@@ -8,9 +8,9 @@ export class NetworkParserController {
     constructor(private gcpSrvc: GoogleCloudParserService) {}
 
     @Post('googlecloud')
-    googleCloud(@Req() request: Request, @Res() response: Response): object {
+    async googleCloud(@Req() request: Request, @Res() response: Response): Promise<any> {
         console.log('POST : network-parser/googlecloud');
-        return this.gcpSrvc.parseData(request, response);
+        return await this.gcpSrvc.parseData(request, response);
     }
 
 }
