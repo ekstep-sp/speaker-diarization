@@ -1,7 +1,3 @@
-// tslint:disable: no-console
-// tslint:disable: no-string-literal
-// tslint:disable: max-line-length
-
 import { Injectable } from '@nestjs/common';
 import { Request, Response } from 'express';
 import { CommonRequestValidatorService } from '../../../../services/shared/common-request-validator/common-request-validator.service';
