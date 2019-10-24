@@ -13,4 +13,10 @@ export class NetworkParserController {
         return await this.gcpSrvc.parseData(request, response);
     }
 
+    @Post('googlecloud2')
+    async googleCloud2(@Req() request: Request, @Res() response: Response): Promise<any> {
+        console.log('POST : network-parser/googlecloud2');
+        return await this.gcpSrvc.parseData2(request, response);
+    }
+
 }
