@@ -1,5 +1,6 @@
 // tslint:disable: class-name
 import { Injectable, HttpService } from '@nestjs/common';
+import {GoogleSpeakerDiarizationEventHandlerService} from './../../event-handler/google-speaker-diarization-event-handler/google-speaker-diarization-event-handler.service';
 
 interface DIARIZATION_REQUEST_INTERFACE {
     fileUri: string;
@@ -13,7 +14,7 @@ interface DIARIZATION_REQUEST_INTERFACE {
 
 @Injectable()
 export class DiarizationSpeakerService {
-    constructor(private httpSrvc: HttpService) {
+    constructor(private httpSrvc: HttpService, private Emitter: GoogleSpeakerDiarizationEventHandlerService) {
     }
 
     getDiarizationRequestData(dataToUse: DIARIZATION_REQUEST_INTERFACE): object {
@@ -53,18 +54,27 @@ export class DiarizationSpeakerService {
         const Response = this.httpSrvc.post(requestDetails.uri, requestDetails.data, requestDetails.requestConfig).toPromise()
         .then((response: any) => {
             // capture the current diarization id and go further
-            this.processDiarizationRequestByID(response.data.name);
+            this.Emitter.triggerEvent('INITIATE_DIARIZATION', {data: response.data.name});
             return Promise.resolve({response: `Process started successfully for ${response.data.name}`});
         })
         .catch(err => {
+            // this.Emitter.triggerEvent('INITIATE_DIARIZATION', {data: '698255031310955052'});
             return Promise.resolve({error: err.message, status: err.response.status});
         });
         return Response;
     }
 
-    processDiarizationRequestByID(diarizationID: string) {
-        // emit an event stating that diarization id is now active, keep reading it for status done
-        console.log('recieved diarization id as' , diarizationID);
+    async checkStatusFromDiarizationID(id: string): Promise<any> {
+        const url = `https://speech.googleapis.com/v1/operations/${id}`;
+        const response = await this.httpSrvc.get(url).toPromise()
+        .then((resp) => {
+            return Promise.resolve({resp});
+        })
+        .catch(err => {
+            return Promise.resolve({error: err});
+        });
 
+        return response;
     }
+
 }
