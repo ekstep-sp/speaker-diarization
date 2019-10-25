@@ -1,12 +1,21 @@
-import { Injectable, Inject, forwardRef } from '@nestjs/common';
+import { Injectable, Inject, forwardRef, OnModuleInit } from '@nestjs/common';
 import { DiarizationSpeakerService } from '../../../services/diarization-speaker/diarization-speaker.service';
+import { GoogleCloudParserService } from '../../../../network-parser/services/google-cloud-parser/google-cloud-parser.service';
+import { ModuleRef } from '@nestjs/core';
 
 @Injectable()
-export class InitiateDiarizationHandlerService {
+export class InitiateDiarizationHandlerService implements OnModuleInit  {
+
+    gcpSrvc: any;
+    diarizationSpkSrvc: any;
     constructor(
-        @Inject(forwardRef(() => DiarizationSpeakerService))
-        private readonly diarizationSpkSrvc: DiarizationSpeakerService,
+        private readonly moduleRef: ModuleRef,
     ) { }
+
+    onModuleInit() {
+        this.gcpSrvc = this.moduleRef.get(GoogleCloudParserService, {strict: false});
+        this.diarizationSpkSrvc = this.moduleRef.get(DiarizationSpeakerService, {strict: false});
+    }
 
     initiate(diarizationID) {
         // read the diarization id and keep checking the status for the same
@@ -37,7 +46,7 @@ export class InitiateDiarizationHandlerService {
                     // call ahead
                     global.clearInterval(globalIteratorID);
                     console.log('\ncompleted...');
-                    this.sendTranscribedAudio(response.response.results);
+                    this.sendTranscribedAudio(response);
                 }
                 console.log(`\nTotal ${response.metadata.progressPercent}% complete....`);
             } else {
@@ -46,9 +55,11 @@ export class InitiateDiarizationHandlerService {
         }
     }
 
-    sendTranscribedAudio(data) {
-        console.log('data recieved is ', data.length);
+    async sendTranscribedAudio(responseData) {
+        console.log('data recieved is ', responseData.response.results.length);
         // initiate the process to remove noise and convert data
-
+        const noiseFilteredDataGoogleCloud2 = await this.gcpSrvc.removeNoiseForGoogleCloudResponse(responseData);
+        const processedDataGoogleCloud2 = await this.gcpSrvc.processDataForGoogleCloud2(noiseFilteredDataGoogleCloud2);
+        console.log('final converted data is ', processedDataGoogleCloud2);
     }
 }

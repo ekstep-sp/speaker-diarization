@@ -16,6 +16,7 @@ export class NetworkParserController {
     @Post('googlecloud2')
     async googleCloud2(@Req() request: Request, @Res() response: Response): Promise<any> {
         console.log('POST : network-parser/googlecloud2');
+        if (request.headers.hasOwnProperty('content-type') && request.headers['content-type'] === 'application/json') {}
         return await this.gcpSrvc.parseData2(request, response);
     }
 

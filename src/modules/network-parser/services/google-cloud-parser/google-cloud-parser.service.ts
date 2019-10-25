@@ -238,6 +238,7 @@ export class GoogleCloudParserService {
      * @returns noise for google cloud response
      */
     async removeNoiseForGoogleCloudResponse(apiResponseData: { response: { results: object[] } }): Promise<object> {
+        console.log('niside remove noise');
         const uniqueSpeakerArray = [];
         const processedData = [];
         const alternativeArray = apiResponseData.response.results;
@@ -304,6 +305,7 @@ export class GoogleCloudParserService {
 
     async processDataForGoogleCloud2(dataToProcess: any): Promise<object> {
         // initial validation
+        console.log('inside processData2')
         if (!!dataToProcess && dataToProcess.constructor === Object && dataToProcess.hasOwnProperty('data') && dataToProcess.data.hasOwnProperty('words')) {
             console.log('ok');
             // validation passed
@@ -319,52 +321,52 @@ export class GoogleCloudParserService {
                 // there is some data to work on, start processing
 
                 dataToProcess.data.words.forEach((wordObject: GCINTERFACE2, index: number) => {
-                    console.log('current word is ', JSON.stringify(wordObject));
+                    // console.log('current word is ', JSON.stringify(wordObject));
                     const currentSpeaker = wordObject.speakerTag.toString();
                     // add a new speaker with the node type --> hub / spoke
                     speakerCollection = this.addSpeakerWithTypeToList(currentSpeaker, speakerCollection);
-                    console.log('speaker collection now is ', speakerCollection);
+                    // console.log('speaker collection now is ', speakerCollection);
                     // add the current word in sentence sequence array
                     if (index === 0) {
                         // this is the first speaker
                         previousSpeaker = currentSpeaker;
-                        console.log('first speaker');
+                        // console.log('first speaker');
                     }
                     // as long as one speaker is speaking, join its words
                     if (currentSpeaker === previousSpeaker) {
-                        console.log('inside continue speaker logic');
+                        // console.log('inside continue speaker logic');
                         if (index === dataToProcess.data.words.length - 1) {
-                            console.log('last speaker');
+                            // console.log('last speaker');
                             sentenceSequenceArray = this.pushIntoSequenceArray2(wordObject, sentenceSequenceArray);
                             const durationForPreviousSpeaker = this.processSequenceForPreviousSpeaker(sentenceSequenceArray);
                             // save this duration corresponding to speaker_tag
                             const newSequenceObj = {};
                             newSequenceObj[previousSpeaker] = durationForPreviousSpeaker;
                             durationSequenceArray.push(newSequenceObj);
-                            console.log('duration sequence now is ', durationSequenceArray);
+                            // console.log('duration sequence now is ', durationSequenceArray);
                             sentenceSequenceArray = [];
                         }
                         // sentenceSequenceArray =  this.pushIntoSequenceArray(wordObject, sentenceSequenceArray);
                     } else {
-                        console.log('new speaker in sequence');
+                        // console.log('new speaker in sequence');
                         // previousSpeaker !== currentSpeaker means, speaker has changed
                         // process the sentenceSequence for previous speaker
                         const durationForPreviousSpeaker = this.processSequenceForPreviousSpeaker(sentenceSequenceArray);
-                        console.log('duration for previous speaker is ', durationForPreviousSpeaker);
+                        // console.log('duration for previous speaker is ', durationForPreviousSpeaker);
                         // save this duration corresponding to speaker_tag
                         const newSequenceObj = {};
                         newSequenceObj[previousSpeaker] = durationForPreviousSpeaker;
                         durationSequenceArray.push(newSequenceObj);
-                        console.log('duration sequence array now is ', durationSequenceArray);
+                        // console.log('duration sequence array now is ', durationSequenceArray);
                         sentenceSequenceArray = [];
                         // update previous speaker with new speaker
                         previousSpeaker = currentSpeaker;
                     }
 
                     if (index !== dataToProcess.data.words.length - 1) {
-                        console.log('this is a continous speaker not at the end');
+                        // console.log('this is a continous speaker not at the end');
                         sentenceSequenceArray = this.pushIntoSequenceArray2(wordObject, sentenceSequenceArray);
-                        console.log('duration sequence now is ', durationSequenceArray);
+                        // console.log('duration sequence now is ', durationSequenceArray);
                     }
 
                 });
