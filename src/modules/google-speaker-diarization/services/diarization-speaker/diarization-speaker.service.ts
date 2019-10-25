@@ -14,6 +14,8 @@ interface DIARIZATION_REQUEST_INTERFACE {
 
 @Injectable()
 export class DiarizationSpeakerService {
+
+    private _bearer_token = '';
     constructor(private httpSrvc: HttpService, private Emitter: GoogleSpeakerDiarizationEventHandlerService) {
     }
 
@@ -32,6 +34,8 @@ export class DiarizationSpeakerService {
                 uri: dataToUse.fileUri || null,
             },
          };
+
+        this._bearer_token = dataToUse.bearer || DefaultAuthorization;
 
         const requestConfig = {
             headers: {
@@ -65,8 +69,16 @@ export class DiarizationSpeakerService {
     }
 
     async checkStatusFromDiarizationID(id: string): Promise<any> {
+        const requestConfig = {
+            headers: {
+                get: {
+                    'Authorization': this._bearer_token,
+                    'Content-Type': 'application/json',
+                },
+            },
+        };
         const url = `https://speech.googleapis.com/v1/operations/${id}`;
-        const response = await this.httpSrvc.get(url).toPromise()
+        const response = await this.httpSrvc.get(url, requestConfig).toPromise()
         .then((resp) => {
             return Promise.resolve({resp});
         })
