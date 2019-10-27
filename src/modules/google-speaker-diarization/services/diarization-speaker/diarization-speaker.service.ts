@@ -53,12 +53,12 @@ export class DiarizationSpeakerService {
         return {uri: googleSpeechDiarizationEndpoint, data, requestConfig};
     }
 
-    initiateDiarization(requestDetails): Promise<any> {
+    initiateDiarization(requestDetails, bodyData): Promise<any> {
         console.log(requestDetails.uri);
         const Response = this.httpSrvc.post(requestDetails.uri, requestDetails.data, requestDetails.requestConfig).toPromise()
         .then((response: any) => {
             // capture the current diarization id and go further
-            this.Emitter.triggerEvent('INITIATE_DIARIZATION', {data: response.data.name});
+            this.Emitter.triggerEvent('INITIATE_DIARIZATION', {data: response.data.name, body: bodyData});
             return Promise.resolve({response: `Process started successfully for ${response.data.name}`});
         })
         .catch(err => {

@@ -13,7 +13,7 @@ export class DiarizationBetaController {
         const requestDetails = await this.diazSrvc.getDiarizationRequestData(body);
         if (!!requestDetails) {
             // hit the official url and wait for response
-            const diarizationIDResponse = await this.diazSrvc.initiateDiarization(requestDetails);
+            const diarizationIDResponse = await this.diazSrvc.initiateDiarization(requestDetails, body);
 
             if (diarizationIDResponse.hasOwnProperty('error')) {
                 response.status(diarizationIDResponse.status).send({ error: diarizationIDResponse.error });
