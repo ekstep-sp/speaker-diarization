@@ -15,7 +15,6 @@ export class GoogleSpeakerDiarizationEventHandlerService {
         private initiateDiarizationSrvc: InitiateDiarizationHandlerService,
         private writeConvertedDataToJSONSrvc: WriteConvertedDataToJsonService,
         ) {
-        console.log('google-speaker-diarization-event-handler active');
         this.handleEvents();
     }
 
@@ -24,7 +23,6 @@ export class GoogleSpeakerDiarizationEventHandlerService {
             console.log('acknowledging the main event INITIATE_DIARIZATION');
             // send the video details seperately
             const videoDetails = this.getVideoDetails(dataToSend);
-            console.log('fetched video details are ', videoDetails);
             this.initiateDiarizationSrvc.initiate(dataToSend.data, videoDetails);
         });
 

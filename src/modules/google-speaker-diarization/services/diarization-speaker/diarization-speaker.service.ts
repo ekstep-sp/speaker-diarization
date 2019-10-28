@@ -54,12 +54,11 @@ export class DiarizationSpeakerService {
     }
 
     initiateDiarization(requestDetails, bodyData): Promise<any> {
-        console.log(requestDetails.uri);
         const Response = this.httpSrvc.post(requestDetails.uri, requestDetails.data, requestDetails.requestConfig).toPromise()
         .then((response: any) => {
             // capture the current diarization id and go further
             this.Emitter.triggerEvent('INITIATE_DIARIZATION', {data: response.data.name, body: bodyData});
-            return Promise.resolve({response: `Process started successfully for ${response.data.name}`});
+            return Promise.resolve({response: {message: `Process started successfully`, data: {process_id: response.data.name}}});
         })
         .catch(err => {
             // this.Emitter.triggerEvent('INITIATE_DIARIZATION', {data: '698255031310955052'});

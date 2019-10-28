@@ -6,10 +6,8 @@ import * as path from 'path';
 @Injectable()
 export class WriteConvertedDataToJsonService {
     public DB_URL = path.resolve(__dirname, '../../../../../../src/assets/vis_db');
-    constructor() {}
 
-    initiate(dataToUse) {
-        console.log('initiate called for writting in file');
+    initiate(dataToUse: object) {
 
         const fileUrl = path.join(this.DB_URL, 'vis_db.json');
 
@@ -29,7 +27,7 @@ export class WriteConvertedDataToJsonService {
         const newVideoObject = {
             id: null,
             vname: `Random Video Z` ,
-            vduration: "1 hr 20 mins",
+            vduration: '1 hr 20 mins',
             vheldOn: `01 Jan 2000`,
             vhubs: [],
             data: [],
@@ -40,7 +38,6 @@ export class WriteConvertedDataToJsonService {
         let newUpdatedDB = {};
 
         if (totalVideosInFile) {
-            console.log('need to append or update the video object');
 
             let isUpdated = false;
             newUpdatedDB['videos'] = [];
@@ -68,7 +65,6 @@ export class WriteConvertedDataToJsonService {
                 oldContents.videos.push(newVideoObject);
 
                 newUpdatedDB = oldContents;
-                console.log(newUpdatedDB);
             }
         } else {
             console.log('there are no videos in the file, write a new one');

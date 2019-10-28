@@ -19,7 +19,6 @@ export class CommonRequestValidatorService {
         if (!!bodyObject && bodyObject.constructor === Object) {
             // the variable is of constructor type
             if (Object.keys(bodyObject).length) {
-                console.log('Body Object Validation passed');
                 isValid = true;
             } else {
                 console.log('Body object validation failed : No keys present inside the body object');

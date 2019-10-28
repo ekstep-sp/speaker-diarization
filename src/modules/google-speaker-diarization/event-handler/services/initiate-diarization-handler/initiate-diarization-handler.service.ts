@@ -47,7 +47,7 @@ export class InitiateDiarizationHandlerService implements OnModuleInit  {
         // to check if the status has changed from pending / progress to complete / error
         if (response.name === diarizationID) {
             if (response.metadata.hasOwnProperty('progressPercent')) {
-                if (response.metadata.progressPercent == 100 && response.hasOwnProperty('done') && response.done ===  true) {
+                if (response.metadata.progressPercent.toString() === '100' && response.hasOwnProperty('done') && response.done ===  true) {
                     // call ahead
                     global.clearInterval(globalIteratorID);
                     console.log('\ncompleted...');
@@ -64,7 +64,6 @@ export class InitiateDiarizationHandlerService implements OnModuleInit  {
         // initiate the process to remove noise and convert data
         const noiseFilteredDataGoogleCloud2 = await this.gcpSrvc.removeNoiseForGoogleCloudResponse(responseData);
         const processedDataGoogleCloud2 = await this.gcpSrvc.processDataForGoogleCloud2(noiseFilteredDataGoogleCloud2);
-        console.log('final converted data is ', processedDataGoogleCloud2);
         // initiate process to write the data in the file
         // get auth token by typing 'gcloud auth application-default print-access-token' in gcloud in appdata/local/cloud
         this.moduleEmitter.emitter.emit('WRITE_CONVERTED_DATA_TO_JSON', {data: processedDataGoogleCloud2, details: videoDetailsForVis});

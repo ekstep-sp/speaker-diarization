@@ -7,10 +7,6 @@ import * as path from 'path';
 export class DatabseCommonService {
 
     public DB_URL = path.resolve(__dirname, '../../../../../../src/assets/vis_db');
-
-    constructor() {
-        console.log('path to read db is ', this.DB_URL);
-    }
     /**
      * Reads jsondb
      * @description Read the databse from the common json file recorded

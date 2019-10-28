@@ -94,7 +94,6 @@ export class GoogleCloudParserService {
                 }
             });
             // round off the float value of duration
-            console.log('speaker duration process for ', speakerTag + ' is ' + speakerDuration);
             preparedObject['dio'] = Math.round(speakerDuration).toString();
             preparedObject['ci_graph'] = '1';
             preparedObject['vs'] = Math.floor(Math.random() * Math.floor(2));   // either of 0 or 1
@@ -238,7 +237,6 @@ export class GoogleCloudParserService {
      * @returns noise for google cloud response
      */
     async removeNoiseForGoogleCloudResponse(apiResponseData: { response: { results: object[] } }): Promise<object> {
-        console.log('niside remove noise');
         const uniqueSpeakerArray = [];
         const processedData = [];
         const alternativeArray = apiResponseData.response.results;
@@ -305,12 +303,9 @@ export class GoogleCloudParserService {
 
     async processDataForGoogleCloud2(dataToProcess: any): Promise<object> {
         // initial validation
-        console.log('inside processData2')
         if (!!dataToProcess && dataToProcess.constructor === Object && dataToProcess.hasOwnProperty('data') && dataToProcess.data.hasOwnProperty('words')) {
-            console.log('ok');
             // validation passed
             if (Array.isArray(dataToProcess.data.words) && dataToProcess.data.words.length > 0) {
-                console.log('real process');
                 let speakerCollection = {};
                 let sentenceSequenceArray = [];
                 let previousSpeaker = '';
@@ -372,7 +367,6 @@ export class GoogleCloudParserService {
                 });
                 // once speakerCollection is recieved,
                 // create inital version of processed data
-                console.log('final formatting');
                 processedDataObject['data'] = this.mergeDurationAndSpeakers(durationSequenceArray, speakerCollection);
                 processedDataObject['data'] = this.addCDOIforSpeakers(processedDataObject['data']);
                 processedDataObject['data'] = this.addIAforSpeakers(processedDataObject['data']);
