@@ -46,7 +46,9 @@ export class WriteConvertedDataToJsonService {
             newUpdatedDB['videos'] = [];
             newUpdatedDB['videos'] = oldContents.videos.filter(videoObj => {
                 if (videoObj.vname === newVideoData.details.video_name) {
-
+                    videoObj['vduration'] = newVideoData.details.video_duration || newVideoObject.vduration;
+                    videoObj['vheldOn'] = newVideoData.details.video_held_on || newVideoObject.vheldOn;
+                    videoObj['vhubs'] = newVideoData.details.hubs_name || newVideoObject.vhubs;
                     videoObj.data = newVideoData.data.data;
                     isUpdated = true;
                     console.log('file updated');

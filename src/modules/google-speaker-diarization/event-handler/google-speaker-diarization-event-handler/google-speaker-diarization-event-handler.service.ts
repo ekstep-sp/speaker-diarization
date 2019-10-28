@@ -39,7 +39,7 @@ export class GoogleSpeakerDiarizationEventHandlerService {
         const videDetailsObject = {
             video_name: '',
             video_duration: '',
-            hubs_details: [],
+            hubs_name: [],
             video_held_on: '',
         };
         if (dataToUse.hasOwnProperty('body') ) {
@@ -48,7 +48,7 @@ export class GoogleSpeakerDiarizationEventHandlerService {
                 videDetailsObject.video_name = dataToUse.body.fileDetails.video_name || `Video ${currentDate}`;
                 videDetailsObject.video_duration = dataToUse.body.fileDetails.video_duration || 'NA';
                 videDetailsObject.video_held_on = dataToUse.body.fileDetails.video_held_on || '15 Aug 1947';
-                videDetailsObject.hubs_details = dataToUse.body.fileDetails.hubs_details || [];
+                videDetailsObject.hubs_name = dataToUse.body.fileDetails.hubs_name || [];
             }
         }
         return videDetailsObject;
