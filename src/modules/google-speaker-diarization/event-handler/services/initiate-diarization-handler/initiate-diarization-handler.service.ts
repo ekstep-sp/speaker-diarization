@@ -61,13 +61,12 @@ export class InitiateDiarizationHandlerService implements OnModuleInit  {
     }
 
     async sendTranscribedAudio(responseData, videoDetailsForVis) {
-        console.log('data recieved is ', responseData.response.results.length);
         // initiate the process to remove noise and convert data
         const noiseFilteredDataGoogleCloud2 = await this.gcpSrvc.removeNoiseForGoogleCloudResponse(responseData);
         const processedDataGoogleCloud2 = await this.gcpSrvc.processDataForGoogleCloud2(noiseFilteredDataGoogleCloud2);
         console.log('final converted data is ', processedDataGoogleCloud2);
         // initiate process to write the data in the file
-        let emitter = this.moduleEmitter.emitter;
-        emitter.emit('WRITE_CONVERTED_DATA_TO_JSON', {data: processedDataGoogleCloud2, details: videoDetailsForVis});
+        // get auth token by typing 'gcloud auth application-default print-access-token' in gcloud in appdata/local/cloud
+        this.moduleEmitter.emitter.emit('WRITE_CONVERTED_DATA_TO_JSON', {data: processedDataGoogleCloud2, details: videoDetailsForVis});
     }
 }

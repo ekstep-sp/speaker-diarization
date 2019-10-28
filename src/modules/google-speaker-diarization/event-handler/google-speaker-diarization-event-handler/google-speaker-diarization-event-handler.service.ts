@@ -35,15 +35,20 @@ export class GoogleSpeakerDiarizationEventHandlerService {
     }
 
     getVideoDetails(dataToUse: any) {
+        const currentDate = new Date().toLocaleString.toString();
         const videDetailsObject = {
-            video_name: `Video ${new Date().toLocaleString}`,
-            video_duration: 'NA',
+            video_name: '',
+            video_duration: '',
+            hubs_details: [],
+            video_held_on: '',
         };
         if (dataToUse.hasOwnProperty('body') ) {
             if (!!dataToUse.body && dataToUse.body.hasOwnProperty('fileDetails')) {
 
-                videDetailsObject.video_name = dataToUse.body.fileDetails.video_name || `Video ${new Date().toLocaleString}`;
+                videDetailsObject.video_name = dataToUse.body.fileDetails.video_name || `Video ${currentDate}`;
                 videDetailsObject.video_duration = dataToUse.body.fileDetails.video_duration || 'NA';
+                videDetailsObject.video_held_on = dataToUse.body.fileDetails.video_held_on || '15 Aug 1947';
+                videDetailsObject.hubs_details = dataToUse.body.fileDetails.hubs_details || [];
             }
         }
         return videDetailsObject;
