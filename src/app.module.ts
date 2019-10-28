@@ -6,9 +6,22 @@ import { CommonRequestValidatorService } from './services/shared/common-request-
 import { GoogleSpeakerDiarizationModule } from './modules/google-speaker-diarization/google-speaker-diarization.module';
 import { ReadDbModule } from './modules/read-db/read-db.module';
 
+import { ServeStaticModule } from '@nestjs/serve-static';
+import { join } from 'path';
+
 @Module({
-  imports: [NetworkParserModule, GoogleSpeakerDiarizationModule, ReadDbModule],
+  // serve static files in the server
+  imports: [
+    ServeStaticModule.forRoot({
+      rootPath: join(__dirname, '..', 'src', 'static'),
+    }),
+    NetworkParserModule, 
+    GoogleSpeakerDiarizationModule,
+    ReadDbModule,
+  ],
   controllers: [AppController],
   providers: [AppService, CommonRequestValidatorService],
 })
-export class AppModule {}
+export class AppModule {
+
+}
