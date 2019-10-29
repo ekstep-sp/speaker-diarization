@@ -1,0 +1,25 @@
+.progressContainer {
+    display: none;
+    position: relative;
+    width: 50%;
+    margin: 0;
+    margin: auto;
+    .progress-bar-parent {
+        background-color: rgb(230, 230, 230);
+        height: 16px;
+        border: none;
+        border: 1px solid rgb(230, 226, 226);
+        border-radius: 10px;
+        .progress-status-bar {
+            background-color: #a8abe3;
+            height: 100%;
+            width: 0%;
+            border-radius: 10px;
+        }
+        .progressText {
+            position: absolute;
+            right: -120px;
+            top: -2px;
+        }
+    }
+}

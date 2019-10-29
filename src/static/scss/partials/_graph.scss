@@ -1,0 +1,14 @@
+svg {
+    position : absolute;
+}
+
+.graphContainer {
+    height: 75vh;
+    background-color: white;
+    width: 95%;
+    margin: auto;
+    margin-top: 20px;
+    position: relative;
+    @include general-box-shadow;
+    // z-index: -1;
+}

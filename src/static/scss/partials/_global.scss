@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    min-width: 100%;
+    min-height: 100%;
+    background-color: #eeeeee;
+    font-family: 'Muli', sans-serif;
+}
+
+#mainContainer {
+    position: relative;
+}

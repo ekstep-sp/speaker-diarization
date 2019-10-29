@@ -1,0 +1,15 @@
+.gc_header {
+    display: inline-block;
+    min-width: 100%;
+    background: white;
+    min-height: 10vh;
+}
+
+.gc_header .gc_title {
+    font-size: 2.3rem;
+    color: black;
+    margin: 0;
+    text-align: center;
+    height: 7.5vh;
+    padding-top: 2.5vh;
+}

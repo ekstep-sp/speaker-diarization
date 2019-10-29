@@ -1,0 +1,109 @@
+.imageSection {
+    
+}
+
+#imageContainer_1 {
+    width: 100%;
+    margin-top: 10%;
+    display: none;
+}
+
+.imageGallery {
+    width: 95%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: stretch;
+}
+
+.heading {
+    font-size: 1.4rem;
+    font-weight: bold;
+    padding : 1em 0;
+    width: 95%;
+    margin: auto;
+}
+
+.imageBlock {
+    margin: 15px;
+    width: 45%;
+
+}
+
+.imageBlock.i1 {
+    img {
+        max-width: 100%;
+    }
+}
+
+.imageBlock.i2 {
+    img {
+        width: 98%;
+    }
+}
+
+
+.flexBlock {
+    display: flex;
+    flex-direction: start;
+    .imageBlock.i3 {
+        width: 100%;
+        img {
+            width: 100%;
+        }
+    }
+}
+
+#imageContainer_2 {
+    width: 100%;
+    margin-top: 10%;
+    display : none;
+}
+
+.imageGallery_2 {
+    width: 95%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: stretch;
+}
+
+.heading_2 {
+    font-size: 1.4rem;
+    font-weight: bold;
+    padding : 1em 0;
+    width: 95%;
+    margin: auto;
+}
+
+.imageBlock_2 {
+    margin: 15px;
+    width: 45%;
+
+}
+
+.imageBlock_2.i1_2 {
+    img {
+        max-width: 100%;
+    }
+}
+
+.imageBlock_2.i2_2 {
+    img {
+        width: 98%;
+    }
+}
+
+
+.flexBlock_2 {
+    display: flex;
+    flex-direction: start;
+    .imageBlock_2.i3_2 {
+        width: 100%;
+        img {
+            width: 100%;
+        }
+    }
+}

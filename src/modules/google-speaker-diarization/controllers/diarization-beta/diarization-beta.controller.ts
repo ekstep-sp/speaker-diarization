@@ -12,6 +12,7 @@ export class DiarizationBetaController {
         // get the request details based on data provided
         const requestDetails = await this.diazSrvc.getDiarizationRequestData(body);
         if (!!requestDetails) {
+            console.log('request details created as ', requestDetails);
             // hit the official url and wait for response
             const diarizationIDResponse = await this.diazSrvc.initiateDiarization(requestDetails, body);
 

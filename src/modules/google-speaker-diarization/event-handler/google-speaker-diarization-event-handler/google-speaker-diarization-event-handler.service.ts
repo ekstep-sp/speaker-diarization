@@ -33,7 +33,7 @@ export class GoogleSpeakerDiarizationEventHandlerService {
     }
 
     getVideoDetails(dataToUse: any) {
-        const currentDate = new Date().toLocaleString.toString();
+        const currentDate = new Date().toLocaleDateString();
         const videDetailsObject = {
             video_name: '',
             video_duration: '',

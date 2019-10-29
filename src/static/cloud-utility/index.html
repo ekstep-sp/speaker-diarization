@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./../dist/css/gc_index.css">
+</head>
+
+<body class="gc">
+    <div class="gc_header">
+        <h3 class="gc_title">Google Cloud Utility</h3>
+    </div>
+    <div class="gc_main_content">
+        <div class="gc_form-container">
+            <form action="submit" class="gc_main_form" onsubmit="submitForm(event,'mainForm')" id="mainForm">
+                <h3 class="title">Form Details</h3>
+                <div class="gc_form-body">
+                    <div class="formEl requiredEl">
+                        <label for="fileUrlEl" class="formElLabel">
+                            <h3>File Url</h3>
+                        </label>
+                        <input type="text" id="fileUrlEl" name="audio_url" class="formElHolder" placeholder="Enter google cloud url" required>
+                        <span>*</span>
+                    </div>
+                    <div class="formEl">
+                            <label for="heldOnEl" class="formElLabel">
+                                <h3>Held On</h3>
+                            </label>
+                            <input type="date" id="heldOnEl" name="video_held_on" class="formElHolder">
+                        </div>
+                    <div class="formEl">
+                        <label for="videoNameEl" class="formElLabel">
+                            <h3>Video Name</h3>
+                        </label>
+                        <input type="text" id="videoNameEl" name="video_name" class="formElHolder">
+                    </div>
+                    <div class="formEl">
+                        <label for="videoDurationEl" class="formElLabel">
+                            <h3>Video Duration</h3>
+                        </label>
+                        <input type="text" id="videoDurationEl" name="video_duration" class="formElHolder">
+                    </div>
+                    <!-- <div class="formEl">
+                            <label for="videoEncodingEl" class="formElLabel">
+                                <h3>Audio File Encoding</h3>
+                            </label>
+
+
+    <input type="text" id="videoEncodingEl" name="encoding" class="formElHolder">
+
+                            <select id="videoEncodingEl" name="encoding" class="formElHolder">
+                                    <option value="mp3">.mp3</option>
+                                    <option value="LINEAR16">LINEAR16 / wav</option>
+                                  </select>
+                        </div> -->
+                    <div class="formEl">
+                        <label for="totalSpkEl" class="formElLabel">
+                            <h3>Total Speakers</h3>
+                        </label>
+                        <input type="number" min="0" id="totalSpkEl" value="10" name="diarizationSpeakerCount" class="formElHolder" required>
+                    </div>
+                    <div class="noteSection">
+                        <h5 class="sectionInfo">
+                            <div class="span-container">
+                                    [ * ]
+                            </div>
+                            <div class="details-container">
+                                    `File Url` is mandatory. Rest of the information will be filled by default, if not provided.
+                            </div>
+                        </h5>
+                    </div>
+                    <div class="successMessage" id="successContainer">
+                        <h5 class="successText" id="successTextMessage">Data Sent Successfully !!!</h5>
+                    </div>
+                    <div class="gc_form_footer">
+                        <button type='submit'>Upload</button>
+                    </div>
+                </div>
+            </form>
+            <div class="progressContainer" id="progressContainer">
+                <div class="progress-bar-parent">
+                    <div class="progress-status-bar" id="progressStatusBar"></div>
+                    <span class="progressText" id="progressText"></span>
+                </div>
+            </div>
+            <div class="redirectMessage" id="redirectMessage">
+                <h5 class="redirectText">
+                    Database has been successfully updated. <span><a class="clickHere" href="/index.html">Click Here</a></span> to visit the visualizer.
+                </h5>
+            </div>
+        </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+<script src="./index.js"></script>
+
+</html>

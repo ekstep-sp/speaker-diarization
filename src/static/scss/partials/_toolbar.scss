@@ -1,0 +1,279 @@
+.toolbar {
+    width: 100%;
+    background-color: white;
+    height: 50px;
+    position: relative;
+}
+
+.node-details, .video-details {
+    display: inline-block;
+}
+
+.node-details {
+    z-index: 100;
+    width: 250px;
+    margin-top: 20px;
+    margin-left: 20px;
+    opacity : 0;
+    .container {
+        .title {
+            text-align: center;
+            margin: 0;
+            padding: 5px 0;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .body {
+            padding: 5px 10px;
+
+            .imageContainer {
+                max-width: 250px;
+                img {
+                    width: 220px;
+                    height: 220px;
+                    border-radius: 50%;
+                    margin-bottom: 10px;
+                }
+            }
+            .row {
+                display: flex;
+                margin-bottom: 7px;
+                .name, .value {
+                    flex: 1;
+                }
+                .name {
+                    max-width: 100px;
+                }
+            }
+        }
+        @include general-box-shadow;
+    }
+}
+
+.video-details2 {
+    float: right;
+    z-index: 100;
+    width: 250px;
+    margin-top: 20px;
+    margin-right: 20px;
+    .container {
+        .title {
+            text-align: center;
+            margin: 0;
+            padding: 10px 5px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .body {
+            padding: 5px 10px;
+            .row {
+                display: flex;
+                margin-bottom: 7px;
+                .name, .value {
+                    flex: 1;
+                }
+                .name {
+                    max-width: 100px;
+                }
+            }
+        }
+        @include general-box-shadow;
+    }
+}
+
+.video-details {
+    float: right;
+    z-index: 100;
+    width: 250px;
+    margin-top: 20px;
+    margin-right: 20px;
+    opacity: 0;
+    .container {
+        .title {
+            text-align: center;
+            margin: 0;
+            padding: 10px 5px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .body {
+            padding: 5px 10px;
+            .row {
+                display: flex;
+                margin-bottom: 7px;
+                .name, .value {
+                    flex: 1;
+                }
+                .name {
+                    max-width: 100px;
+                }
+            }
+        }
+        @include general-box-shadow;
+    }
+}
+
+.legendsContainer {
+    position: absolute;
+    bottom: 40px;
+    right: 0;
+    margin-right: 20px;
+    z-index: 99;
+    min-width: 150px;
+    text-align: center;
+
+    .legendDetails {
+        min-width: 100%;
+        background-color: transparent;
+        min-height: 70%;
+        font-size: 1.3rem;
+        margin-top: 20px;
+    }
+
+    .legendDetails {
+        .body {
+            .section {
+                margin-bottom: 20px;
+                padding-bottom: 7px;
+                padding-top: 7px;
+                @include general-box-shadow;
+            }
+        }
+    }
+    span.label{
+        margin: -3px 5px;
+    }
+
+    .labelValue, .labelValue1 , .labelValue2{
+        line-height: 1.5;
+    }
+
+    .labelValue1 {
+        padding-right: 45px;
+    }
+
+    .labelValue2 {
+        padding-right: 25px;
+    }
+
+    .sample {
+        padding-right: 30px;
+    }
+
+    span.label.org {
+        background: #1f77b4;
+        display: inline-block;
+        width: 20px;
+        border-radius: 50%;
+        height: 20px;
+    }
+    span.label.att {
+        background: #ff7f0e;
+        display: inline-block;
+        width: 20px;
+        border-radius: 50%;
+        height: 20px;
+        margin-left: 5px;
+    }
+    span.label.vOff {
+        background: red;
+        display: inline-block;
+        width: 20px;
+        border-radius: 50%;
+        height: 20px;
+    }
+    span.label.vOn {
+        background: #4CAF50;
+        display: inline-block;
+        width: 20px;
+        border-radius: 50%;
+        height: 20px;
+    }
+
+    span.label.vAct {
+        background: #00ffd0;
+        display: inline-block;
+        width: 20px;
+        border-radius: 50%;
+        height: 20px;
+    }
+    
+}
+
+.Positive {
+    color: #4CAF50;
+}
+
+.Negative {
+    color: red;
+}
+
+.Neutral {
+    color: black;
+}
+
+.initialText {
+    text-align: center;
+    color: lightslategrey;
+    font-size: 1.4rem;
+    position: absolute;
+    left: 40%;
+    top: 45%;
+}
+
+
+
+// tooltip css
+.tooltip {
+    position:relative;
+    text-align:left;
+}
+
+.tooltip .left {
+    min-width:170px; 
+    top:50%;
+    right:100%;
+    margin-right:20px;
+    transform:translate(0, -50%);
+    padding:10px 20px;
+    color:#FFFFFF;
+    background-color:#888888;
+    font-weight:normal;
+    font-size:13px;
+    border-radius:8px;
+    position:absolute;
+    z-index:99999999;
+    box-sizing:border-box;
+    border:1px solid #666666;box-shadow:0 1px 8px rgba(0,0,0,0.5);
+    visibility:hidden; opacity:0; transition:opacity 0.8s;
+}
+
+.tooltip2 .left {
+    min-width: 100px;
+}
+
+.section:hover .left {
+    visibility:visible; opacity:1;
+}
+
+.tooltip .left i {
+    position:absolute;
+    top:50%;
+    left:100%;
+    margin-top:-12px;
+    width:12px;
+    height:24px;
+    overflow:hidden;
+}
+
+.tooltip .left i::after {
+    content:'';
+    position:absolute;
+    width:12px;
+    height:12px;
+    left:0;
+    top:50%;
+    transform:translate(-50%,-50%) rotate(-45deg);
+    background-color:#888888;
+    border:1px solid #666666;box-shadow:0 1px 8px rgba(0,0,0,0.5);
+}

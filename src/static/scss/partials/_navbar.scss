@@ -1,0 +1,17 @@
+navbar {
+    display: block;
+    background-color: white;;
+    font-size: 1.6rem;
+}
+
+.navbarContent {
+    height: 100%;
+    .title {
+        padding: .60em;
+        text-align: center;
+    }
+}
+
+.logo {
+    float: left;
+}

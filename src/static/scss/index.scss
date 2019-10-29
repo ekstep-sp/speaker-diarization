@@ -1,0 +1,23 @@
+@import './mixins/global_mixins';
+
+@import './partials/global';
+@import './partials/navbar';
+@import './partials/toolbar';
+@import './partials/dropdown';
+@import './partials/graph';
+@import './partials/tooltip';
+@import './partials/slider';
+@import './partials/buttons';
+@import './partials/image_container';
+
+// import gcloud css seperately
+@import './partials/gc_header';
+.clearfix {
+    overflow: auto;
+  }
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+// this is the main index file to be linked in the html

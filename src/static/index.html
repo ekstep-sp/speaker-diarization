@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="./dist/css/index.css">
+  <title>Network Interaction Analysis</title>
+</head>
+
+<body>
+
+  <navbar>
+    <div class="navbarContent">
+      <div class="logo">
+        <img src="./assets/societal-logo.png">
+      </div>
+      <h1 class="title">
+        Network Interaction Analysis
+      </h1>
+    </div>
+  </navbar>
+
+  <div id="mainContainer" class="container">
+    <div id="graphContainer" class="graphContainer">
+      <div class="toolbar">
+        <!--video details without dropdown functionality-->
+        <div class="node-details">
+          <div class="container">
+            <p class="title">Participant Details</p>
+            <div class="body">
+              <!--rows are dynamically added here-->
+            </div>
+          </div>
+        </div>
+        <!--video details without dropdown functionality ends-->
+
+        <!--video details with dropdown functionality-->
+        <div class="video-details2">
+            <div class="container">
+                <div class="dropdown">
+                  <p class="title">Loading...</p>
+                </div>
+            </div>
+          </div>
+        <!--video details with dropdown functionality ends-->
+        <div class="video-details">
+          <div class="container">
+            <p class="title">NICPR ECHO Clinic 4th January, 2018 (Week 17)</p>
+            <div class="body">
+              <div class="row">
+                <p class="name">Held On</p>
+                <p class="value">04 January 2018</p>
+              </div>
+              <div class="row">
+                <p class="name">Hub 1</p>
+                <p class="value">Dr. Aishwarya George</p>
+              </div>
+              <div class="row">
+                <p class="name">Hub 2</p>
+                <p class="value">Dr. Suzanne</p>
+              </div>
+              <div class="row">
+                <p class="name">Duration</p>
+                <p class="value">3 hr 20 mins</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+
+      <!--legends section-->
+      <div class="legendsContainer">
+        <div class="legendDetails">
+          <p class="title"></p>
+          <div class="body">
+            <div class="section tooltip">
+                <div class="left">
+                    <h3>Participant Type</h3>
+                    <i></i>
+                </div>
+                <div class="row">
+                    <span class="label org"></span>
+                    <span class="labelValue1">Hub</span>
+                  </div>
+                  <div class="row">
+                    <span class="label att"></span>
+                    <span class="labelValue2">Spoke</span>
+                  </div>
+            </div>
+            <div class="section tooltip">
+                <div class="left">
+                    <h3>Video Status</h3>
+               
+                    <i></i>
+                </div>
+                <div class="row">
+                    <span class="label vOn"></span>
+                    <span class="labelValue">On</span>
+                  </div>
+                  <div class="row">
+                    <span class="label vOff"></span>
+                    <span class="labelValue">Off</span>
+                  </div>
+            </div>
+            <div class="section tooltip tooltip2">
+                <div class="left">
+                    <h3>Current Participant</h3>
+                    <i></i>
+                </div>
+                <div class="row">
+                    <span class="label vAct"></span>
+                    <span class="labelValue sample">Active</span>
+                  </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="initialText" class="initialText">
+        <h3>Click " Analyze " button to begin analysis</h3>
+      </div>
+      <!--space for svg-->
+    </div>
+
+    <!--range slider using slider.js-->
+    <div class="range">
+      <input type="range" min="0" value="0" class="slider" disabled>
+      <!-- <div id="sliderticks" class="sliderticks">
+    </div> -->
+      <ul id="sliderticks" class="sliderticks"></ul>
+      <div class="clearfix"></div>
+    </div>
+    <div class="clearfix">
+      <div class="clearfix"></div>
+    </div>
+    <div class="buttonContainer">
+      <button id="startBtn" class="generalBtn start">Analyze</button>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+
+  <div class="imageSection">
+      <div id="imageContainer_1">
+          <div class="heading">Network Analysis</div>
+          <div class="imageGallery">
+            <div class="imageBlock i1">
+                <img src="./assets/4th/p1.png">
+            </div>
+            <div class="imageBlock i2">
+                <img src="./assets/4th/wcloud2.png">
+            </div>
+            <div class="flexBlock">
+                <div class="imageBlock i3">
+                    <img src="./assets/4th/p2.png">
+                </div>
+                <div class="imageBlock i3">
+                    <img src="./assets/4th/image.png">
+                </div>
+                <div class="imageBlock i4">
+                    <img src="./assets/4th/tone_detect_2.png">
+                </div>
+            </div>
+          </div>
+        </div>
+    
+        <div id="imageContainer_2">
+            <div class="heading_2">Network Analysis</div>
+            <div class="imageGallery_2">
+              <div class="imageBlock_2 i1_2">
+                  <img src="./assets/25th/p4.png">
+              </div>
+              <div class="imageBlock_2 i2_2">
+                  <img src="./assets/25th/wcloud1.png">
+              </div>
+              <div class="flexBlock_2">
+                  <div class="imageBlock_2 i3_2">
+                      <img src="./assets/25th/p3.png">
+                  </div>
+                  <div class="imageBlock_2 i3_2">
+                      <img src="./assets/25th/image.png">
+                  </div>
+                  <div class="imageBlock_2 i4_2">
+                      <img src="./assets/25th/tone_detect.png">
+                  </div>
+              </div>
+            </div>
+          </div>
+  </div>
+
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
+<script src="./js/config/variables_Config.js"></script>
+<script src="./js/urlHandler.js"></script>
+<script src="./js/config/color_config.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+  <script src="./js/slider.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="./js/data_module/dataModule.js"></script>
+<script src="./js/nodes_module/nodes_module.js"></script>
+<script src="./js/relationship/index.js"></script>
+<script src="./js/dropdown_module/dropdown_module.js"></script>
+<script src="./js/toolbar_module/toolbar_module.js"></script>
+<script src="./js/index.js"></script>
+
+
+</html>

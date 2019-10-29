@@ -1,0 +1,27 @@
+.buttonContainer {
+    margin: 0;
+    position: absolute;
+    right: 70px;
+    margin-top: 50px;
+    top: 35%;
+    text-align: center;
+}
+
+
+.generalBtn {
+    min-width: 250px;
+    min-height: 40px;
+    text-align: center;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.generalBtn:hover {
+    cursor: pointer;
+}
+
+.generalBtn.start {
+    color: black;
+    background-color: #a8abe3;
+
+}

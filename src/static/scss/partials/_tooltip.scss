@@ -1,0 +1,40 @@
+.toolTip, .miniToolTip {
+    display: inline;
+    position: absolute;
+    padding: 10px;
+}
+
+.toolTip {
+    background-color: whitesmoke;
+    opacity: 0.9;
+    min-width: 220px;
+    border-radius: 5px;
+    box-shadow: 10px 10px 30px -13px rgba(0,0,0,0.29);
+}
+
+.miniToolTip {
+    background-color: grey;
+    min-width: 100px;
+}
+
+.visible {
+    display: inline;
+}
+
+.hidden {
+    display: none;
+}
+
+#tooltip .container .row {
+    display: flex;
+    padding: 5px 0;
+}
+
+#tooltip .container .row .rowName , #tooltip .container .row .rowValue {
+    flex: 1;
+}
+
+#tooltip .container .row .rowName {
+    font-weight: bold;
+    max-width: 70px;
+}

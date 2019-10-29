@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
+.gc_main_content {
+    font-family: 'Source Sans Pro', sans-serif;
+    display: block;
+    min-height: 84.5vh;
+    padding-top: 50px;
+    width: 100%;
+    background-color: #eeeeee;
+    .gc_form-container {
+        position: relative;
+        background: white;
+        color: black;
+        width: auto;
+        max-width: 70%;
+        min-height: 82vh;
+        margin: auto;
+        box-shadow: 3px 2px 27px -10px rgba(0, 0, 0, 0) !important;
+        .gc_main_form {
+            border-radius: 15px;
+            .title {
+                margin: 0;
+                width: 100%;
+                text-align: center;
+                font-size: 1.2rem;
+                padding-top: 20px;
+            }
+            .gc_form-body {
+                padding: 5vh 0;
+                background-color : white;
+            }
+        }
+    }
+}
+
+.formEl {
+    max-width: 50%;
+    margin: auto;
+    display: flex;
+    .formElLabel, .formElHolder {
+        flex: 1;
+    }
+}
+
+.formElHolder {
+    padding-top: 5px;
+    width: 200px;
+    -webkit-appearance: none; 
+    appearance: none;
+}
+
+.formElHolder:focus {
+    outline: none;
+}
+
+.formElHolder {
+    font-size: 24px;
+    border-radius: 5px;
+    border: 1px solid rgb(190, 190, 190);
+    max-height: 40px;
+}
+
+.formElHolder::placeholder {
+    opacity: 0.3;
+    font-size: 20px;
+}
+
+.noteSection {
+    padding-top: 20px;
+    text-align: left;
+    .sectionInfo {
+        display: flex;
+        font-size: 18px;
+        max-width: 50%;
+        margin: auto;
+        .span-container {
+            flex: 1;
+            color: red;
+            font-size: 30px;
+        }
+        .details-container {
+            flex: 5;
+        }
+    }
+}
+
+.gc_form_footer {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+    padding-top: 50px;
+    text-align: center;
+    button {
+        border: none;
+        width: 100px;
+        height: 40px;
+        outline: none;
+        background-color: #a8abe3;
+        color: white;
+        cursor: pointer;
+    }
+    button:focus {
+        outline: none;
+        background-color:#8286cf ;
+    }
+}
+
+.successMessage {
+    display: none;
+    font-size: 18px;
+    max-width: 50%;
+    margin: 20px auto;
+    text-align: center;
+    .successText {
+        margin: 0;
+        color: green;
+    }
+}
+
+.formEl.requiredEl {
+    
+    span {
+        color: red;
+        font-size: 36px;
+    }
+}
+
+.redirectMessage {
+    display: none;
+    text-align: center;
+    .clickHere {
+        text-decoration: none;
+        display: inline-block;
+        border: 1px solid rgb(53, 170, 224);
+        padding: 5px;
+        background-color: rgb(53, 170, 224);
+        border-radius: 5px;
+        color: white;
+        font-weight: normal;
+        cursor: pointer;
+    }
+}
