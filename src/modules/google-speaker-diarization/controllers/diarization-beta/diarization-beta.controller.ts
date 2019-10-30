@@ -1,4 +1,4 @@
-import { Controller, Post, Res, Body } from '@nestjs/common';
+import { Controller, Post, Res, Body, Get, Query, Param } from '@nestjs/common';
 import { Response } from 'express';
 import { DiarizationSpeakerService } from '../../services/diarization-speaker/diarization-speaker.service';
 import { AccessTokenGeneratorService } from '../../../automate-access-token/services/access-token-generator/access-token-generator.service';
@@ -12,6 +12,19 @@ export class DiarizationBetaController {
         console.log('POST : diarization-beta/speaker/longrunningrecogize');
         // get the request details based on data provided
         return this.handleRequest(response, body);
+    }
+
+    @Get('check-status/:diarizationID')
+    async checkStatus(@Param() params , @Res() response: Response): Promise<any> {
+        console.log('GET: diarization/check-status');
+        if (this.validateDiarizationID(params.diarizationID)) {
+            console.log('is valid');
+            return this.checkDiarizationStatusFromID(response, params);
+        }
+    }
+
+    validateDiarizationID(idToValidate) {
+        return (typeof idToValidate === 'string' && idToValidate.length >= 19 && !isNaN(parseInt(idToValidate, 10))) ? true : false;
     }
 
     async handleRequest(response, body) {
@@ -41,6 +54,30 @@ export class DiarizationBetaController {
             }
         } else {
             response.status(400).send({ error: 'file uri not provided, cannot initiate diarization' });
+        }
+    }
+
+    async checkDiarizationStatusFromID(response, params): Promise<any> {
+        const res = await this.diazSrvc.checkStatusFromDiarizationID(params.diarizationID);
+
+        if (!!res) {
+            if (res.hasOwnProperty('error')) {
+                if (res.error.response.status.toString() === '401') {
+                    console.log('token expired for polling, refreshing the token');
+                    const isRefreshed = await this.atgSrvc.refreshAuthKey();
+                    if (isRefreshed) {
+                        console.log('sending checkDiarizationStatusFromID request at ', new Date().toTimeString());
+                        return this.checkDiarizationStatusFromID(response, params);
+                    } else {
+                        console.log('unable to refresh auth key for gcloud, check manually');
+                        response.status(res.error.response.status).send({ error: res.error.message });
+                    }
+                }
+                return response.status(res.error.response.status).send({error: res.error.message})
+            }
+            return response.status(200).send({...res.resp.data});
+        } else {
+            return response.status(400).send({error: 'Malformed or invalid diarization id provided'});
         }
     }
 }

@@ -1,4 +1,3 @@
-const BEARER_TOKEN = 'Bearer ya29.c.Kl6pB7nwL1pLdHPmpcYvfhruTyTAG7cqVOkM95QkT9lEWPChwmNMIUcnuyIEZ9RwVkOlOycdkGgn3X1--C75A1gHnjBHSMsqG21m4QArJGSDqhSIfWedoLO26yPicV8n';
 var iterator = 0;
 var parentElements = ['encoding', 'audio_url', 'diarizationSpeakerCount'];
 
@@ -97,7 +96,6 @@ function startProgressStatus(diarizationID) {
 
     let config = {
         headers: {
-            'Authorization': BEARER_TOKEN,
             'Content-Type': 'application/json'
         }
     }
@@ -106,7 +104,7 @@ function startProgressStatus(diarizationID) {
         window.clearInterval(iterator);
     }
     iterator = window.setInterval(function(){
-        axios.get(`https://speech.googleapis.com/v1/operations/${diarizationID}`, config)
+        axios.get(`/diarization-beta/check-status/${diarizationID}`, config)
         .then(function(response){
             console.log('recieved response as ', response);
             progressTextEl.style.right = '-120px';
@@ -128,7 +126,7 @@ function startProgressStatus(diarizationID) {
             console.log('An error occured while reading status');
             console.log(error.response);
         })
-    },5000);
+    },10000);
     
 
 }
@@ -141,7 +139,6 @@ function openNewTab(url) {
 function getRequestBody(formDataToUse) {
     let finalObject = {
         fileUri: '',
-        bearer: BEARER_TOKEN,
         fileDetails: {},
         encoding: '',
         diarizationSpeakerCount: formDataToUse.diarizationSpeakerCount

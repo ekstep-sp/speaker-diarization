@@ -17,15 +17,17 @@ interface DIARIZATION_REQUEST_INTERFACE {
 export class DiarizationSpeakerService {
 
     private _bearer_token = '';
+    private DEFAULT_AUTHORIZATION = '';
     constructor(private httpSrvc: HttpService, private Emitter: GoogleSpeakerDiarizationEventHandlerService,
         private tokenProvider: GcloudTokenProviderService) {
+            this.DEFAULT_AUTHORIZATION = 'Bearer ' + this.tokenProvider.process_token;
     }
 
     getDiarizationRequestData(dataToUse: DIARIZATION_REQUEST_INTERFACE): object {
         const googleSpeechDiarizationEndpoint = ' https://speech.googleapis.com/v1p1beta1/speech:longrunningrecognize';
         // access the default provider token for gcloud
         const newToken = this.tokenProvider.process_token;
-        const DefaultAuthorization = 'Bearer ' + newToken;
+        this.DEFAULT_AUTHORIZATION = 'Bearer ' + newToken;
         const data = {
             config: {
                 encoding: dataToUse.encoding || 'LINEAR16',
@@ -39,7 +41,7 @@ export class DiarizationSpeakerService {
             },
          };
 
-        this._bearer_token = !!dataToUse.bearer ? dataToUse.bearer : DefaultAuthorization;
+        this._bearer_token = !!dataToUse.bearer ? dataToUse.bearer : this.DEFAULT_AUTHORIZATION;
 
         const requestConfig = {
             headers: {
@@ -75,10 +77,12 @@ export class DiarizationSpeakerService {
     }
 
     async checkStatusFromDiarizationID(id: string): Promise<any> {
+        // set the bearer token
+        this.DEFAULT_AUTHORIZATION = 'Bearer ' + this.tokenProvider.process_token;
         const requestConfig = {
             headers: {
                 get: {
-                    'Authorization': this._bearer_token,
+                    'Authorization': this.DEFAULT_AUTHORIZATION,
                     'Content-Type': 'application/json',
                 },
             },
