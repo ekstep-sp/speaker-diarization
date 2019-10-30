@@ -8,6 +8,7 @@ import { ReadDbModule } from './modules/read-db/read-db.module';
 
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
+import { AutomateAccessTokenModule } from './modules/automate-access-token/automate-access-token.module';
 
 @Module({
   // serve static files in the server
@@ -15,8 +16,9 @@ import { join } from 'path';
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', 'src', 'static'),
     }),
-    NetworkParserModule, 
+    NetworkParserModule,
     GoogleSpeakerDiarizationModule,
+    AutomateAccessTokenModule,
     ReadDbModule,
   ],
   controllers: [AppController],

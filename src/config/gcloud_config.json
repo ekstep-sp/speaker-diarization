@@ -1,0 +1,6 @@
+{
+    "gcloud_installation_path": "C:/Users/rishabh.kalra/AppData/Local/Google/Cloud SDK/google-cloud-sdk/bin",
+    "env": {
+        "GCLOUD_APPLICATION_CREDENTIAL_FILE_PATH": "C:/Users/rishabh.kalra/Desktop/auth.json"
+    }
+}

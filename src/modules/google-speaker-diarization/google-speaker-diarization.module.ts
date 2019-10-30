@@ -4,11 +4,13 @@ import { DiarizationSpeakerService } from './services/diarization-speaker/diariz
 import { GoogleSpeakerDiarizationEventHandlerService } from './event-handler/google-speaker-diarization-event-handler/google-speaker-diarization-event-handler.service';
 import { InitiateDiarizationHandlerService } from './event-handler/services/initiate-diarization-handler/initiate-diarization-handler.service';
 import { WriteConvertedDataToJsonService } from './event-handler/services/write-converted-data-to-json/write-converted-data-to-json.service';
+import { GcloudTokenProviderService } from '../automate-access-token/services/gcloud-token-provider/gcloud-token-provider.service';
+import { AccessTokenGeneratorService } from '../automate-access-token/services/access-token-generator/access-token-generator.service';
 
 @Module({
     imports: [HttpModule],
     controllers: [DiarizationBetaController],
-    providers: [DiarizationSpeakerService, InitiateDiarizationHandlerService, GoogleSpeakerDiarizationEventHandlerService, WriteConvertedDataToJsonService],
+    providers: [DiarizationSpeakerService, InitiateDiarizationHandlerService, GoogleSpeakerDiarizationEventHandlerService, WriteConvertedDataToJsonService, GcloudTokenProviderService, AccessTokenGeneratorService],
 })
 export class GoogleSpeakerDiarizationModule {
 }

@@ -1,6 +1,7 @@
 // tslint:disable: class-name
 import { Injectable, HttpService } from '@nestjs/common';
 import {GoogleSpeakerDiarizationEventHandlerService} from './../../event-handler/google-speaker-diarization-event-handler/google-speaker-diarization-event-handler.service';
+import { GcloudTokenProviderService } from '../../../automate-access-token/services/gcloud-token-provider/gcloud-token-provider.service';
 
 interface DIARIZATION_REQUEST_INTERFACE {
     fileUri: string;
@@ -16,12 +17,15 @@ interface DIARIZATION_REQUEST_INTERFACE {
 export class DiarizationSpeakerService {
 
     private _bearer_token = '';
-    constructor(private httpSrvc: HttpService, private Emitter: GoogleSpeakerDiarizationEventHandlerService) {
+    constructor(private httpSrvc: HttpService, private Emitter: GoogleSpeakerDiarizationEventHandlerService,
+        private tokenProvider: GcloudTokenProviderService) {
     }
 
     getDiarizationRequestData(dataToUse: DIARIZATION_REQUEST_INTERFACE): object {
         const googleSpeechDiarizationEndpoint = ' https://speech.googleapis.com/v1p1beta1/speech:longrunningrecognize';
-        const DefaultAuthorization = 'Bearer  ya29.c.Kl6iB_0Yv7Fjfj5wR-SZF1h5Y9b36jt9Oafi4DH7hpbKoyC8xc_qohNSvzOge-5cT2trtdIwnGJOai_CNJ2YhlcUKqt-5GAsHtkDqwG1OtMWRjNr3hReBEg94mbzXYLC';
+        // access the default provider token for gcloud
+        const newToken = this.tokenProvider.process_token;
+        const DefaultAuthorization = 'Bearer ' + newToken;
         const data = {
             config: {
                 encoding: dataToUse.encoding || 'LINEAR16',
@@ -35,12 +39,12 @@ export class DiarizationSpeakerService {
             },
          };
 
-        this._bearer_token = dataToUse.bearer || DefaultAuthorization;
+        this._bearer_token = !!dataToUse.bearer ? dataToUse.bearer : DefaultAuthorization;
 
         const requestConfig = {
             headers: {
                 post: {
-                    'Authorization': dataToUse.bearer || DefaultAuthorization,
+                    'Authorization': this._bearer_token,
                     'Content-Type': 'application/json',
                 },
             },
@@ -54,13 +58,16 @@ export class DiarizationSpeakerService {
     }
 
     initiateDiarization(requestDetails, bodyData): Promise<any> {
+        console.log('sending initiate diarization request at ', new Date().toTimeString());
         const Response = this.httpSrvc.post(requestDetails.uri, requestDetails.data, requestDetails.requestConfig).toPromise()
         .then((response: any) => {
+            console.log('recieved response from initiate diarization request at ', new Date().toTimeString());
             // capture the current diarization id and go further
             this.Emitter.triggerEvent('INITIATE_DIARIZATION', {data: response.data.name, body: bodyData});
             return Promise.resolve({response: {message: `Process started successfully`, data: {process_id: response.data.name}}});
         })
         .catch(err => {
+            console.log('recieved error from initiate diarization request at ', new Date().toTimeString());
             // this.Emitter.triggerEvent('INITIATE_DIARIZATION', {data: '698255031310955052'});
             return Promise.resolve({error: err.message, status: err.response.status});
         });
