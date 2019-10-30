@@ -50,19 +50,7 @@ function validateReqBodyForEncoding(dataToValidate) {
         mp3: 'mp3'
     }
 
-    // let audioUrl = dataToValidate.fileUri;
     let selectedEncoding = dataToValidate.encoding;
-    // let last5CharsOfAudioUrl = audioUrl.substr(audioUrl.length - 15);
-    // let audioFormat = last5CharsOfAudioUrl.split('.')[1];
-    /* if (audioFormat === encodingFormats[selectedEncoding]) {
-        // format is okay
-        console.log('encoding matches the audio format');
-        return true;
-    } else {
-        // format is not okay
-        alert('Encoding must match the format of audio file provided');
-        return false;
-    } */
     if (Object.keys(encodingFormats).indexOf(selectedEncoding) > -1) {
         dataToValidate.encoding = encodingFormats[selectedEncoding];
         return dataToValidate;
