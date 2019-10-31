@@ -125,12 +125,21 @@
 }
 
 .formEl.requiredEl {
+    .label-title {
+        position: relative;
+    }
     
-    span {
+    span.asterick {
+        position: absolute;
+        top: -12px;
         color: red;
-        font-size: 36px;
+        font-size: 34px;
+        max-height: 20px;
+        overflow-y: hidden;
     }
 }
+
+
 
 .redirectMessage {
     display: none;

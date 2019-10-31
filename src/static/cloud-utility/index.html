@@ -20,26 +20,25 @@
                 <div class="gc_form-body">
                     <div class="formEl requiredEl">
                         <label for="fileUrlEl" class="formElLabel">
-                            <h3>File Url</h3>
+                            <h3 class="label-title">File Url <span class="asterick">*</span></h3>
                         </label>
                         <input type="text" id="fileUrlEl" name="audio_url" class="formElHolder" placeholder="Enter google cloud url" pattern="gs?://.+" required title="Google Storage Url starting with gs://">
-                        <span>*</span>
                     </div>
                     <div class="formEl">
                             <label for="heldOnEl" class="formElLabel">
-                                <h3>Held On</h3>
+                                <h3 class="label-title">Held On</h3>
                             </label>
                             <input type="date" id="heldOnEl" name="video_held_on" class="formElHolder">
                         </div>
                     <div class="formEl">
                         <label for="videoNameEl" class="formElLabel">
-                            <h3>Video Name</h3>
+                            <h3 class="label-title">Video Name</h3>
                         </label>
                         <input type="text" id="videoNameEl" name="video_name" class="formElHolder">
                     </div>
                     <div class="formEl">
                         <label for="videoDurationEl" class="formElLabel">
-                            <h3>Video Duration</h3>
+                            <h3 class="label-title">Video Duration</h3>
                         </label>
                         <input type="text" id="videoDurationEl" name="video_duration" class="formElHolder">
                     </div>
@@ -58,7 +57,7 @@
                         </div> -->
                     <div class="formEl">
                         <label for="totalSpkEl" class="formElLabel">
-                            <h3>Total Speakers</h3>
+                            <h3 class="label-title">Total Speakers</h3>
                         </label>
                         <input type="number" min="0" id="totalSpkEl" value="10" name="diarizationSpeakerCount" class="formElHolder" required>
                     </div>
