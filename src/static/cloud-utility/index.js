@@ -3,49 +3,79 @@ var parentElements = ['encoding', 'audio_url', 'diarizationSpeakerCount'];
 
 
 
-function submitForm(formEvent,formID) {
+function submitForm(formEvent, formID) {
     var formEl = document.getElementById(formID);
     formEvent.preventDefault();
     var formData = extractForm(formEl);
     console.log('form data is ', formData);
     var requestBody = getRequestBody(formData);
     var validatedReqBody = validateReqBodyForEncoding(requestBody);
-    if(typeof validatedReqBody !== 'boolean') {
+    if (typeof validatedReqBody !== 'boolean') {
         console.log('request body is ', requestBody);
 
         if (!!formData && formData.constructor === Object) {
             console.log('ready to make a request');
             axios.post('/diarization-beta/speaker/longrunningrecogize', requestBody)
-              .then(function (response) {
-                  if (response.status == 200) {
-                    showSuccessMessage(response.data.response.message);      
-                  }
-                console.log(response);
-                window.setTimeout(function(){
-                    hideSuccessMessage();
-                    startProgressStatus(response.data.response.data.process_id);
-                }, 4000);
-    
-              })
-              .catch(function (error) {
-                  if (error.response.status == 401) {
-                    alert('Token Expired, retry with a new token');      
-                  } else {
-                alert('An error occured while sending data to the server, try again later !!');
-                  }
-                console.error('An error occured while sending data to the server', error.response);
-              });
+                .then(function (response) {
+                    if (response.status == 200) {
+                        showSuccessMessage(response.data.response.message);
+                    }
+                    console.log(response);
+                    window.setTimeout(function () {
+                        hideSuccessMessage();
+                        startProgressStatus(response.data.response.data.process_id);
+                    }, 4000);
+
+                })
+                .catch(function (error) {
+                    if (error.response.status == 401) {
+                        alert('Token Expired, retry with a new token');
+                    } else {
+                        alert('An error occured while sending data to the server, try again later !!');
+                    }
+                    console.error('An error occured while sending data to the server', error.response);
+                });
         }
-    }
-    else {
+    } else {
         console.log('data did not validate');
         // nothing
     }
 }
 
+function addDefaultValues() {
+    // function will fill the form initially with default values
+    var placeHolderDetails = {
+        fileUrlEl: {
+            placeholder: 'Google Cloud storage URL'
+        },
+        heldOnEl: {
+            value: new Date().toLocaleDateString('zh-Hans-CN').split('/').join('-')
+        },
+        videoNameEl: {
+            value: `conference ${new Date().toLocaleDateString()}`
+        },
+        videoDurationEl: {
+            value: '1hr 00 mins'
+        },
+        totalSpkEl: {
+            value: 10
+        },
+    }
+
+    Object.keys(placeHolderDetails).forEach(elID => {
+        let el = document.getElementById(elID);
+        if (el) {
+            let propertyName = Object.keys(placeHolderDetails[elID])[0];
+            let propertyValue = Object.values(placeHolderDetails[elID])[0];
+            el[propertyName] = propertyValue;
+        }
+    });
+
+}
+
 function validateReqBodyForEncoding(dataToValidate) {
     let encodingFormats = {
-        wav : 'LINEAR16',
+        wav: 'LINEAR16',
         mp3: 'mp3'
     }
 
@@ -53,8 +83,7 @@ function validateReqBodyForEncoding(dataToValidate) {
     if (Object.keys(encodingFormats).indexOf(selectedEncoding) > -1) {
         dataToValidate.encoding = encodingFormats[selectedEncoding];
         return dataToValidate;
-    }
-    else {
+    } else {
         alert('Audio File extension must be one of these : \n1) wav\n2)mp3');
         return false;
     }
@@ -62,8 +91,8 @@ function validateReqBodyForEncoding(dataToValidate) {
 
 function extractForm(formElement) {
     var finalObject = {};
-    Object.keys(formElement.elements).forEach(function(elIndex){
-        if ( formElement.elements[elIndex].name !== '' && formElement.elements[elIndex].localname !== 'button') {
+    Object.keys(formElement.elements).forEach(function (elIndex) {
+        if (formElement.elements[elIndex].name !== '' && formElement.elements[elIndex].localname !== 'button') {
             finalObject[formElement.elements[elIndex].name] = formElement.elements[elIndex].value
         }
     });
@@ -103,31 +132,31 @@ function startProgressStatus(diarizationID) {
         console.log('there is already an iterator working, clearing it');
         window.clearInterval(iterator);
     }
-    iterator = window.setInterval(function(){
+    iterator = window.setInterval(function () {
         axios.get(`/diarization-beta/check-status/${diarizationID}`, config)
-        .then(function(response){
-            console.log('recieved response as ', response);
-            progressTextEl.style.right = '-120px';
-            let progress = response.data.metadata.hasOwnProperty('progressPercent') ? response.data.metadata.progressPercent : 0;
-            progressStatusEl.style.width = `${progress}%`;
-            progressTextEl.innerText = `${progress}% completed...`;
-            if (progress == 100) {
-                progressTextEl.style.right = '-45px';
-                progressTextEl.innerText = 'done';
-                // display the redirect url for access
-                redirectEl.style.display = 'block';
+            .then(function (response) {
+                console.log('recieved response as ', response);
+                progressTextEl.style.right = '-120px';
+                let progress = response.data.metadata.hasOwnProperty('progressPercent') ? response.data.metadata.progressPercent : 0;
+                progressStatusEl.style.width = `${progress}%`;
+                progressTextEl.innerText = `${progress}% completed...`;
+                if (progress == 100) {
+                    progressTextEl.style.right = '-45px';
+                    progressTextEl.innerText = 'Done';
+                    // display the redirect url for access
+                    redirectEl.style.display = 'block';
+                    window.clearInterval(iterator);
+                    console.log('progress completed');
+                    openNewTab('localhost:3000/index.html');
+                }
+            })
+            .catch(function (error) {
                 window.clearInterval(iterator);
-                console.log('progress completed');
-                openNewTab('localhost:3000/index.html');
-            }
-        })
-        .catch(function(error){
-            window.clearInterval(iterator);
-            console.log('An error occured while reading status');
-            console.log(error.response);
-        })
-    },10000);
-    
+                console.log('An error occured while reading status');
+                console.log(error.response);
+            })
+    }, 10000);
+
 
 }
 
@@ -150,7 +179,7 @@ function getRequestBody(formDataToUse) {
     // set diarizationSpeakerCount seperately
     finalObject.diarizationSpeakerCount = parseInt(formDataToUse.diarizationSpeakerCount);
     // add the corresponding keys to the fileDetails
-    Object.keys(formDataToUse).forEach(function(key){
+    Object.keys(formDataToUse).forEach(function (key) {
         if (parentElements.indexOf(key) < 0) {
             finalObject.fileDetails[key] = formDataToUse[key]
         }
@@ -159,5 +188,5 @@ function getRequestBody(formDataToUse) {
 }
 
 function getEncodingFromAudio(url) {
-    return url.substr(url.lastIndexOf('.')+1, url.length+1 - url.lastIndexOf('.'));
+    return url.substr(url.lastIndexOf('.') + 1, url.length + 1 - url.lastIndexOf('.'));
 }

@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
 .gc_main_content {
-    font-family: 'Source Sans Pro', sans-serif;
     display: block;
     min-height: 84.5vh;
     padding-top: 50px;
@@ -12,7 +10,7 @@
         color: black;
         width: auto;
         max-width: 70%;
-        min-height: 82vh;
+        min-height: 74vh;
         margin: auto;
         box-shadow: 3px 2px 27px -10px rgba(0, 0, 0, 0) !important;
         .gc_main_form {
@@ -60,7 +58,7 @@
 }
 
 .formElHolder::placeholder {
-    opacity: 0.3;
+    opacity: 0.5;
     font-size: 20px;
 }
 

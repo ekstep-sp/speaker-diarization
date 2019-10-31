@@ -11,7 +11,7 @@
 
 <body class="gc">
     <div class="gc_header">
-        <h3 class="gc_title">Google Cloud Utility</h3>
+        <h3 class="gc_title">Speaker Diarization Utility</h3>
     </div>
     <div class="gc_main_content">
         <div class="gc_form-container">
@@ -22,7 +22,7 @@
                         <label for="fileUrlEl" class="formElLabel">
                             <h3>File Url</h3>
                         </label>
-                        <input type="text" id="fileUrlEl" name="audio_url" class="formElHolder" placeholder="Enter google cloud url" required>
+                        <input type="url" id="fileUrlEl" name="audio_url" class="formElHolder" placeholder="Enter google cloud url" pattern="gs://\*" required title="Google Storage Url starting with gs://">
                         <span>*</span>
                     </div>
                     <div class="formEl">
@@ -95,5 +95,9 @@
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
 <script src="./index.js"></script>
+<script>
+// add the default values to the form
+addDefaultValues();
+</script>
 
 </html>
