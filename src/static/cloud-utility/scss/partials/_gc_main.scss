@@ -10,7 +10,7 @@
         color: black;
         width: auto;
         max-width: 70%;
-        min-height: 74vh;
+        // min-height: 74vh;
         margin: auto;
         box-shadow: 3px 2px 27px -10px rgba(0, 0, 0, 0) !important;
         .gc_main_form {
@@ -82,11 +82,7 @@
 }
 
 .gc_form_footer {
-    position: absolute;
-    bottom: 50px;
-    left: 0;
-    right: 0;
-    padding-top: 50px;
+    padding-bottom: 30px;
     text-align: center;
     button {
         border: none;
@@ -97,7 +93,7 @@
         color: white;
         cursor: pointer;
     }
-    button:focus {
+    button:active {
         outline: none;
         background-color:#8286cf ;
     }
@@ -107,11 +103,24 @@
     display: none;
     font-size: 18px;
     max-width: 50%;
-    margin: 20px auto;
+    margin: 0 auto;
+    padding-bottom: 30px;
     text-align: center;
     .successText {
         margin: 0;
         color: green;
+    }
+}
+.errorMessage {
+    display: none;
+    font-size: 18px;
+    max-width: 50%;
+    margin: 0 auto;
+    padding-bottom: 30px;
+    text-align: center;
+    .errorText {
+        margin: 0;
+        color: red;
     }
 }
 

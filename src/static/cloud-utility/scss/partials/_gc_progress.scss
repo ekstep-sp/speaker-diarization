@@ -1,9 +1,10 @@
 .progressContainer {
     display: none;
     position: relative;
-    width: 50%;
+    width: 80%;
     margin: 0;
     margin: auto;
+    padding-bottom: 30px;
     .progress-bar-parent {
         background-color: rgb(230, 230, 230);
         height: 16px;
@@ -18,8 +19,73 @@
         }
         .progressText {
             position: absolute;
+            display:inline;
+            margin: 0;
             right: -120px;
-            top: -2px;
+            top: 0px;
+            span {
+                /**
+                 * Use the blink animation, which is defined above
+                 */
+                animation-name: blink;
+                /**
+                 * The animation should take 1.4 seconds
+                 */
+                animation-duration: 1.4s;
+                /**
+                 * It will repeat itself forever
+                 */
+                animation-iteration-count: infinite;
+                /**
+                 * This makes sure that the starting style (opacity: .2)
+                 * of the animation is applied before the animation starts.
+                 * Otherwise we would see a short flash or would have
+                 * to set the default styling of the dots to the same
+                 * as the animation. Same applies for the ending styles.
+                 */
+                animation-fill-mode: both;
+            }
+            span:nth-child(2) {
+                /**
+                 * Starts the animation of the third dot
+                 * with a delay of .2s, otherwise all dots
+                 * would animate at the same time
+                 */
+                animation-delay: .2s;
+            }
+            
+            span:nth-child(3) {
+                /**
+                 * Starts the animation of the third dot
+                 * with a delay of .4s, otherwise all dots
+                 * would animate at the same time
+                 */
+                animation-delay: .4s;
+            }
         }
+    }
+}
+
+@keyframes blink {
+    /**
+     * At the start of the animation the dot
+     * has an opacity of .2
+     */
+    0% {
+      opacity: .2;
+    }
+    /**
+     * At 20% the dot is fully visible and
+     * then fades out slowly
+     */
+    20% {
+      opacity: 1;
+    }
+    /**
+     * Until it reaches an opacity of .2 and
+     * the animation can start again
+     */
+    100% {
+      opacity: .2;
     }
 }

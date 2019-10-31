@@ -15,6 +15,8 @@ function submitForm(formEvent, formID) {
 
         if (!!formData && formData.constructor === Object) {
             console.log('ready to make a request');
+            hideUIelements();
+            stopIterators();
             axios.post('/diarization-beta/speaker/longrunningrecogize', requestBody)
                 .then(function (response) {
                     if (response.status == 200) {
@@ -40,6 +42,23 @@ function submitForm(formEvent, formID) {
         console.log('data did not validate');
         // nothing
     }
+}
+
+function stopIterators() {
+    // if user clicks on upload when iterator is active, clear all the iterators
+    console.log('clearing iterator with id ', iterator)
+    window.clearInterval(iterator);
+}
+
+function hideUIelements() {
+    // change the css of dynamic elements to hidden state, (useful for cases when user clicks on upload without reloading)
+    var elementsToHide = ['successContainer', 'progressContainer', 'errorContainer', 'redirectMessage']
+    elementsToHide.forEach(elementID => {
+        let el = document.getElementById(elementID);
+        if (el) {
+            el.style.display = 'none';
+        }
+    });
 }
 
 function addDefaultValues() {
@@ -121,7 +140,7 @@ function startProgressStatus(diarizationID) {
     var redirectEl = document.getElementById('redirectMessage');
     // poll the request, read the status and update accordingly
     progressStatusEl.style.width = '0%';
-    progressTextEl.innerText = '0% completed...';
+    progressTextEl.innerHTML = '<em id="percentTextCore">0% completed</em> <span>.</span><span>.</span><span>.</span>';
 
     let config = {
         headers: {
@@ -137,9 +156,12 @@ function startProgressStatus(diarizationID) {
             .then(function (response) {
                 console.log('recieved response as ', response);
                 progressTextEl.style.right = '-120px';
+                let progressTextCoreEl = document.getElementById('percentTextCore');
                 let progress = response.data.metadata.hasOwnProperty('progressPercent') ? response.data.metadata.progressPercent : 0;
                 progressStatusEl.style.width = `${progress}%`;
-                progressTextEl.innerText = `${progress}% completed...`;
+                // progressTextEl.innerHtml = `<small style="margin: 0">${progress}% completed </small><span>.</span><span>.</span><span>.</span>`;
+                console.log(progressTextCoreEl);
+                progressTextCoreEl.innerText = `${progress}% completed`;
                 if (progress == 100) {
                     progressTextEl.style.right = '-45px';
                     progressTextEl.innerText = 'Done';
@@ -153,11 +175,18 @@ function startProgressStatus(diarizationID) {
             .catch(function (error) {
                 window.clearInterval(iterator);
                 console.log('An error occured while reading status');
+                displayErrorMessage('An Error occured while reading progress status !!!');
                 console.log(error.response);
             })
     }, 10000);
 
 
+}
+
+function displayErrorMessage(textToUse) {
+    // errorContainer
+    document.getElementById('errorContainer').style.display = 'block';
+    document.getElementById('errorTextMessage').innerText = textToUse || 'An error occured';
 }
 
 function openNewTab(url) {

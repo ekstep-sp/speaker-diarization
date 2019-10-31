@@ -22,7 +22,7 @@
                         <label for="fileUrlEl" class="formElLabel">
                             <h3>File Url</h3>
                         </label>
-                        <input type="url" id="fileUrlEl" name="audio_url" class="formElHolder" placeholder="Enter google cloud url" pattern="gs://\*" required title="Google Storage Url starting with gs://">
+                        <input type="text" id="fileUrlEl" name="audio_url" class="formElHolder" placeholder="Enter google cloud url" pattern="gs?://.+" required title="Google Storage Url starting with gs://">
                         <span>*</span>
                     </div>
                     <div class="formEl">
@@ -72,24 +72,27 @@
                             </div>
                         </h5>
                     </div>
-                    <div class="successMessage" id="successContainer">
-                        <h5 class="successText" id="successTextMessage">Data Sent Successfully !!!</h5>
-                    </div>
-                    <div class="gc_form_footer">
-                        <button type='submit'>Upload</button>
-                    </div>
                 </div>
             </form>
-            <div class="progressContainer" id="progressContainer">
-                <div class="progress-bar-parent">
-                    <div class="progress-status-bar" id="progressStatusBar"></div>
-                    <span class="progressText" id="progressText"></span>
-                </div>
+            <div class="gc_form_footer">
+                <button type='submit' form="mainForm">Upload</button>
+            </div>
+            <div class="successMessage" id="successContainer">
+                <h5 class="successText" id="successTextMessage">Data Sent Successfully !!!</h5>
+            </div>
+            <div class="errorMessage" id="errorContainer">
+                <h5 class="errorText" id="errorTextMessage"></h5>
             </div>
             <div class="redirectMessage" id="redirectMessage">
                 <h5 class="redirectText">
-                    Database has been successfully updated. <span><a class="clickHere" href="/index.html">Click Here</a></span> to visit the visualizer.
+                    Database has been successfully updated. <span><a class="clickHere" onclick="window.open( `http:\/\/localhost:3000\/index.html`, '_blank' );">Click Here</a></span> to visit the visualizer.
                 </h5>
+            </div>
+            <div class="progressContainer" id="progressContainer">
+                <div class="progress-bar-parent">
+                    <div class="progress-status-bar" id="progressStatusBar"></div>
+                    <p class="progressText" id="progressText"></p>
+                </div>
             </div>
         </div>
 </body>
