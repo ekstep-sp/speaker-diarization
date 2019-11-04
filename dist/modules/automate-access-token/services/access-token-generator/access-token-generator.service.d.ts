@@ -3,6 +3,7 @@ export declare class AccessTokenGeneratorService {
     private gctproviderSrvc;
     private PLATFORM;
     private gcloudConfig;
+    private commandToExecute;
     constructor(gctproviderSrvc: GcloudTokenProviderService);
     initiate(): void;
     detectPlatForm(): void;

@@ -19,6 +19,7 @@ let AccessTokenGeneratorService = class AccessTokenGeneratorService {
     constructor(gctproviderSrvc) {
         this.gctproviderSrvc = gctproviderSrvc;
         this.PLATFORM = '';
+        this.commandToExecute = 'gcloud auth application-default print-access-token';
     }
     initiate() {
         this.detectPlatForm();
@@ -45,6 +46,7 @@ let AccessTokenGeneratorService = class AccessTokenGeneratorService {
         else if (os === 'linux') {
             console.log('os is linux');
             this.PLATFORM = 'linux';
+            this.commandToExecute = './gcloud auth application-default print-access-token';
         }
     }
     getGcloudConfig() {
@@ -62,7 +64,7 @@ let AccessTokenGeneratorService = class AccessTokenGeneratorService {
     getAuthKey() {
         return new Promise((resolve, reject) => {
             console.log('initiate execute', this.gcloudConfig);
-            childProcess.exec('gcloud auth application-default print-access-token', {
+            childProcess.exec(this.commandToExecute, {
                 cwd: this.gcloudConfig['gcloud_installation_path'],
                 env: {
                     GOOGLE_APPLICATION_CREDENTIALS: this.gcloudConfig['env']['GCLOUD_APPLICATION_CREDENTIAL_FILE_PATH'],

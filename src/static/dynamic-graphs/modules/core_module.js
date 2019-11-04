@@ -12,16 +12,26 @@ var coreModule = (function(d3Object){
                             .attr('id','timeSeriesSVG')
                             .attr('class', 'time-series-svg');
 
-        var wcSVG = d3Object.select('.word-cloud-container')
+        var wcSVGLeft = d3Object.select('.word-cloud-container')
                             .append('svg')
-                            .attr('id','wordCloudSVG')
+                            .attr('id','wordCloudSVGLeft')
                             .attr('class', 'word-series-svg');
+                                    // .append('div')
+        // .attr('class','wordCloudSVGLeftContainer')
+
+        var wcSVGRight = d3Object.select('.word-cloud-container')
+                            .append('svg')
+                            .attr('id','wordCloudSVGRight')
+                            .attr('class', 'word-series-svg');
+        // .append('div')
+        // .attr('class','wordCloudSVGRightContainer')
 
         var dataObject = dataModule.getDataObject();
         // send data to create time-series graph
         // timeSeriesModule.generateTimeSeriesGraph(dataObject, tsSVG);
         // send data to create word-cloud graph
         singleTimeSeriesModule.generateTimeSeriesGraph(dataObject, tsSVG);
+        wordCloudModule.getD3({wcSVGLeft,wcSVGRight})
     }
     return {
         initiateD3Graphs: _initiateD3Graphs

@@ -49,8 +49,23 @@ body {
   font-size: 12px;
 }
 
-.word-cloud-svg {
+.word-cloud-container {
   width: 100%;
-  height: 45vh;
+  height: 50vh;
+  padding-top: 3vh;
+}
+
+.word-cloud-container #wordCloudSVGLeft {
+  padding-top: 2vh;
+  margin-left: 5%;
+  width: 42%;
+  height: 40vh;
+}
+
+.word-cloud-container #wordCloudSVGRight {
+  padding-top: 2vh;
+  margin-left: 6%;
+  width: 42%;
+  height: 40vh;
 }
 /*# sourceMappingURL=dg_index.css.map */
