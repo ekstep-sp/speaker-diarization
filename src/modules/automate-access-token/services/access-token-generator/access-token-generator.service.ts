@@ -9,6 +9,7 @@ import { GcloudTokenProviderService } from '../gcloud-token-provider/gcloud-toke
 export class AccessTokenGeneratorService {
     private PLATFORM = '';
     private gcloudConfig;
+    private commandToExecute = 'gcloud auth application-default print-access-token'
     constructor(private gctproviderSrvc: GcloudTokenProviderService) {
     }
 
@@ -42,6 +43,7 @@ export class AccessTokenGeneratorService {
         } else if (os === 'linux') {
             console.log('os is linux');
             this.PLATFORM = 'linux';
+            this.commandToExecute = './gcloud auth application-default print-access-token';
         }
     }
 
@@ -62,7 +64,7 @@ export class AccessTokenGeneratorService {
         return new Promise((resolve, reject) => {
             console.log('initiate execute', this.gcloudConfig);
             childProcess.exec(
-                'gcloud auth application-default print-access-token',
+                this.commandToExecute,
                 {
                     cwd: this.gcloudConfig['gcloud_installation_path'],
                     env: {
