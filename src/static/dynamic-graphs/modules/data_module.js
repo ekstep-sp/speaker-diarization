@@ -69,7 +69,7 @@ var dataModule = (function () {
                     name: 'week_2',
                     start_date: "",
                     end_date: "",
-                    progress_report: 1,
+                    progress_report: 5,
                 },
                 {
                     name: 'week_3',
@@ -105,7 +105,13 @@ var dataModule = (function () {
                     name: 'week_8',
                     start_date: "",
                     end_date: "",
-                    progress_report: 1,
+                    progress_report: 6,
+                },
+                {
+                    name: 'week_9',
+                    start_date: "",
+                    end_date: "",
+                    progress_report: 5,
                 }
             ]
         }
