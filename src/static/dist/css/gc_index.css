@@ -1,0 +1,346 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap");
+.gc {
+  margin: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.gc_header {
+  display: inline-block;
+  min-width: 100%;
+  background: white;
+  min-height: 10vh;
+}
+
+.gc_header .gc_title {
+  font-size: 2.3rem;
+  color: black;
+  margin: 0;
+  text-align: center;
+  height: 7.5vh;
+  padding-top: 2.5vh;
+}
+
+.gc_main_content {
+  display: block;
+  min-height: 84.5vh;
+  padding-top: 50px;
+  width: 100%;
+  background-color: #eeeeee;
+}
+
+.gc_main_content .gc_form-container {
+  position: relative;
+  background: white;
+  color: black;
+  width: auto;
+  max-width: 70%;
+  margin: auto;
+  -webkit-box-shadow: 3px 2px 27px -10px rgba(0, 0, 0, 0) !important;
+          box-shadow: 3px 2px 27px -10px rgba(0, 0, 0, 0) !important;
+}
+
+.gc_main_content .gc_form-container .gc_main_form {
+  border-radius: 15px;
+}
+
+.gc_main_content .gc_form-container .gc_main_form .title {
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 1.2rem;
+  padding-top: 20px;
+}
+
+.gc_main_content .gc_form-container .gc_main_form .gc_form-body {
+  padding: 5vh 0;
+  background-color: white;
+}
+
+.formEl {
+  max-width: 50%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.formEl .formElLabel, .formEl .formElHolder {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.formElHolder {
+  padding-top: 5px;
+  width: 200px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+}
+
+.formElHolder:focus {
+  outline: none;
+}
+
+.formElHolder {
+  font-size: 24px;
+  border-radius: 5px;
+  border: 1px solid #bebebe;
+  max-height: 40px;
+}
+
+.formElHolder::-webkit-input-placeholder {
+  opacity: 0.5;
+  font-size: 20px;
+}
+
+.formElHolder:-ms-input-placeholder {
+  opacity: 0.5;
+  font-size: 20px;
+}
+
+.formElHolder::-ms-input-placeholder {
+  opacity: 0.5;
+  font-size: 20px;
+}
+
+.formElHolder::placeholder {
+  opacity: 0.5;
+  font-size: 20px;
+}
+
+.noteSection {
+  padding-top: 20px;
+  text-align: left;
+}
+
+.noteSection .sectionInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 18px;
+  max-width: 50%;
+  margin: auto;
+}
+
+.noteSection .sectionInfo .span-container {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  color: red;
+  font-size: 30px;
+}
+
+.noteSection .sectionInfo .details-container {
+  -webkit-box-flex: 5;
+      -ms-flex: 5;
+          flex: 5;
+}
+
+.gc_form_footer {
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+.gc_form_footer button {
+  border: none;
+  width: 100px;
+  height: 40px;
+  outline: none;
+  background-color: #a8abe3;
+  color: white;
+  cursor: pointer;
+}
+
+.gc_form_footer button:active {
+  outline: none;
+  background-color: #8286cf;
+}
+
+.successMessage {
+  display: none;
+  font-size: 18px;
+  max-width: 50%;
+  margin: 0 auto;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+.successMessage .successText {
+  margin: 0;
+  color: green;
+}
+
+.errorMessage {
+  display: none;
+  font-size: 18px;
+  max-width: 50%;
+  margin: 0 auto;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+.errorMessage .errorText {
+  margin: 0;
+  color: red;
+}
+
+.formEl.requiredEl .label-title {
+  position: relative;
+}
+
+.formEl.requiredEl span.asterick {
+  position: absolute;
+  top: -12px;
+  color: red;
+  font-size: 34px;
+  max-height: 20px;
+  overflow-y: hidden;
+}
+
+.redirectMessage {
+  display: none;
+  text-align: center;
+}
+
+.redirectMessage .clickHere {
+  text-decoration: none;
+  display: inline-block;
+  border: 1px solid #35aae0;
+  padding: 5px;
+  background-color: #35aae0;
+  border-radius: 5px;
+  color: white;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.progressContainer {
+  display: none;
+  position: relative;
+  width: 80%;
+  margin: 0;
+  margin: auto;
+  padding-bottom: 30px;
+}
+
+.progressContainer .progress-bar-parent {
+  background-color: #e6e6e6;
+  height: 16px;
+  border: none;
+  border: 1px solid #e6e2e2;
+  border-radius: 10px;
+}
+
+.progressContainer .progress-bar-parent .progress-status-bar {
+  background-color: #a8abe3;
+  height: 100%;
+  width: 0%;
+  -webkit-transition: 1.5s;
+  transition: 1.5s;
+  border-radius: 10px;
+}
+
+.progressContainer .progress-bar-parent .progressText {
+  position: absolute;
+  display: inline;
+  margin: 0;
+  right: -120px;
+  top: 0px;
+}
+
+.progressContainer .progress-bar-parent .progressText span {
+  /**
+                 * Use the blink animation, which is defined above
+                 */
+  -webkit-animation-name: blink;
+          animation-name: blink;
+  /**
+                 * The animation should take 1.4 seconds
+                 */
+  -webkit-animation-duration: 1.4s;
+          animation-duration: 1.4s;
+  /**
+                 * It will repeat itself forever
+                 */
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  /**
+                 * This makes sure that the starting style (opacity: .2)
+                 * of the animation is applied before the animation starts.
+                 * Otherwise we would see a short flash or would have
+                 * to set the default styling of the dots to the same
+                 * as the animation. Same applies for the ending styles.
+                 */
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+.progressContainer .progress-bar-parent .progressText span:nth-child(2) {
+  /**
+                 * Starts the animation of the third dot
+                 * with a delay of .2s, otherwise all dots
+                 * would animate at the same time
+                 */
+  -webkit-animation-delay: .2s;
+          animation-delay: .2s;
+}
+
+.progressContainer .progress-bar-parent .progressText span:nth-child(3) {
+  /**
+                 * Starts the animation of the third dot
+                 * with a delay of .4s, otherwise all dots
+                 * would animate at the same time
+                 */
+  -webkit-animation-delay: .4s;
+          animation-delay: .4s;
+}
+
+@-webkit-keyframes blink {
+  /**
+     * At the start of the animation the dot
+     * has an opacity of .2
+     */
+  0% {
+    opacity: .2;
+  }
+  /**
+     * At 20% the dot is fully visible and
+     * then fades out slowly
+     */
+  20% {
+    opacity: 1;
+  }
+  /**
+     * Until it reaches an opacity of .2 and
+     * the animation can start again
+     */
+  100% {
+    opacity: .2;
+  }
+}
+
+@keyframes blink {
+  /**
+     * At the start of the animation the dot
+     * has an opacity of .2
+     */
+  0% {
+    opacity: .2;
+  }
+  /**
+     * At 20% the dot is fully visible and
+     * then fades out slowly
+     */
+  20% {
+    opacity: 1;
+  }
+  /**
+     * Until it reaches an opacity of .2 and
+     * the animation can start again
+     */
+  100% {
+    opacity: .2;
+  }
+}
+/*# sourceMappingURL=gc_index.css.map */

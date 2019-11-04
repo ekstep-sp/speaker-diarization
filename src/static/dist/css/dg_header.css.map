@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,UAAU,CAAC;EACP,gBAAgB,EAAE,IAAI;EACtB,KAAK,EAAE,IAAI;CAUd;;AAZD,AAGI,UAHM,CAGN,eAAe,CAAC;EACZ,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,IAAI;CAMf;;AAXL,AAMQ,UANE,CAGN,eAAe,CAGX,aAAa,CAAC;EACV,WAAW,EAAE,GAAG;EAChB,UAAU,EAAE,MAAM;EAClB,MAAM,EAAE,CAAC;CACZ",
+    "sources": [
+        "../../dynamic-graphs/scss/partials/dg_header.scss"
+    ],
+    "names": [],
+    "file": "dg_header.css"
+}

@@ -1,0 +1,16 @@
+.dg-header {
+  background-color: grey;
+  width: 100%;
+}
+
+.dg-header .header-content {
+  width: 100%;
+  height: 10vh;
+}
+
+.dg-header .header-content .header-title {
+  padding-top: 3vh;
+  text-align: center;
+  margin: 0;
+}
+/*# sourceMappingURL=dg_header.css.map */

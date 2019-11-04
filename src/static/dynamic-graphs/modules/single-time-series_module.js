@@ -125,8 +125,8 @@ var singleTimeSeriesModule = (function(d3Object){
         var domainData = getXandYdomain(dataToUse);
         console.log('domain data is ', domainData);
         x.domain(domainData.x);
-        console.log('sorted domain  y', domainData.y.sort());
-        y.domain([0,domainData.y.sort()[domainData.y.length - 1]]);
+        console.log('sorted domain  y', domainData.y.sort()[domainData.y.length - 1]);
+        y.domain([0,d3Object.max(domainData.y)]);
         // x.domain(dataToUse.map(function(d){return d.name}));
         // y.domain(d3Object.extent(dataToUse, function(d){return d.value}));
 
