@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./../dist/css/dg_index.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="dg-header">
+        <div class="header-content">
+            <h2 class="header-title">
+                Dashboard Graphs
+            </h2>
+        </div>
+    </div>
+
+    <div class="dashboard-main">
+        <!--time series graph section-->
+        <div class="time-series-container">
+            <div class="title">
+                <h3 class="title-text">
+                    Time Series Graph
+                </h3>
+            </div>
+        </div>
+        <!--time series graph section ends-->
+
+        <!--word-cloud graph section-->
+        <div class="word-cloud-container">
+                <div class="title">
+                        <h3 class="title-text">
+                            Word Cloud Graph
+                        </h3>
+                    </div>
+        </div>
+        <!--word-cloud graph section ends-->
+    </div>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="./modules/data_module.js"></script>
+    <script src="./modules/single-time-series_module.js"></script>
+    <!-- <script src="./modules/time-series_module.js"></script> -->
+    <script src="./modules/word-cloud_module.js"></script>
+    <script src="./modules/core_module.js"></script>
+    <script src="./index.js"></script>
+</body>
+</html>

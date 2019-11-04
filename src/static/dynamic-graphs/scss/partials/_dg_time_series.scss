@@ -1,0 +1,11 @@
+.time-series-svg {
+    width: 90%;
+    height: 43vh;
+    margin: 0;
+    margin-left: 70px;
+    .line {
+        fill: none;
+        stroke: steelblue;
+        stroke-width: 2px;
+    }
+}

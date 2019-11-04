@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap'); 
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #eeeeee;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+@import './partials/dg_header';
+@import './partials/dg_dashboard_main';
+@import './partials/dg_time_series';
+@import './partials/dg_word_cloud';

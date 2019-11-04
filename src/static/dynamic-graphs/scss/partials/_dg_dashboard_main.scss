@@ -1,0 +1,13 @@
+.dashboard-main {
+    width: 100%;
+}
+
+.time-series-container, .word-cloud-container {
+    .title {
+        .title-text {
+            margin: 0;
+            padding-top: 10px;
+            text-align: center;
+        }
+    }
+}
