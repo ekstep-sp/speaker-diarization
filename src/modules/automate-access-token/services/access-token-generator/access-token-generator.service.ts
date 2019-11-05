@@ -63,7 +63,6 @@ export class AccessTokenGeneratorService {
     getAuthKey(): Promise<string> {
         return new Promise((resolve, reject) => {
             console.log('initiate execute', this.gcloudConfig);
-            console.log(process.env.GOOGLE_APPLICATION_CREDENTIALS);
             childProcess.exec(
                 this.commandToExecute,
                 {

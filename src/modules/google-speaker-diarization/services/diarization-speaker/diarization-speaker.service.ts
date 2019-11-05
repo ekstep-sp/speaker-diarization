@@ -34,7 +34,7 @@ export class DiarizationSpeakerService {
                 languageCode: dataToUse.language || 'en-US',
                 enableSpeakerDiarization: dataToUse.enableSpeakerDiarization ||  true,
                 diarizationSpeakerCount: dataToUse.diarizationSpeakerCount ||  10,
-                model: dataToUse.model || 'default',
+                model: dataToUse.model || 'video',
             },
             audio: {
                 uri: dataToUse.fileUri || null,
@@ -70,6 +70,7 @@ export class DiarizationSpeakerService {
         })
         .catch(err => {
             console.log('recieved error from initiate diarization request at ', new Date().toTimeString());
+            console.log(err);
             // this.Emitter.triggerEvent('INITIATE_DIARIZATION', {data: '698255031310955052'});
             return Promise.resolve({error: err.message, status: err.response.status});
         });
