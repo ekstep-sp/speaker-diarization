@@ -95,7 +95,7 @@ function addDefaultValues() {
 function validateReqBodyForEncoding(dataToValidate) {
     let encodingFormats = {
         wav: 'LINEAR16',
-        mp3: 'mp3'
+        mp3: 'MP3'
     }
 
     let selectedEncoding = dataToValidate.encoding;
