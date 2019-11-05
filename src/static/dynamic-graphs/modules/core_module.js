@@ -6,22 +6,44 @@ var coreModule = (function(d3Object){
 
     console.log('inner width and height ', maxScreenWidth + '  ' + maxScreenHeight);
 
+
     function _initiateD3Graphs() {
+
+        let default_width = document.getElementsByClassName('wordcloudcont')[0].innerWidth;
+        let default_height = document.getElementsByClassName('wordcloudcont')[0].innerHeight;
+    // var default_ratio = default_width / default_height;
+    
+
+
         var tsSVG = d3Object.select('.time-series-container')
                             .append('svg')
                             .attr('id','timeSeriesSVG')
                             .attr('class', 'time-series-svg');
 
-        var wcSVGLeft = d3Object.select('.word-cloud-container')
+
+        var wcSVGLeft = d3Object.select('#cancercloud')
                             .append('svg')
                             .attr('id','wordCloudSVGLeft')
+                            .style('margin', '2%')
+                            .style('margin-left', '2.5%')
+                            .style('margin-right', '1.5%')                            
+                            .style('height', '55vh')
+                            .style('padding','2%')
+                            .attr("width", '92%')
                             .attr('class', 'word-series-svg');
+                            // .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
                                     // .append('div')
         // .attr('class','wordCloudSVGLeftContainer')
 
-        var wcSVGRight = d3Object.select('.word-cloud-container')
-                            .append('svg')
+        var wcSVGRight = d3Object.select('#tbcloud')
+                            .append('svg')                   
                             .attr('id','wordCloudSVGRight')
+                            .style('margin', '2%')
+                            .style('margin-left', '1.5%')
+                            .style('margin-right', '2.5%')  
+                            .style('height', '55vh')
+                            .style('padding','2%')
+                            .attr("width", '92%')
                             .attr('class', 'word-series-svg');
         // .append('div')
         // .attr('class','wordCloudSVGRightContainer')

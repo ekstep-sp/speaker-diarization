@@ -1,18 +1,29 @@
 .word-cloud-container {
     width: 100%;
-    height: 50vh;
     padding-top: 3vh;
 
+    .wordcloudcont {
+        width: 50%;
+        float: left;
+        height: 70vh;
+
+        h3 {
+            text-align: center;
+        }
+    }
+
+
+
     #wordCloudSVGLeft {
-        padding-top: 2vh;
-        margin-left: 5%;
-        width: 42%;
-        height: 40vh;
+        // padding-top: 2vh;
+        // margin-left: 5%;
+        // width: 42%;
+        // height: 40vh;
     }
     #wordCloudSVGRight {
-        padding-top: 2vh;
-        margin-left: 6%;
-        width: 42%;
-        height: 40vh;
+        // padding-top: 2vh;
+        // margin-left: 6%;
+        // width: 42%;
+        // height: 40vh;
     }
 }

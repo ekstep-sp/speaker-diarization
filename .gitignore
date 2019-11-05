@@ -389,5 +389,7 @@ Temporary Items
 # Local
 docker-compose.yml
 .env
+*/.vscode
 /package-lock.json
 package-lock.json
+*/package-lock.json

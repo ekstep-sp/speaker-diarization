@@ -63,12 +63,13 @@ export class AccessTokenGeneratorService {
     getAuthKey(): Promise<string> {
         return new Promise((resolve, reject) => {
             console.log('initiate execute', this.gcloudConfig);
+            console.log(process.env.GOOGLE_APPLICATION_CREDENTIALS);
             childProcess.exec(
                 this.commandToExecute,
                 {
-                    cwd: this.gcloudConfig['gcloud_installation_path'],
+                    cwd: process.env['GCLOUD_INSTALLATION_PATH'] || this.gcloudConfig['gcloud_installation_path'],
                     env: {
-                        GOOGLE_APPLICATION_CREDENTIALS: this.gcloudConfig['env']['GCLOUD_APPLICATION_CREDENTIAL_FILE_PATH'],
+                        GOOGLE_APPLICATION_CREDENTIALS: process.env['GOOGLE_APPLICATION_CREDENTIALS'] || this.gcloudConfig['env']['GCLOUD_APPLICATION_CREDENTIAL_FILE_PATH'],
                     },
                 }, (err, stdout, stderr) => {
                     if (err == null) {

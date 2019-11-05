@@ -51,21 +51,16 @@ body {
 
 .word-cloud-container {
   width: 100%;
-  height: 50vh;
   padding-top: 3vh;
 }
 
-.word-cloud-container #wordCloudSVGLeft {
-  padding-top: 2vh;
-  margin-left: 5%;
-  width: 42%;
-  height: 40vh;
+.word-cloud-container .wordcloudcont {
+  width: 50%;
+  float: left;
+  height: 70vh;
 }
 
-.word-cloud-container #wordCloudSVGRight {
-  padding-top: 2vh;
-  margin-left: 6%;
-  width: 42%;
-  height: 40vh;
+.word-cloud-container .wordcloudcont h3 {
+  text-align: center;
 }
 /*# sourceMappingURL=dg_index.css.map */
