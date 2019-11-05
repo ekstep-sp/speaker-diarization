@@ -195,21 +195,21 @@ var dataModule = (function () {
                     name: 'week_1',
                     start_date: "",
                     end_date: "",
-                    progress_report: 9,
+                    progress_report: 0,
                     held_on: "01-Jan-19"
                 },
                 {
                     name: 'week_2',
                     start_date: "",
                     end_date: "",
-                    progress_report: 8,
+                    progress_report: 2,
                     held_on: "07-Jan-19"
                 },
                 {
                     name: 'week_3',
                     start_date: "",
                     end_date: "",
-                    progress_report: 7,
+                    progress_report: 4,
                     held_on: "14-Jan-19"
                 },
                 {
@@ -223,28 +223,28 @@ var dataModule = (function () {
                     name: 'week_5',
                     start_date: "",
                     end_date: "",
-                    progress_report: 5,
+                    progress_report: 8,
                     held_on: "28-Jan-19"
                 },
                 {
                     name: 'week_6',
                     start_date: "",
                     end_date: "",
-                    progress_report: 4,
+                    progress_report: 9,
                     held_on: "05-Feb-19"
                 },
                 {
                     name: 'week_7',
                     start_date: "",
                     end_date: "",
-                    progress_report: 3,
+                    progress_report: 4,
                     held_on: "11-Feb-19"
                 },
                 {
                     name: 'week_8',
                     start_date: "",
                     end_date: "",
-                    progress_report: 2,
+                    progress_report: 6,
                     held_on: "18-Feb-19"
                 }
             ]

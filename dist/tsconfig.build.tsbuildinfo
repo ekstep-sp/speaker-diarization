@@ -1094,7 +1094,7 @@
         "signature": "b49b4dc380561b20d0b303649a0ad0080553cd8759daf180d101cd41b6b39298"
       },
       "c:/users/rishabh.kalra/desktop/speech_analysis/nest_sevice/project/src/modules/automate-access-token/services/access-token-generator/access-token-generator.service.ts": {
-        "version": "8443fb154e5ba42eb8764ae22ce4b2a3b5ea62a9058ccbbd4e5dd42e9232c5a4",
+        "version": "1bb381d9c4516b1fe41f73a42aeb7b19906469d757e5c7c2fe1b803d217128fb",
         "signature": "5dafe53ee77991ae8e18cbd77aaf087be02549522acad910a0e871e44d93f060"
       },
       "c:/users/rishabh.kalra/desktop/speech_analysis/nest_sevice/project/src/app.service.ts": {
@@ -1354,7 +1354,7 @@
         "signature": "9fc7f7b6ad854404973b8cba8e6d883f758237991968e9a3965d716d46f1da88"
       },
       "c:/users/rishabh.kalra/desktop/speech_analysis/nest_sevice/project/src/main.ts": {
-        "version": "168db11d6df6aa83dc706dfae97c8f1c094038a48bd20eda8fdd823ccafb7ad6",
+        "version": "55bd00e5b680745a5505d0fa2f88a24ae3aa64e78b4eac885644aeb43fc58c3e",
         "signature": "f761c91419d0a89422a0004ef1a92929dd4d2d5e5c16758654d8b0467d1998c6"
       },
       "c:/users/rishabh.kalra/desktop/speech_analysis/nest_sevice/project/node_modules/@types/anymatch/index.d.ts": {
@@ -6117,7 +6117,6 @@
       "c:/users/rishabh.kalra/desktop/speech_analysis/nest_sevice/project/node_modules/@nestjs/common/utils/index.d.ts",
       "c:/users/rishabh.kalra/desktop/speech_analysis/nest_sevice/project/node_modules/@nestjs/common/index.d.ts",
       "c:/users/rishabh.kalra/desktop/speech_analysis/nest_sevice/project/src/modules/automate-access-token/services/gcloud-token-provider/gcloud-token-provider.service.ts",
-      "c:/users/rishabh.kalra/desktop/speech_analysis/nest_sevice/project/src/modules/automate-access-token/services/access-token-generator/access-token-generator.service.ts",
       "c:/users/rishabh.kalra/desktop/speech_analysis/nest_sevice/project/src/app.service.ts",
       "c:/users/rishabh.kalra/desktop/speech_analysis/nest_sevice/project/src/app.controller.ts",
       "c:/users/rishabh.kalra/desktop/speech_analysis/nest_sevice/project/node_modules/@types/range-parser/index.d.ts",
@@ -6182,7 +6181,6 @@
       "c:/users/rishabh.kalra/desktop/speech_analysis/nest_sevice/project/node_modules/@nestjs/serve-static/index.d.ts",
       "c:/users/rishabh.kalra/desktop/speech_analysis/nest_sevice/project/src/modules/automate-access-token/automate-access-token.module.ts",
       "c:/users/rishabh.kalra/desktop/speech_analysis/nest_sevice/project/src/app.module.ts",
-      "c:/users/rishabh.kalra/desktop/speech_analysis/nest_sevice/project/src/main.ts",
       "c:/users/rishabh.kalra/desktop/speech_analysis/nest_sevice/project/node_modules/@types/anymatch/index.d.ts",
       "c:/users/rishabh.kalra/desktop/speech_analysis/nest_sevice/project/node_modules/@babel/types/lib/index.d.ts",
       "c:/users/rishabh.kalra/desktop/speech_analysis/nest_sevice/project/node_modules/@types/babel__generator/index.d.ts",
@@ -6211,7 +6209,9 @@
       "c:/users/rishabh.kalra/desktop/speech_analysis/nest_sevice/project/node_modules/@types/webpack-sources/index.d.ts",
       "c:/users/rishabh.kalra/desktop/speech_analysis/nest_sevice/project/node_modules/@types/webpack/index.d.ts",
       "c:/users/rishabh.kalra/desktop/speech_analysis/nest_sevice/project/node_modules/@types/yargs-parser/index.d.ts",
-      "c:/users/rishabh.kalra/desktop/speech_analysis/nest_sevice/project/node_modules/@types/yargs/index.d.ts"
+      "c:/users/rishabh.kalra/desktop/speech_analysis/nest_sevice/project/node_modules/@types/yargs/index.d.ts",
+      "c:/users/rishabh.kalra/desktop/speech_analysis/nest_sevice/project/src/modules/automate-access-token/services/access-token-generator/access-token-generator.service.ts",
+      "c:/users/rishabh.kalra/desktop/speech_analysis/nest_sevice/project/src/main.ts"
     ]
   },
   "version": "3.4.5"

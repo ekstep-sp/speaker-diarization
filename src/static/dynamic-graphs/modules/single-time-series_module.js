@@ -186,12 +186,13 @@ var singleTimeSeriesModule = (function(d3Object){
     }
 
     function mouseOverHandler(selectedNode, triggeredEvent) {
+        console.log(triggeredEvent)
         d3Object.select('[id="globalPathTooltip"]')
                 .style('opacity', 0.8)
                 .style('cursor', 'pointer')
                 .style('box-shadow','13px 11px 24px -15px rgba(0,0,0,0.75)')
-                .style('top',triggeredEvent.clientY + 'px')
-                .style('left', triggeredEvent.clientX + 'px')
+                .style('top',triggeredEvent.y + 'px')
+                .style('left', triggeredEvent.x + 'px')
                 .html(
                     `<div class="tooltipContainer">
                         <div class="tooltipText">
