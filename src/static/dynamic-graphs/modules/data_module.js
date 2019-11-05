@@ -110,13 +110,6 @@ var dataModule = (function () {
                     held_on: "05-Feb-19"
                 },
                 {
-                    name: 'week_7',
-                    start_date: "",
-                    end_date: "",
-                    progress_report: 3,
-                    held_on: "05-Feb-19"
-                },
-                {
                     name: 'week_8',
                     start_date: "",
                     end_date: "",

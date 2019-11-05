@@ -45,7 +45,9 @@ var singleTimeSeriesModule = (function(d3Object){
                 timeline: (function(timelineArray){
                     var timelineParsed = [];
                     timelineArray.forEach(function(timelineObj){
-                        timelineParsed.push({name: timelineObj.name, value: timelineObj.progress_report})
+                        // timelineParsed.push({name: timelineObj.name, value: timelineObj.progress_report})
+                        timelineParsed.push({name: timelineObj.held_on, value: timelineObj.progress_report})
+
                     });
                     return timelineParsed;
                 })(dataObj.timeline), 
@@ -107,7 +109,7 @@ var singleTimeSeriesModule = (function(d3Object){
         var width = svgwidth - margin.left - margin.right;
         var height = svgheight - margin.top - margin.bottom;
 
-        var globalChartGroup = svgEl.append('g').attr('id', 'globalChartGroup').attr("transform","translate(" + margin.left + "," + margin.top + ")");   
+        var globalChartGroup = svgEl.append('g').attr('id', 'globalChartGroup').attr('width', '90%').attr("transform","translate(" + margin.left + "," + margin.top + ")");   
         var x = d3Object.scalePoint().rangeRound([0,width]);
         var y = d3Object.scaleLinear().rangeRound([height,0]);
         
