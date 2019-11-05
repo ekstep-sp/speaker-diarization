@@ -115,13 +115,6 @@ var singleTimeSeriesModule = (function(d3Object){
         
         var D3dynamicLinesArray = getDynamicLines(dataToUse, x, y);
         console.log('dynamic lines array now is ', D3dynamicLinesArray);
-        var line = d3Object.line()
-                           .x(function(d){
-                            return x(d.name);
-                           })
-                           .y(function(d){
-                            return y(d.value)
-                           });
 
         // get max x and y domain
         var domainData = getXandYdomain(dataToUse);
@@ -148,6 +141,11 @@ var singleTimeSeriesModule = (function(d3Object){
 
         globalChartGroup.append("g")
                         .attr('id', 'YaxisGroup').call(d3Object.axisLeft(y)).append("text").attr("fill", "#000").attr("transform", "rotate(-90)").attr("y", 6).attr("dy", "0.71em").attr("text-anchor", "end").text("Performance index");
+        
+        // add a globalToolbar
+        var globalPathToopTip = d3Object.select('body').append('div').attr('id','globalPathTooltip').style('position','absolute').style('top','100px').style('left','100px').style('opacity',0);
+
+        globalPathToopTip.attr('class', 'tooltip');
         // append the path
         generatePaths(globalChartGroup, dataToUse, D3dynamicLinesArray, colorScale);
     }
@@ -156,7 +154,18 @@ var singleTimeSeriesModule = (function(d3Object){
         let colorCodes = ['red', 'steelblue', 'grey', 'orange', 'green', 'pink'];
         // render lines for each data segment
         dataToConsume.forEach(function(dataSegment,index){
-            d3Element.append("path").attr('id',`linePath_${dataSegment.sessionName}`).datum(dataSegment.timeline).attr("fill", "none").attr("stroke", function(){return colorScale(index)}).attr("stroke-linejoin", "round").attr("stroke-linecap", "round").attr("stroke-width", 1.5).attr("d", assignLine(linesCBArray, dataSegment.sessionName));
+            d3Element
+                    .append("path").attr('id',`linePath_${dataSegment.sessionName}`)
+                    .datum(dataSegment.timeline).attr("fill", "none")
+                    .attr("stroke", function(){return colorScale(index)})
+                    .attr("stroke-linejoin", "round").attr("stroke-linecap", "round")
+                    .attr("stroke-width", 1.5).attr("d", assignLine(linesCBArray, dataSegment.sessionName))
+                    .on('mouseover', function(d){
+                        mouseOverHandler(d, d3Object.event);
+                    })
+                    .on('mouseout', function(d){
+                        mouseOutHandler(d);
+                    });
         });        
     }
 
@@ -174,6 +183,32 @@ var singleTimeSeriesModule = (function(d3Object){
             }
         });
         return selectedLineCB;
+    }
+
+    function mouseOverHandler(selectedNode, triggeredEvent) {
+        d3Object.select('[id="globalPathTooltip"]')
+                .style('opacity', 0.8)
+                .style('cursor', 'pointer')
+                .style('box-shadow','13px 11px 24px -15px rgba(0,0,0,0.75)')
+                .style('top',triggeredEvent.clientY + 'px')
+                .style('left', triggeredEvent.clientX + 'px')
+                .html(
+                    `<div class="tooltipContainer">
+                        <div class="tooltipText">
+                            <h6 class="text">${triggeredEvent.target.id.split('_')[1]}</h6>
+                        </div>
+                     </div>`
+                );
+        // add the video name inside the tooltip
+
+    }
+
+    function mouseOutHandler(selectedNode, triggeredEvent) {
+        d3Object.select('[id="globalPathTooltip"]')
+                .style('left', '0px')
+                .style('top','50px')
+                .style('opacity', 0);
+        
     }
     return {
         generateTimeSeriesGraph: _generateTimeSeriesGraph
