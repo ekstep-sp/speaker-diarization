@@ -98,7 +98,7 @@ var singleTimeSeriesModule = (function(d3Object){
 
     function drawChart(dataToUse, svgEl) {
         console.log('draw chart ', dataToUse);
-        var colorScale = d3Object.scaleOrdinal(d3Object.schemeCategory20);
+        var colorScale = d3Object.scaleOrdinal(d3Object.schemeCategory20).range(['red','blue','black','orange']);
 
         let svgwidth = svgEl.node().getBoundingClientRect().width;
         let svgheight = svgEl.node().getBoundingClientRect().height;
@@ -145,7 +145,7 @@ var singleTimeSeriesModule = (function(d3Object){
                         .text("Week Numbers");
 
         globalChartGroup.append("g")
-                        .attr('id', 'YaxisGroup').call(d3Object.axisLeft(y)).append("text").attr("fill", "#000").attr("transform", "rotate(-90)").attr("y", 6).attr("dy", "0.71em").attr("text-anchor", "end").text("Progress (numbers)");
+                        .attr('id', 'YaxisGroup').call(d3Object.axisLeft(y)).append("text").attr("fill", "#000").attr("transform", "rotate(-90)").attr("y", 6).attr("dy", "0.71em").attr("text-anchor", "end").text("Performance index");
         // append the path
         generatePaths(globalChartGroup, dataToUse, D3dynamicLinesArray, colorScale);
     }
