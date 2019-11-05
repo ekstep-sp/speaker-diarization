@@ -64,7 +64,6 @@ let AccessTokenGeneratorService = class AccessTokenGeneratorService {
     getAuthKey() {
         return new Promise((resolve, reject) => {
             console.log('initiate execute', this.gcloudConfig);
-            console.log(process.env.GOOGLE_APPLICATION_CREDENTIALS);
             childProcess.exec(this.commandToExecute, {
                 cwd: this.gcloudConfig['gcloud_installation_path'],
                 env: {

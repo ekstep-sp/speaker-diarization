@@ -31,7 +31,7 @@ let DiarizationSpeakerService = class DiarizationSpeakerService {
                 languageCode: dataToUse.language || 'en-US',
                 enableSpeakerDiarization: dataToUse.enableSpeakerDiarization || true,
                 diarizationSpeakerCount: dataToUse.diarizationSpeakerCount || 10,
-                model: dataToUse.model || 'default',
+                model: dataToUse.model || 'video',
             },
             audio: {
                 uri: dataToUse.fileUri || null,
@@ -61,6 +61,7 @@ let DiarizationSpeakerService = class DiarizationSpeakerService {
         })
             .catch(err => {
             console.log('recieved error from initiate diarization request at ', new Date().toTimeString());
+            console.log(err);
             return Promise.resolve({ error: err.message, status: err.response.status });
         });
         return Response;
