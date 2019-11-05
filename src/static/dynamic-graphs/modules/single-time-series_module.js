@@ -110,7 +110,7 @@ var singleTimeSeriesModule = (function(d3Object){
         var height = svgheight - margin.top - margin.bottom;
 
         var globalChartGroup = svgEl.append('g').attr('id', 'globalChartGroup').attr('width', '90%').attr("transform","translate(" + margin.left + "," + margin.top + ")");   
-        var x = d3Object.scalePoint().rangeRound([0,width]);
+        var x = d3Object.scalePoint().rangeRound([0,width-10]);
         var y = d3Object.scaleLinear().rangeRound([height,0]);
         
         var D3dynamicLinesArray = getDynamicLines(dataToUse, x, y);
@@ -134,7 +134,7 @@ var singleTimeSeriesModule = (function(d3Object){
                         .append("text")
                         .attr("fill", "#000")
                         .attr('y',-10)
-                        .attr("x", (globalChartGroup.node().getBoundingClientRect().width - 100))
+                        .attr("x", (globalChartGroup.node().getBoundingClientRect().width - 120))
                         .attr("dx", "0em")
                         .attr("text-anchor", "start")
                         .text("Week Numbers");
