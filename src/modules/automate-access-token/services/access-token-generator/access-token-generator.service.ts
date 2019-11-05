@@ -67,9 +67,9 @@ export class AccessTokenGeneratorService {
             childProcess.exec(
                 this.commandToExecute,
                 {
-                    cwd: process.env['GCLOUD_INSTALLATION_PATH'] || this.gcloudConfig['gcloud_installation_path'],
+                    cwd: this.gcloudConfig['gcloud_installation_path'],
                     env: {
-                        GOOGLE_APPLICATION_CREDENTIALS: process.env['GOOGLE_APPLICATION_CREDENTIALS'] || this.gcloudConfig['env']['GCLOUD_APPLICATION_CREDENTIAL_FILE_PATH'],
+                        GOOGLE_APPLICATION_CREDENTIALS: this.gcloudConfig['env']['GCLOUD_APPLICATION_CREDENTIAL_FILE_PATH'],
                     },
                 }, (err, stdout, stderr) => {
                     if (err == null) {
