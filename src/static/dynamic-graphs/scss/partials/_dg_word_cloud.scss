@@ -1,29 +1,28 @@
 .word-cloud-container {
-    width: 100%;
-    padding-top: 3vh;
+    width: 96%;
+    margin: 0% 2%;
 
     .wordcloudcont {
-        width: 50%;
+       
         float: left;
         height: 70vh;
+   
+        padding:1%;
+        box-sizing: border-box;
+        background-color: #ffffff;
 
         h3 {
+            background-color: #ffffff;
             text-align: center;
         }
     }
+    #cancercloud{
+        margin-right:1% ;
+        width: 49%;
 
-
-
-    #wordCloudSVGLeft {
-        // padding-top: 2vh;
-        // margin-left: 5%;
-        // width: 42%;
-        // height: 40vh;
     }
-    #wordCloudSVGRight {
-        // padding-top: 2vh;
-        // margin-left: 6%;
-        // width: 42%;
-        // height: 40vh;
+    #tbcloud{
+        margin-left:1% ;
+        width: 49%;
     }
 }

@@ -23,13 +23,9 @@ var coreModule = (function(d3Object){
 
         var wcSVGLeft = d3Object.select('#cancercloud')
                             .append('svg')
-                            .attr('id','wordCloudSVGLeft')
-                            .style('margin', '2%')
-                            .style('margin-left', '2.5%')
-                            .style('margin-right', '1.5%')                            
+                            .attr('id','wordCloudSVGLeft')                         
                             .style('height', '55vh')
-                            .style('padding','2%')
-                            .attr("width", '92%')
+                            .attr("width", '100%')
                             .attr('class', 'word-series-svg');
                             // .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
                                     // .append('div')
@@ -38,12 +34,8 @@ var coreModule = (function(d3Object){
         var wcSVGRight = d3Object.select('#tbcloud')
                             .append('svg')                   
                             .attr('id','wordCloudSVGRight')
-                            .style('margin', '2%')
-                            .style('margin-left', '1.5%')
-                            .style('margin-right', '2.5%')  
                             .style('height', '55vh')
-                            .style('padding','2%')
-                            .attr("width", '92%')
+                            .attr("width", '100%')
                             .attr('class', 'word-series-svg');
         // .append('div')
         // .attr('class','wordCloudSVGRightContainer')
