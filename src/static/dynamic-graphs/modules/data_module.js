@@ -3,7 +3,7 @@ var dataModule = (function () {
     var dataObject = [
         {
             id: 0,
-            video_name: 'TB Video',
+            video_name: 'Cancer Program',
             timeline: [
                 {
                     name: 'week_1',
@@ -65,7 +65,7 @@ var dataModule = (function () {
         },
         {
             id: 1,
-            video_name: 'Cancer Video',
+            video_name: 'Tuberculosis Program',
             timeline: [
                 {
                     name: 'week_1',
@@ -127,7 +127,7 @@ var dataModule = (function () {
         },
         {
             id: 2,
-            video_name: 'TB Video 1',
+            video_name: 'Cancer Program 2',
             timeline: [
                 {
                     name: 'week_1',
@@ -189,7 +189,7 @@ var dataModule = (function () {
         },
         {
             id: 3,
-            video_name: 'TB Video 2',
+            video_name: 'Tuberculosis Program 2',
             timeline: [
                 {
                     name: 'week_1',

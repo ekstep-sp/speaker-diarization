@@ -6117,6 +6117,7 @@
       "c:/users/rishabh.kalra/desktop/speech_analysis/nest_sevice/project/node_modules/@nestjs/common/utils/index.d.ts",
       "c:/users/rishabh.kalra/desktop/speech_analysis/nest_sevice/project/node_modules/@nestjs/common/index.d.ts",
       "c:/users/rishabh.kalra/desktop/speech_analysis/nest_sevice/project/src/modules/automate-access-token/services/gcloud-token-provider/gcloud-token-provider.service.ts",
+      "c:/users/rishabh.kalra/desktop/speech_analysis/nest_sevice/project/src/modules/automate-access-token/services/access-token-generator/access-token-generator.service.ts",
       "c:/users/rishabh.kalra/desktop/speech_analysis/nest_sevice/project/src/app.service.ts",
       "c:/users/rishabh.kalra/desktop/speech_analysis/nest_sevice/project/src/app.controller.ts",
       "c:/users/rishabh.kalra/desktop/speech_analysis/nest_sevice/project/node_modules/@types/range-parser/index.d.ts",
@@ -6181,6 +6182,7 @@
       "c:/users/rishabh.kalra/desktop/speech_analysis/nest_sevice/project/node_modules/@nestjs/serve-static/index.d.ts",
       "c:/users/rishabh.kalra/desktop/speech_analysis/nest_sevice/project/src/modules/automate-access-token/automate-access-token.module.ts",
       "c:/users/rishabh.kalra/desktop/speech_analysis/nest_sevice/project/src/app.module.ts",
+      "c:/users/rishabh.kalra/desktop/speech_analysis/nest_sevice/project/src/main.ts",
       "c:/users/rishabh.kalra/desktop/speech_analysis/nest_sevice/project/node_modules/@types/anymatch/index.d.ts",
       "c:/users/rishabh.kalra/desktop/speech_analysis/nest_sevice/project/node_modules/@babel/types/lib/index.d.ts",
       "c:/users/rishabh.kalra/desktop/speech_analysis/nest_sevice/project/node_modules/@types/babel__generator/index.d.ts",
@@ -6209,9 +6211,7 @@
       "c:/users/rishabh.kalra/desktop/speech_analysis/nest_sevice/project/node_modules/@types/webpack-sources/index.d.ts",
       "c:/users/rishabh.kalra/desktop/speech_analysis/nest_sevice/project/node_modules/@types/webpack/index.d.ts",
       "c:/users/rishabh.kalra/desktop/speech_analysis/nest_sevice/project/node_modules/@types/yargs-parser/index.d.ts",
-      "c:/users/rishabh.kalra/desktop/speech_analysis/nest_sevice/project/node_modules/@types/yargs/index.d.ts",
-      "c:/users/rishabh.kalra/desktop/speech_analysis/nest_sevice/project/src/modules/automate-access-token/services/access-token-generator/access-token-generator.service.ts",
-      "c:/users/rishabh.kalra/desktop/speech_analysis/nest_sevice/project/src/main.ts"
+      "c:/users/rishabh.kalra/desktop/speech_analysis/nest_sevice/project/node_modules/@types/yargs/index.d.ts"
     ]
   },
   "version": "3.4.5"
