@@ -1,13 +1,19 @@
 .time-series-svg {
-    width: 90%;
+    width: 98%;
     height: 43vh;
-    margin: 0;
-    margin-left: 70px;
+    margin: 1%;
     .line {
         fill: none;
         stroke: steelblue;
         stroke-width: 2px;
     }
+}
+
+.time-series-container {
+    background-color: white;
+    margin: 2%;
+    width: 96%;
+    border-radius: 7px;
 }
 
 .xaxisGroup {

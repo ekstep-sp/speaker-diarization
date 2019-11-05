@@ -7,7 +7,7 @@ body {
 }
 
 .dg-header {
-  background-color: grey;
+  background-color: #ccc;
   width: 100%;
 }
 
@@ -20,6 +20,7 @@ body {
   padding-top: 3vh;
   text-align: center;
   margin: 0;
+  color: #333;
 }
 
 .dashboard-main {
@@ -33,16 +34,22 @@ body {
 }
 
 .time-series-svg {
-  width: 90%;
+  width: 98%;
   height: 43vh;
-  margin: 0;
-  margin-left: 70px;
+  margin: 1%;
 }
 
 .time-series-svg .line {
   fill: none;
   stroke: steelblue;
   stroke-width: 2px;
+}
+
+.time-series-container {
+  background-color: white;
+  margin: 2%;
+  width: 96%;
+  border-radius: 7px;
 }
 
 .xaxisGroup {
@@ -65,17 +72,33 @@ body {
 }
 
 .word-cloud-container {
-  width: 100%;
-  padding-top: 3vh;
+  width: 96%;
+  margin: 0% 2%;
 }
 
 .word-cloud-container .wordcloudcont {
-  width: 50%;
   float: left;
-  height: 70vh;
+  height: 63vh;
+  margin-bottom: 20px;
+  border-radius: 7px;
+  padding: 1%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #ffffff;
 }
 
 .word-cloud-container .wordcloudcont h3 {
+  background-color: #ffffff;
   text-align: center;
+}
+
+.word-cloud-container #cancercloud {
+  margin-right: 1%;
+  width: 49%;
+}
+
+.word-cloud-container #tbcloud {
+  margin-left: 1%;
+  width: 49%;
 }
 /*# sourceMappingURL=dg_index.css.map */
