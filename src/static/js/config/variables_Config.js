@@ -1,6 +1,6 @@
 var variablesConfig = (function(){
     return {
-        DEFAULT_INTERVAL_TIMEOUT: 300,
+        DEFAULT_INTERVAL_TIMEOUT: 3000,
         DEFAULT_GRAPH_RADIUS: 200,
         DEAFULT_SUBGRAPH_RADIUS: {
             OFFSET_MIN: 50,

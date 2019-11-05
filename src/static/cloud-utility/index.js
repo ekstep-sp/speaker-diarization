@@ -169,7 +169,7 @@ function startProgressStatus(diarizationID) {
                     redirectEl.style.display = 'block';
                     window.clearInterval(iterator);
                     console.log('progress completed');
-                    openNewTab('localhost:3000/index.html');
+                    openNewTab('localhost:3200/index.html');
                 }
             })
             .catch(function (error) {
