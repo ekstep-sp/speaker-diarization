@@ -5,12 +5,11 @@ import * as path from 'path';
 
 @Injectable()
 export class WriteConvertedDataToJsonService {
-    public DB_URL = path.resolve(__dirname, '../../../../../../src/assets/vis_db');
+    public DB_URL = path.resolve(__dirname, './../../../../../assets/vis_db');
 
     initiate(dataToUse: object) {
-
         const fileUrl = path.join(this.DB_URL, 'vis_db.json');
-
+        console.log('writing file on ', fileUrl);
         const readFileContents = fs.readFileSync(fileUrl, {encoding: 'utf-8'});
         const newFileContents = this.updateContentsOfFile(readFileContents, dataToUse);
         try {
