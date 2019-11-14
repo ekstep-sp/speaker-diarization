@@ -29,8 +29,8 @@ export class AccessTokenGeneratorService {
                 this.getAuthKey()
                 .then(response => {
                     console.log('auth key generated as ', response);
-                    // this.gctproviderSrvc.setAuthKey(response);
-                    this.gctproviderSrvc.setAuthKey('ya29.c.Kl6pB33xOESV7FvMG8yfbp6R_D8fF75QtVAdyuCyMysqCWKwPywiySl_0vu-IwUARjFYI3lGcpW-EIT_qXcl2pkR3b8XuMvzKWHIX9v4T2hI4LJ3on9y8W75NrEXFFm2');
+                    this.gctproviderSrvc.setAuthKey(response);
+                    // this.gctproviderSrvc.setAuthKey('ya29.c.Kl6pB33xOESV7FvMG8yfbp6R_D8fF75QtVAdyuCyMysqCWKwPywiySl_0vu-IwUARjFYI3lGcpW-EIT_qXcl2pkR3b8XuMvzKWHIX9v4T2hI4LJ3on9y8W75NrEXFFm2');
                 }).catch(err => {
                     console.log('error occured while generating auth key ', err);
                 });
