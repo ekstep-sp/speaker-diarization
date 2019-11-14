@@ -16,6 +16,7 @@ const read_db_module_1 = require("./modules/read-db/read-db.module");
 const serve_static_1 = require("@nestjs/serve-static");
 const path_1 = require("path");
 const automate_access_token_module_1 = require("./modules/automate-access-token/automate-access-token.module");
+const async_reader_module_1 = require("./modules/async-reader/async-reader.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -28,6 +29,7 @@ AppModule = __decorate([
             google_speaker_diarization_module_1.GoogleSpeakerDiarizationModule,
             automate_access_token_module_1.AutomateAccessTokenModule,
             read_db_module_1.ReadDbModule,
+            async_reader_module_1.AsyncReaderModule,
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService, common_request_validator_service_1.CommonRequestValidatorService],

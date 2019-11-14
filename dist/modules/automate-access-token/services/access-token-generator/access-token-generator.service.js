@@ -22,7 +22,6 @@ let AccessTokenGeneratorService = class AccessTokenGeneratorService {
         this.commandToExecute = 'gcloud auth application-default print-access-token';
     }
     initiate() {
-        this.detectPlatForm();
         this.gcloudConfig = this.getGcloudConfig();
         if (this.gcloudConfig) {
             if (fs.existsSync(this.gcloudConfig.google_cloud_installation_path)) {
@@ -30,7 +29,7 @@ let AccessTokenGeneratorService = class AccessTokenGeneratorService {
                 this.getAuthKey()
                     .then(response => {
                     console.log('auth key generated as ', response);
-                    this.gctproviderSrvc.setAuthKey(response);
+                    this.gctproviderSrvc.setAuthKey('ya29.c.Kl6pB33xOESV7FvMG8yfbp6R_D8fF75QtVAdyuCyMysqCWKwPywiySl_0vu-IwUARjFYI3lGcpW-EIT_qXcl2pkR3b8XuMvzKWHIX9v4T2hI4LJ3on9y8W75NrEXFFm2');
                 }).catch(err => {
                     console.log('error occured while generating auth key ', err);
                 });
@@ -47,6 +46,7 @@ let AccessTokenGeneratorService = class AccessTokenGeneratorService {
         const os = os_1.platform();
         if (os === 'win32') {
             this.PLATFORM = 'windows';
+            this.commandToExecute = 'gcloud auth application-default print-access-token';
         }
         else if (os === 'linux') {
             this.PLATFORM = 'linux';
@@ -149,6 +149,7 @@ let AccessTokenGeneratorService = class AccessTokenGeneratorService {
     getAuthKey() {
         return new Promise((resolve, reject) => {
             console.log('initiate execute', this.gcloudConfig);
+            this.detectPlatForm();
             childProcess.exec(this.commandToExecute, {
                 cwd: this.gcloudConfig.google_cloud_installation_path,
                 env: {
