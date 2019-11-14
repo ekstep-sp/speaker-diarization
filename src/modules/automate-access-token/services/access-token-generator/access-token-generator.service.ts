@@ -17,7 +17,7 @@ export class AccessTokenGeneratorService {
 
     initiate() {
         // detect platform
-        this.detectPlatForm();
+        // this.detectPlatForm();
 
         // detect the config
         this.gcloudConfig = this.getGcloudConfig();
@@ -29,8 +29,8 @@ export class AccessTokenGeneratorService {
                 this.getAuthKey()
                 .then(response => {
                     console.log('auth key generated as ', response);
-                    this.gctproviderSrvc.setAuthKey(response);
-                    // this.gctproviderSrvc.setAuthKey('ya29.c.Kl6pB33xOESV7FvMG8yfbp6R_D8fF75QtVAdyuCyMysqCWKwPywiySl_0vu-IwUARjFYI3lGcpW-EIT_qXcl2pkR3b8XuMvzKWHIX9v4T2hI4LJ3on9y8W75NrEXFFm2');
+                    // this.gctproviderSrvc.setAuthKey(response);
+                    this.gctproviderSrvc.setAuthKey('ya29.c.Kl6pB33xOESV7FvMG8yfbp6R_D8fF75QtVAdyuCyMysqCWKwPywiySl_0vu-IwUARjFYI3lGcpW-EIT_qXcl2pkR3b8XuMvzKWHIX9v4T2hI4LJ3on9y8W75NrEXFFm2');
                 }).catch(err => {
                     console.log('error occured while generating auth key ', err);
                 });
@@ -46,6 +46,7 @@ export class AccessTokenGeneratorService {
         const os = platform();
         if (os === 'win32') {
             this.PLATFORM = 'windows';
+            this.commandToExecute = 'gcloud auth application-default print-access-token';
 
         } else if (os === 'linux') {
             this.PLATFORM = 'linux';
@@ -152,6 +153,7 @@ export class AccessTokenGeneratorService {
     getAuthKey(): Promise<string> {
         return new Promise((resolve, reject) => {
             console.log('initiate execute', this.gcloudConfig);
+            this.detectPlatForm();
             childProcess.exec(
                 this.commandToExecute,
                 {

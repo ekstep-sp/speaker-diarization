@@ -9,17 +9,18 @@ import { ReadDbModule } from './modules/read-db/read-db.module';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
 import { AutomateAccessTokenModule } from './modules/automate-access-token/automate-access-token.module';
-
+import { AsyncReaderModule } from './modules/async-reader/async-reader.module';
 @Module({
   // serve static files in the server
   imports: [
-    ServeStaticModule.forRoot({
+  ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', 'src', 'static'),
     }),
     NetworkParserModule,
     GoogleSpeakerDiarizationModule,
     AutomateAccessTokenModule,
     ReadDbModule,
+    AsyncReaderModule,
   ],
   controllers: [AppController],
   providers: [AppService, CommonRequestValidatorService],
