@@ -11,9 +11,10 @@ const fs = require("fs");
 const path = require("path");
 let DatabseCommonService = class DatabseCommonService {
     constructor() {
-        this.DB_URL = path.resolve(__dirname, '../../../../../../src/assets/vis_db');
+        this.DB_URL = path.resolve(__dirname, './../../../../../assets/vis_db');
     }
     readJSONdb() {
+        console.log('reading from file', this.DB_URL);
         const fileUrl = path.join(this.DB_URL, 'vis_db.json');
         const fileData = fs.readFileSync(fileUrl, { encoding: 'utf-8' });
         return fileData;

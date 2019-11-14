@@ -7,7 +7,12 @@ export declare class AccessTokenGeneratorService {
     constructor(gctproviderSrvc: GcloudTokenProviderService);
     initiate(): void;
     detectPlatForm(): void;
-    getGcloudConfig(): any;
+    getGcloudConfig(): {
+        google_cloud_installation_path: string;
+        google_cloud_authentication_file_path: string;
+    };
+    getGCLOUD_INSTALLATION_PATH(gcloud_config_url: any, global_config: any): any;
+    getGCLOUD_CREDENTIAL_FILE_PATH(gcloud_config_url: any, global_config: any): any;
     getAuthKey(): Promise<string>;
     refreshAuthKey(): Promise<boolean>;
 }
