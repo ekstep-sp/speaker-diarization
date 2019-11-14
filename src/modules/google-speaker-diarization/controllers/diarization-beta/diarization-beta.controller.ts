@@ -73,7 +73,7 @@ export class DiarizationBetaController {
                         response.status(res.error.response.status).send({ error: res.error.message });
                     }
                 }
-                return response.status(res.error.response.status).send({error: res.error.message})
+                return response.status(res.error.response.status).send({error: res.error.message});
             }
             return response.status(200).send({...res.resp.data});
         } else {

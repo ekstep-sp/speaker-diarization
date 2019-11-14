@@ -81,7 +81,6 @@ export class AccessTokenGeneratorService {
         }
     }
 
-
     getGCLOUD_INSTALLATION_PATH(gcloud_config_url, global_config) {
         if (!process.env.GCLOUD_CUSTOM_INSTALLATION_PATH) {
             console.log('env variable for gcloud installation path is not present, looking in static file');
