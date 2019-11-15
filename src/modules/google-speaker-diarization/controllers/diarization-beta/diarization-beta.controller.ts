@@ -16,15 +16,18 @@ export class DiarizationBetaController {
 
     @Get('check-status/:diarizationID')
     async checkStatus(@Param() params , @Res() response: Response): Promise<any> {
-        console.log('GET: diarization/check-status');
+        console.log('GET: diarization/check-status, for ', params.diarizationID);
         if (this.validateDiarizationID(params.diarizationID)) {
-            console.log('is valid');
+            console.log('diarization id supplied seems syntactically correct');
             return this.checkDiarizationStatusFromID(response, params);
+        } else {
+            console.log('diarizationID invalid');
+            response.status(400).send({status: 400, message: 'diarization id supplied is invalid'});
         }
     }
 
     validateDiarizationID(idToValidate) {
-        return (typeof idToValidate === 'string' && idToValidate.length >= 19 && !isNaN(parseInt(idToValidate, 10))) ? true : false;
+        return (typeof idToValidate === 'string' && idToValidate.length >= 5 && !isNaN(parseInt(idToValidate, 10))) ? true : false;
     }
 
     async handleRequest(response, body) {
@@ -66,7 +69,7 @@ export class DiarizationBetaController {
                     console.log('token expired for polling, refreshing the token');
                     const isRefreshed = await this.atgSrvc.refreshAuthKey();
                     if (isRefreshed) {
-                        console.log('sending checkDiarizationStatusFromID request at ', new Date().toTimeString());
+                        console.log('sending checkDiarizationStatusFromID requestafter refresh at ', new Date().toTimeString());
                         return this.checkDiarizationStatusFromID(response, params);
                     } else {
                         console.log('unable to refresh auth key for gcloud, check manually');

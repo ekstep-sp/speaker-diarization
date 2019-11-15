@@ -94,6 +94,7 @@ export class DiarizationSpeakerService {
             return Promise.resolve({resp});
         })
         .catch(err => {
+            console.log('error occcured while hitting pol request for diarization ID ' + id, err);
             return Promise.resolve({error: err});
         });
 
