@@ -1,0 +1,1255 @@
+{
+  "name": "8083453483928377699",
+  "metadata": {
+    "@type": "type.googleapis.com/google.cloud.speech.v1p1beta1.LongRunningRecognizeMetadata",
+    "progressPercent": 100,
+    "startTime": "2019-11-13T08:11:17.035342Z",
+    "lastUpdateTime": "2019-11-13T08:11:54.488566Z"
+  },
+  "done": true,
+  "response": {
+    "@type": "type.googleapis.com/google.cloud.speech.v1p1beta1.LongRunningRecognizeResponse",
+    "results": [
+      {
+        "alternatives": [
+          {
+            "transcript": "you want to communicate data from the component logic to the template this is called one rated a binding open up SRC app and find and replace it with the following",
+            "confidence": 0.9162759,
+            "words": [
+              {
+                "startTime": "2.900s",
+                "endTime": "3.300s",
+                "word": "you"
+              },
+              {
+                "startTime": "3.300s",
+                "endTime": "3.600s",
+                "word": "want"
+              },
+              {
+                "startTime": "3.600s",
+                "endTime": "3.700s",
+                "word": "to"
+              },
+              {
+                "startTime": "3.700s",
+                "endTime": "3.900s",
+                "word": "communicate"
+              },
+              {
+                "startTime": "3.900s",
+                "endTime": "4.300s",
+                "word": "data"
+              },
+              {
+                "startTime": "4.300s",
+                "endTime": "4.600s",
+                "word": "from"
+              },
+              {
+                "startTime": "4.600s",
+                "endTime": "4.700s",
+                "word": "the"
+              },
+              {
+                "startTime": "4.700s",
+                "endTime": "5.200s",
+                "word": "component"
+              },
+              {
+                "startTime": "5.200s",
+                "endTime": "5.600s",
+                "word": "logic"
+              },
+              {
+                "startTime": "5.600s",
+                "endTime": "5.700s",
+                "word": "to"
+              },
+              {
+                "startTime": "5.700s",
+                "endTime": "5.800s",
+                "word": "the"
+              },
+              {
+                "startTime": "5.800s",
+                "endTime": "6.400s",
+                "word": "template"
+              },
+              {
+                "startTime": "6.400s",
+                "endTime": "6.900s",
+                "word": "this"
+              },
+              {
+                "startTime": "6.900s",
+                "endTime": "7.100s",
+                "word": "is"
+              },
+              {
+                "startTime": "7.100s",
+                "endTime": "7.500s",
+                "word": "called"
+              },
+              {
+                "startTime": "7.500s",
+                "endTime": "7.800s",
+                "word": "one"
+              },
+              {
+                "startTime": "7.800s",
+                "endTime": "8.200s",
+                "word": "rated"
+              },
+              {
+                "startTime": "8.200s",
+                "endTime": "8.200s",
+                "word": "a"
+              },
+              {
+                "startTime": "8.200s",
+                "endTime": "8.600s",
+                "word": "binding"
+              },
+              {
+                "startTime": "8.600s",
+                "endTime": "9.700s",
+                "word": "open"
+              },
+              {
+                "startTime": "9.700s",
+                "endTime": "9.900s",
+                "word": "up"
+              },
+              {
+                "startTime": "9.900s",
+                "endTime": "10.600s",
+                "word": "SRC"
+              },
+              {
+                "startTime": "10.600s",
+                "endTime": "11.100s",
+                "word": "app"
+              },
+              {
+                "startTime": "11.100s",
+                "endTime": "13.600s",
+                "word": "and"
+              },
+              {
+                "startTime": "13.600s",
+                "endTime": "14.100s",
+                "word": "find"
+              },
+              {
+                "startTime": "14.100s",
+                "endTime": "14.800s",
+                "word": "and"
+              },
+              {
+                "startTime": "14.800s",
+                "endTime": "15.100s",
+                "word": "replace"
+              },
+              {
+                "startTime": "15.100s",
+                "endTime": "15.400s",
+                "word": "it"
+              },
+              {
+                "startTime": "15.400s",
+                "endTime": "15.500s",
+                "word": "with"
+              },
+              {
+                "startTime": "15.500s",
+                "endTime": "15.600s",
+                "word": "the"
+              },
+              {
+                "startTime": "15.600s",
+                "endTime": "15.900s",
+                "word": "following"
+              }
+            ]
+          }
+        ],
+        "languageCode": "en-us"
+      },
+      {
+        "alternatives": [
+          {
+            "transcript": " we will have to hang up his",
+            "confidence": 0.8713403,
+            "words": [
+              {
+                "startTime": "17.600s",
+                "endTime": "18s",
+                "word": "we"
+              },
+              {
+                "startTime": "18s",
+                "endTime": "18.200s",
+                "word": "will"
+              },
+              {
+                "startTime": "18.200s",
+                "endTime": "18.400s",
+                "word": "have"
+              },
+              {
+                "startTime": "18.400s",
+                "endTime": "18.500s",
+                "word": "to"
+              },
+              {
+                "startTime": "18.500s",
+                "endTime": "19.300s",
+                "word": "hang"
+              },
+              {
+                "startTime": "19.300s",
+                "endTime": "19.400s",
+                "word": "up"
+              },
+              {
+                "startTime": "19.400s",
+                "endTime": "19.800s",
+                "word": "his"
+              }
+            ]
+          }
+        ],
+        "languageCode": "en-us"
+      },
+      {
+        "alternatives": [
+          {
+            "transcript": " Little Einstein binding you rather than blackards property but specify style and then the name of the CSS property you're buying them to an expression and then go to the operator is being used",
+            "confidence": 0.9183148,
+            "words": [
+              {
+                "startTime": "43s",
+                "endTime": "43.600s",
+                "word": "Little"
+              },
+              {
+                "startTime": "43.600s",
+                "endTime": "44.200s",
+                "word": "Einstein"
+              },
+              {
+                "startTime": "44.200s",
+                "endTime": "44.700s",
+                "word": "binding"
+              },
+              {
+                "startTime": "44.700s",
+                "endTime": "44.900s",
+                "word": "you"
+              },
+              {
+                "startTime": "44.900s",
+                "endTime": "45.300s",
+                "word": "rather"
+              },
+              {
+                "startTime": "45.300s",
+                "endTime": "45.500s",
+                "word": "than"
+              },
+              {
+                "startTime": "45.500s",
+                "endTime": "46.100s",
+                "word": "blackards"
+              },
+              {
+                "startTime": "46.100s",
+                "endTime": "46.900s",
+                "word": "property"
+              },
+              {
+                "startTime": "46.900s",
+                "endTime": "47.100s",
+                "word": "but"
+              },
+              {
+                "startTime": "47.100s",
+                "endTime": "47.900s",
+                "word": "specify"
+              },
+              {
+                "startTime": "47.900s",
+                "endTime": "48.700s",
+                "word": "style"
+              },
+              {
+                "startTime": "48.700s",
+                "endTime": "49.300s",
+                "word": "and"
+              },
+              {
+                "startTime": "49.300s",
+                "endTime": "49.600s",
+                "word": "then"
+              },
+              {
+                "startTime": "49.600s",
+                "endTime": "49.700s",
+                "word": "the"
+              },
+              {
+                "startTime": "49.700s",
+                "endTime": "49.900s",
+                "word": "name"
+              },
+              {
+                "startTime": "49.900s",
+                "endTime": "49.900s",
+                "word": "of"
+              },
+              {
+                "startTime": "49.900s",
+                "endTime": "50.400s",
+                "word": "the"
+              },
+              {
+                "startTime": "50.400s",
+                "endTime": "50.800s",
+                "word": "CSS"
+              },
+              {
+                "startTime": "50.800s",
+                "endTime": "51.300s",
+                "word": "property"
+              },
+              {
+                "startTime": "51.300s",
+                "endTime": "51.700s",
+                "word": "you're"
+              },
+              {
+                "startTime": "51.700s",
+                "endTime": "51.700s",
+                "word": "buying"
+              },
+              {
+                "startTime": "51.700s",
+                "endTime": "52.200s",
+                "word": "them"
+              },
+              {
+                "startTime": "52.200s",
+                "endTime": "52.600s",
+                "word": "to"
+              },
+              {
+                "startTime": "52.600s",
+                "endTime": "52.800s",
+                "word": "an"
+              },
+              {
+                "startTime": "52.800s",
+                "endTime": "53.400s",
+                "word": "expression"
+              },
+              {
+                "startTime": "53.400s",
+                "endTime": "54.400s",
+                "word": "and"
+              },
+              {
+                "startTime": "54.400s",
+                "endTime": "54.700s",
+                "word": "then"
+              },
+              {
+                "startTime": "54.700s",
+                "endTime": "55.200s",
+                "word": "go"
+              },
+              {
+                "startTime": "55.200s",
+                "endTime": "55.300s",
+                "word": "to"
+              },
+              {
+                "startTime": "55.300s",
+                "endTime": "55.500s",
+                "word": "the"
+              },
+              {
+                "startTime": "55.500s",
+                "endTime": "56s",
+                "word": "operator"
+              },
+              {
+                "startTime": "56s",
+                "endTime": "56s",
+                "word": "is"
+              },
+              {
+                "startTime": "56s",
+                "endTime": "56.400s",
+                "word": "being"
+              },
+              {
+                "startTime": "56.400s",
+                "endTime": "56.700s",
+                "word": "used"
+              }
+            ]
+          }
+        ],
+        "languageCode": "en-us"
+      },
+      {
+        "alternatives": [
+          {
+            "transcript": " gardenline style binding you rather than brackets what if you wanted to specify multiple CSS property properties of getting change the book",
+            "confidence": 0.87258726,
+            "words": [
+              {
+                "startTime": "84.400s",
+                "endTime": "85.300s",
+                "word": "gardenline"
+              },
+              {
+                "startTime": "85.300s",
+                "endTime": "85.600s",
+                "word": "style"
+              },
+              {
+                "startTime": "85.600s",
+                "endTime": "86.100s",
+                "word": "binding"
+              },
+              {
+                "startTime": "86.100s",
+                "endTime": "86.500s",
+                "word": "you"
+              },
+              {
+                "startTime": "86.500s",
+                "endTime": "86.900s",
+                "word": "rather"
+              },
+              {
+                "startTime": "86.900s",
+                "endTime": "87.100s",
+                "word": "than"
+              },
+              {
+                "startTime": "87.100s",
+                "endTime": "87.600s",
+                "word": "brackets"
+              },
+              {
+                "startTime": "87.600s",
+                "endTime": "88.900s",
+                "word": "what"
+              },
+              {
+                "startTime": "88.900s",
+                "endTime": "89.100s",
+                "word": "if"
+              },
+              {
+                "startTime": "89.100s",
+                "endTime": "89.200s",
+                "word": "you"
+              },
+              {
+                "startTime": "89.200s",
+                "endTime": "89.600s",
+                "word": "wanted"
+              },
+              {
+                "startTime": "89.600s",
+                "endTime": "89.800s",
+                "word": "to"
+              },
+              {
+                "startTime": "89.800s",
+                "endTime": "90.200s",
+                "word": "specify"
+              },
+              {
+                "startTime": "90.200s",
+                "endTime": "90.700s",
+                "word": "multiple"
+              },
+              {
+                "startTime": "90.700s",
+                "endTime": "91.100s",
+                "word": "CSS"
+              },
+              {
+                "startTime": "91.100s",
+                "endTime": "91.600s",
+                "word": "property"
+              },
+              {
+                "startTime": "91.600s",
+                "endTime": "96.600s",
+                "word": "properties"
+              },
+              {
+                "startTime": "96.600s",
+                "endTime": "96.700s",
+                "word": "of"
+              },
+              {
+                "startTime": "96.700s",
+                "endTime": "96.900s",
+                "word": "getting"
+              },
+              {
+                "startTime": "96.900s",
+                "endTime": "97.300s",
+                "word": "change"
+              },
+              {
+                "startTime": "97.300s",
+                "endTime": "97.900s",
+                "word": "the"
+              },
+              {
+                "startTime": "97.900s",
+                "endTime": "98.200s",
+                "word": "book"
+              }
+            ]
+          }
+        ],
+        "languageCode": "en-us"
+      },
+      {
+        "alternatives": [
+          {
+            "transcript": " Sevierville concluded by Services services are special company made on a list page",
+            "confidence": 0.71748334,
+            "words": [
+              {
+                "startTime": "133.100s",
+                "endTime": "134.200s",
+                "word": "Sevierville"
+              },
+              {
+                "startTime": "134.200s",
+                "endTime": "135.100s",
+                "word": "concluded"
+              },
+              {
+                "startTime": "135.100s",
+                "endTime": "135.300s",
+                "word": "by"
+              },
+              {
+                "startTime": "135.300s",
+                "endTime": "135.900s",
+                "word": "Services"
+              },
+              {
+                "startTime": "135.900s",
+                "endTime": "136.900s",
+                "word": "services"
+              },
+              {
+                "startTime": "136.900s",
+                "endTime": "137s",
+                "word": "are"
+              },
+              {
+                "startTime": "137s",
+                "endTime": "137.400s",
+                "word": "special"
+              },
+              {
+                "startTime": "137.400s",
+                "endTime": "137.800s",
+                "word": "company"
+              },
+              {
+                "startTime": "137.800s",
+                "endTime": "145.500s",
+                "word": "made"
+              },
+              {
+                "startTime": "145.500s",
+                "endTime": "145.700s",
+                "word": "on"
+              },
+              {
+                "startTime": "145.700s",
+                "endTime": "145.800s",
+                "word": "a"
+              },
+              {
+                "startTime": "145.800s",
+                "endTime": "146.100s",
+                "word": "list"
+              },
+              {
+                "startTime": "146.100s",
+                "endTime": "146.400s",
+                "word": "page"
+              }
+            ]
+          }
+        ],
+        "languageCode": "en-us"
+      },
+      {
+        "alternatives": [
+          {
+            "words": [
+              {
+                "startTime": "2.900s",
+                "endTime": "3.300s",
+                "word": "you",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "3.300s",
+                "endTime": "3.600s",
+                "word": "want",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "3.600s",
+                "endTime": "3.700s",
+                "word": "to",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "3.700s",
+                "endTime": "3.900s",
+                "word": "communicate",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "3.900s",
+                "endTime": "4.300s",
+                "word": "data",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "4.300s",
+                "endTime": "4.600s",
+                "word": "from",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "4.600s",
+                "endTime": "4.700s",
+                "word": "the",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "4.700s",
+                "endTime": "5.200s",
+                "word": "component",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "5.200s",
+                "endTime": "5.600s",
+                "word": "logic",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "5.600s",
+                "endTime": "5.700s",
+                "word": "to",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "5.700s",
+                "endTime": "5.800s",
+                "word": "the",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "5.800s",
+                "endTime": "6.400s",
+                "word": "template",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "6.400s",
+                "endTime": "6.900s",
+                "word": "this",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "6.900s",
+                "endTime": "7.100s",
+                "word": "is",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "7.100s",
+                "endTime": "7.500s",
+                "word": "called",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "7.500s",
+                "endTime": "7.800s",
+                "word": "one",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "7.800s",
+                "endTime": "8.200s",
+                "word": "rated",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "8.200s",
+                "endTime": "8.200s",
+                "word": "a",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "8.200s",
+                "endTime": "8.600s",
+                "word": "binding",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "8.600s",
+                "endTime": "9.700s",
+                "word": "open",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "9.700s",
+                "endTime": "9.900s",
+                "word": "up",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "9.900s",
+                "endTime": "10.600s",
+                "word": "SRC",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "10.600s",
+                "endTime": "11.100s",
+                "word": "app",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "11.100s",
+                "endTime": "13.600s",
+                "word": "and",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "13.600s",
+                "endTime": "14.100s",
+                "word": "find",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "14.100s",
+                "endTime": "14.800s",
+                "word": "and",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "14.800s",
+                "endTime": "15.100s",
+                "word": "replace",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "15.100s",
+                "endTime": "15.400s",
+                "word": "it",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "15.400s",
+                "endTime": "15.500s",
+                "word": "with",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "15.500s",
+                "endTime": "15.600s",
+                "word": "the",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "15.600s",
+                "endTime": "15.900s",
+                "word": "following",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "17.600s",
+                "endTime": "18s",
+                "word": "we",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "18s",
+                "endTime": "18.200s",
+                "word": "will",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "18.200s",
+                "endTime": "18.400s",
+                "word": "have",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "18.400s",
+                "endTime": "18.500s",
+                "word": "to",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "18.500s",
+                "endTime": "19.300s",
+                "word": "hang",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "19.300s",
+                "endTime": "19.400s",
+                "word": "up",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "19.400s",
+                "endTime": "19.800s",
+                "word": "his",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "43s",
+                "endTime": "43.600s",
+                "word": "Little",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "43.600s",
+                "endTime": "44.200s",
+                "word": "Einstein",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "44.200s",
+                "endTime": "44.700s",
+                "word": "binding",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "44.700s",
+                "endTime": "44.900s",
+                "word": "you",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "44.900s",
+                "endTime": "45.300s",
+                "word": "rather",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "45.300s",
+                "endTime": "45.500s",
+                "word": "than",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "45.500s",
+                "endTime": "46.100s",
+                "word": "blackards",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "46.100s",
+                "endTime": "46.900s",
+                "word": "property",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "46.900s",
+                "endTime": "47.100s",
+                "word": "but",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "47.100s",
+                "endTime": "47.900s",
+                "word": "specify",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "47.900s",
+                "endTime": "48.700s",
+                "word": "style",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "48.700s",
+                "endTime": "49.300s",
+                "word": "and",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "49.300s",
+                "endTime": "49.600s",
+                "word": "then",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "49.600s",
+                "endTime": "49.700s",
+                "word": "the",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "49.700s",
+                "endTime": "49.900s",
+                "word": "name",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "49.900s",
+                "endTime": "49.900s",
+                "word": "of",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "49.900s",
+                "endTime": "50.400s",
+                "word": "the",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "50.400s",
+                "endTime": "50.800s",
+                "word": "CSS",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "50.800s",
+                "endTime": "51.300s",
+                "word": "property",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "51.300s",
+                "endTime": "51.700s",
+                "word": "you're",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "51.700s",
+                "endTime": "51.700s",
+                "word": "buying",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "51.700s",
+                "endTime": "52.200s",
+                "word": "them",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "52.200s",
+                "endTime": "52.600s",
+                "word": "to",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "52.600s",
+                "endTime": "52.800s",
+                "word": "an",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "52.800s",
+                "endTime": "53.400s",
+                "word": "expression",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "53.400s",
+                "endTime": "54.400s",
+                "word": "and",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "54.400s",
+                "endTime": "54.700s",
+                "word": "then",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "54.700s",
+                "endTime": "55.200s",
+                "word": "go",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "55.200s",
+                "endTime": "55.300s",
+                "word": "to",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "55.300s",
+                "endTime": "55.500s",
+                "word": "the",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "55.500s",
+                "endTime": "56s",
+                "word": "operator",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "56s",
+                "endTime": "56s",
+                "word": "is",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "56s",
+                "endTime": "56.400s",
+                "word": "being",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "56.400s",
+                "endTime": "56.700s",
+                "word": "used",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "84.400s",
+                "endTime": "85.300s",
+                "word": "gardenline",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "85.300s",
+                "endTime": "85.600s",
+                "word": "style",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "85.600s",
+                "endTime": "86.100s",
+                "word": "binding",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "86.100s",
+                "endTime": "86.500s",
+                "word": "you",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "86.500s",
+                "endTime": "86.900s",
+                "word": "rather",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "86.900s",
+                "endTime": "87.100s",
+                "word": "than",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "87.100s",
+                "endTime": "87.600s",
+                "word": "brackets",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "87.600s",
+                "endTime": "88.900s",
+                "word": "what",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "88.900s",
+                "endTime": "89.100s",
+                "word": "if",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "89.100s",
+                "endTime": "89.200s",
+                "word": "you",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "89.200s",
+                "endTime": "89.600s",
+                "word": "wanted",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "89.600s",
+                "endTime": "89.800s",
+                "word": "to",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "89.800s",
+                "endTime": "90.200s",
+                "word": "specify",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "90.200s",
+                "endTime": "90.700s",
+                "word": "multiple",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "90.700s",
+                "endTime": "91.100s",
+                "word": "CSS",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "91.100s",
+                "endTime": "91.600s",
+                "word": "property",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "91.600s",
+                "endTime": "96.600s",
+                "word": "properties",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "96.600s",
+                "endTime": "96.700s",
+                "word": "of",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "96.700s",
+                "endTime": "96.900s",
+                "word": "getting",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "96.900s",
+                "endTime": "97.300s",
+                "word": "change",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "97.300s",
+                "endTime": "97.900s",
+                "word": "the",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "97.900s",
+                "endTime": "98.200s",
+                "word": "book",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "133.100s",
+                "endTime": "134.200s",
+                "word": "Sevierville",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "134.200s",
+                "endTime": "135.100s",
+                "word": "concluded",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "135.100s",
+                "endTime": "135.300s",
+                "word": "by",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "135.300s",
+                "endTime": "135.900s",
+                "word": "Services",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "135.900s",
+                "endTime": "136.900s",
+                "word": "services",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "136.900s",
+                "endTime": "137s",
+                "word": "are",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "137s",
+                "endTime": "137.400s",
+                "word": "special",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "137.400s",
+                "endTime": "137.800s",
+                "word": "company",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "137.800s",
+                "endTime": "145.500s",
+                "word": "made",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "145.500s",
+                "endTime": "145.700s",
+                "word": "on",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "145.700s",
+                "endTime": "145.800s",
+                "word": "a",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "145.800s",
+                "endTime": "146.100s",
+                "word": "list",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "146.100s",
+                "endTime": "146.400s",
+                "word": "page",
+                "speakerTag": 1
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

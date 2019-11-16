@@ -1,0 +1,1024 @@
+{
+  "name": "1383664823801557936",
+  "metadata": {
+    "@type": "type.googleapis.com/google.cloud.speech.v1p1beta1.LongRunningRecognizeMetadata",
+    "progressPercent": 100,
+    "startTime": "2019-11-13T08:06:25.606343Z",
+    "lastUpdateTime": "2019-11-13T08:07:01.827968Z"
+  },
+  "done": true,
+  "response": {
+    "@type": "type.googleapis.com/google.cloud.speech.v1p1beta1.LongRunningRecognizeResponse",
+    "results": [
+      {
+        "alternatives": [
+          {
+            "transcript": "I hope this new way of his Rising routing will help you to memorize it better routing is fun you just need to pick it once",
+            "confidence": 0.91071653,
+            "words": [
+              {
+                "startTime": "22.800s",
+                "endTime": "23.200s",
+                "word": "I"
+              },
+              {
+                "startTime": "23.200s",
+                "endTime": "23.600s",
+                "word": "hope"
+              },
+              {
+                "startTime": "23.600s",
+                "endTime": "23.700s",
+                "word": "this"
+              },
+              {
+                "startTime": "23.700s",
+                "endTime": "24s",
+                "word": "new"
+              },
+              {
+                "startTime": "24s",
+                "endTime": "24.300s",
+                "word": "way"
+              },
+              {
+                "startTime": "24.300s",
+                "endTime": "24.500s",
+                "word": "of"
+              },
+              {
+                "startTime": "24.500s",
+                "endTime": "24.600s",
+                "word": "his"
+              },
+              {
+                "startTime": "24.600s",
+                "endTime": "24.900s",
+                "word": "Rising"
+              },
+              {
+                "startTime": "24.900s",
+                "endTime": "25.500s",
+                "word": "routing"
+              },
+              {
+                "startTime": "25.500s",
+                "endTime": "25.700s",
+                "word": "will"
+              },
+              {
+                "startTime": "25.700s",
+                "endTime": "26s",
+                "word": "help"
+              },
+              {
+                "startTime": "26s",
+                "endTime": "26.200s",
+                "word": "you"
+              },
+              {
+                "startTime": "26.200s",
+                "endTime": "26.400s",
+                "word": "to"
+              },
+              {
+                "startTime": "26.400s",
+                "endTime": "26.600s",
+                "word": "memorize"
+              },
+              {
+                "startTime": "26.600s",
+                "endTime": "26.900s",
+                "word": "it"
+              },
+              {
+                "startTime": "26.900s",
+                "endTime": "27.600s",
+                "word": "better"
+              },
+              {
+                "startTime": "27.600s",
+                "endTime": "28.500s",
+                "word": "routing"
+              },
+              {
+                "startTime": "28.500s",
+                "endTime": "28.600s",
+                "word": "is"
+              },
+              {
+                "startTime": "28.600s",
+                "endTime": "28.900s",
+                "word": "fun"
+              },
+              {
+                "startTime": "28.900s",
+                "endTime": "29.200s",
+                "word": "you"
+              },
+              {
+                "startTime": "29.200s",
+                "endTime": "29.600s",
+                "word": "just"
+              },
+              {
+                "startTime": "29.600s",
+                "endTime": "29.800s",
+                "word": "need"
+              },
+              {
+                "startTime": "29.800s",
+                "endTime": "29.900s",
+                "word": "to"
+              },
+              {
+                "startTime": "29.900s",
+                "endTime": "30s",
+                "word": "pick"
+              },
+              {
+                "startTime": "30s",
+                "endTime": "30.500s",
+                "word": "it"
+              },
+              {
+                "startTime": "30.500s",
+                "endTime": "31.200s",
+                "word": "once"
+              }
+            ]
+          }
+        ],
+        "languageCode": "en-us"
+      },
+      {
+        "alternatives": [
+          {
+            "transcript": "activated route condenser information about is out associated with a component loaded in an outlet similar to Atlantic and Pacific components we will create a new company",
+            "confidence": 0.88532716,
+            "words": [
+              {
+                "startTime": "58.600s",
+                "endTime": "59.500s",
+                "word": "activated"
+              },
+              {
+                "startTime": "59.500s",
+                "endTime": "59.800s",
+                "word": "route"
+              },
+              {
+                "startTime": "59.800s",
+                "endTime": "60.400s",
+                "word": "condenser"
+              },
+              {
+                "startTime": "60.400s",
+                "endTime": "61s",
+                "word": "information"
+              },
+              {
+                "startTime": "61s",
+                "endTime": "61.200s",
+                "word": "about"
+              },
+              {
+                "startTime": "61.200s",
+                "endTime": "61.500s",
+                "word": "is"
+              },
+              {
+                "startTime": "61.500s",
+                "endTime": "61.700s",
+                "word": "out"
+              },
+              {
+                "startTime": "61.700s",
+                "endTime": "62.400s",
+                "word": "associated"
+              },
+              {
+                "startTime": "62.400s",
+                "endTime": "62.500s",
+                "word": "with"
+              },
+              {
+                "startTime": "62.500s",
+                "endTime": "62.700s",
+                "word": "a"
+              },
+              {
+                "startTime": "62.700s",
+                "endTime": "63.100s",
+                "word": "component"
+              },
+              {
+                "startTime": "63.100s",
+                "endTime": "63.600s",
+                "word": "loaded"
+              },
+              {
+                "startTime": "63.600s",
+                "endTime": "63.800s",
+                "word": "in"
+              },
+              {
+                "startTime": "63.800s",
+                "endTime": "64s",
+                "word": "an"
+              },
+              {
+                "startTime": "64s",
+                "endTime": "64.400s",
+                "word": "outlet"
+              },
+              {
+                "startTime": "64.400s",
+                "endTime": "65.400s",
+                "word": "similar"
+              },
+              {
+                "startTime": "65.400s",
+                "endTime": "65.500s",
+                "word": "to"
+              },
+              {
+                "startTime": "65.500s",
+                "endTime": "66.200s",
+                "word": "Atlantic"
+              },
+              {
+                "startTime": "66.200s",
+                "endTime": "66.400s",
+                "word": "and"
+              },
+              {
+                "startTime": "66.400s",
+                "endTime": "66.600s",
+                "word": "Pacific"
+              },
+              {
+                "startTime": "66.600s",
+                "endTime": "67.500s",
+                "word": "components"
+              },
+              {
+                "startTime": "67.500s",
+                "endTime": "67.700s",
+                "word": "we"
+              },
+              {
+                "startTime": "67.700s",
+                "endTime": "67.900s",
+                "word": "will"
+              },
+              {
+                "startTime": "67.900s",
+                "endTime": "68.100s",
+                "word": "create"
+              },
+              {
+                "startTime": "68.100s",
+                "endTime": "68.300s",
+                "word": "a"
+              },
+              {
+                "startTime": "68.300s",
+                "endTime": "68.300s",
+                "word": "new"
+              },
+              {
+                "startTime": "68.300s",
+                "endTime": "68.900s",
+                "word": "company"
+              }
+            ]
+          }
+        ],
+        "languageCode": "en-us"
+      },
+      {
+        "alternatives": [
+          {
+            "transcript": "now if you look delectable in Pacific manual we had apart but we need to print the mill ID on the screen as well which means we need to accept the bill ID from URL",
+            "confidence": 0.9142339,
+            "words": [
+              {
+                "startTime": "98s",
+                "endTime": "99.700s",
+                "word": "now"
+              },
+              {
+                "startTime": "99.700s",
+                "endTime": "100.100s",
+                "word": "if"
+              },
+              {
+                "startTime": "100.100s",
+                "endTime": "100.200s",
+                "word": "you"
+              },
+              {
+                "startTime": "100.200s",
+                "endTime": "100.500s",
+                "word": "look"
+              },
+              {
+                "startTime": "100.500s",
+                "endTime": "101.400s",
+                "word": "delectable"
+              },
+              {
+                "startTime": "101.400s",
+                "endTime": "102s",
+                "word": "in"
+              },
+              {
+                "startTime": "102s",
+                "endTime": "102.700s",
+                "word": "Pacific"
+              },
+              {
+                "startTime": "102.700s",
+                "endTime": "103.100s",
+                "word": "manual"
+              },
+              {
+                "startTime": "103.100s",
+                "endTime": "103.200s",
+                "word": "we"
+              },
+              {
+                "startTime": "103.200s",
+                "endTime": "103.400s",
+                "word": "had"
+              },
+              {
+                "startTime": "103.400s",
+                "endTime": "103.700s",
+                "word": "apart"
+              },
+              {
+                "startTime": "103.700s",
+                "endTime": "104.400s",
+                "word": "but"
+              },
+              {
+                "startTime": "104.400s",
+                "endTime": "104.500s",
+                "word": "we"
+              },
+              {
+                "startTime": "104.500s",
+                "endTime": "104.700s",
+                "word": "need"
+              },
+              {
+                "startTime": "104.700s",
+                "endTime": "104.900s",
+                "word": "to"
+              },
+              {
+                "startTime": "104.900s",
+                "endTime": "105.200s",
+                "word": "print"
+              },
+              {
+                "startTime": "105.200s",
+                "endTime": "105.300s",
+                "word": "the"
+              },
+              {
+                "startTime": "105.300s",
+                "endTime": "105.600s",
+                "word": "mill"
+              },
+              {
+                "startTime": "105.600s",
+                "endTime": "105.900s",
+                "word": "ID"
+              },
+              {
+                "startTime": "105.900s",
+                "endTime": "106.200s",
+                "word": "on"
+              },
+              {
+                "startTime": "106.200s",
+                "endTime": "106.300s",
+                "word": "the"
+              },
+              {
+                "startTime": "106.300s",
+                "endTime": "106.600s",
+                "word": "screen"
+              },
+              {
+                "startTime": "106.600s",
+                "endTime": "106.800s",
+                "word": "as"
+              },
+              {
+                "startTime": "106.800s",
+                "endTime": "106.900s",
+                "word": "well"
+              },
+              {
+                "startTime": "106.900s",
+                "endTime": "107.600s",
+                "word": "which"
+              },
+              {
+                "startTime": "107.600s",
+                "endTime": "108s",
+                "word": "means"
+              },
+              {
+                "startTime": "108s",
+                "endTime": "108.200s",
+                "word": "we"
+              },
+              {
+                "startTime": "108.200s",
+                "endTime": "108.400s",
+                "word": "need"
+              },
+              {
+                "startTime": "108.400s",
+                "endTime": "108.600s",
+                "word": "to"
+              },
+              {
+                "startTime": "108.600s",
+                "endTime": "108.800s",
+                "word": "accept"
+              },
+              {
+                "startTime": "108.800s",
+                "endTime": "109.100s",
+                "word": "the"
+              },
+              {
+                "startTime": "109.100s",
+                "endTime": "109.400s",
+                "word": "bill"
+              },
+              {
+                "startTime": "109.400s",
+                "endTime": "109.800s",
+                "word": "ID"
+              },
+              {
+                "startTime": "109.800s",
+                "endTime": "110.100s",
+                "word": "from"
+              },
+              {
+                "startTime": "110.100s",
+                "endTime": "110.800s",
+                "word": "URL"
+              }
+            ]
+          }
+        ],
+        "languageCode": "en-us"
+      },
+      {
+        "alternatives": [
+          {
+            "words": [
+              {
+                "startTime": "22.800s",
+                "endTime": "23.200s",
+                "word": "I",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "23.200s",
+                "endTime": "23.600s",
+                "word": "hope",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "23.600s",
+                "endTime": "23.700s",
+                "word": "this",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "23.700s",
+                "endTime": "24s",
+                "word": "new",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "24s",
+                "endTime": "24.300s",
+                "word": "way",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "24.300s",
+                "endTime": "24.500s",
+                "word": "of",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "24.500s",
+                "endTime": "24.600s",
+                "word": "his",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "24.600s",
+                "endTime": "24.900s",
+                "word": "Rising",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "24.900s",
+                "endTime": "25.500s",
+                "word": "routing",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "25.500s",
+                "endTime": "25.700s",
+                "word": "will",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "25.700s",
+                "endTime": "26s",
+                "word": "help",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "26s",
+                "endTime": "26.200s",
+                "word": "you",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "26.200s",
+                "endTime": "26.400s",
+                "word": "to",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "26.400s",
+                "endTime": "26.600s",
+                "word": "memorize",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "26.600s",
+                "endTime": "26.900s",
+                "word": "it",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "26.900s",
+                "endTime": "27.600s",
+                "word": "better",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "27.600s",
+                "endTime": "28.500s",
+                "word": "routing",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "28.500s",
+                "endTime": "28.600s",
+                "word": "is",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "28.600s",
+                "endTime": "28.900s",
+                "word": "fun",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "28.900s",
+                "endTime": "29.200s",
+                "word": "you",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "29.200s",
+                "endTime": "29.600s",
+                "word": "just",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "29.600s",
+                "endTime": "29.800s",
+                "word": "need",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "29.800s",
+                "endTime": "29.900s",
+                "word": "to",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "29.900s",
+                "endTime": "30s",
+                "word": "pick",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "30s",
+                "endTime": "30.500s",
+                "word": "it",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "30.500s",
+                "endTime": "31.200s",
+                "word": "once",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "58.600s",
+                "endTime": "59.500s",
+                "word": "activated",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "59.500s",
+                "endTime": "59.800s",
+                "word": "route",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "59.800s",
+                "endTime": "60.400s",
+                "word": "condenser",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "60.400s",
+                "endTime": "61s",
+                "word": "information",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "61s",
+                "endTime": "61.200s",
+                "word": "about",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "61.200s",
+                "endTime": "61.500s",
+                "word": "is",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "61.500s",
+                "endTime": "61.700s",
+                "word": "out",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "61.700s",
+                "endTime": "62.400s",
+                "word": "associated",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "62.400s",
+                "endTime": "62.500s",
+                "word": "with",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "62.500s",
+                "endTime": "62.700s",
+                "word": "a",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "62.700s",
+                "endTime": "63.100s",
+                "word": "component",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "63.100s",
+                "endTime": "63.600s",
+                "word": "loaded",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "63.600s",
+                "endTime": "63.800s",
+                "word": "in",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "63.800s",
+                "endTime": "64s",
+                "word": "an",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "64s",
+                "endTime": "64.400s",
+                "word": "outlet",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "64.400s",
+                "endTime": "65.400s",
+                "word": "similar",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "65.400s",
+                "endTime": "65.500s",
+                "word": "to",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "65.500s",
+                "endTime": "66.200s",
+                "word": "Atlantic",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "66.200s",
+                "endTime": "66.400s",
+                "word": "and",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "66.400s",
+                "endTime": "66.600s",
+                "word": "Pacific",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "66.600s",
+                "endTime": "67.500s",
+                "word": "components",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "67.500s",
+                "endTime": "67.700s",
+                "word": "we",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "67.700s",
+                "endTime": "67.900s",
+                "word": "will",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "67.900s",
+                "endTime": "68.100s",
+                "word": "create",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "68.100s",
+                "endTime": "68.300s",
+                "word": "a",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "68.300s",
+                "endTime": "68.300s",
+                "word": "new",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "68.300s",
+                "endTime": "68.900s",
+                "word": "company",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "98s",
+                "endTime": "99.700s",
+                "word": "now",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "99.700s",
+                "endTime": "100.100s",
+                "word": "if",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "100.100s",
+                "endTime": "100.200s",
+                "word": "you",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "100.200s",
+                "endTime": "100.500s",
+                "word": "look",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "100.500s",
+                "endTime": "101.400s",
+                "word": "delectable",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "101.400s",
+                "endTime": "102s",
+                "word": "in",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "102s",
+                "endTime": "102.700s",
+                "word": "Pacific",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "102.700s",
+                "endTime": "103.100s",
+                "word": "manual",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "103.100s",
+                "endTime": "103.200s",
+                "word": "we",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "103.200s",
+                "endTime": "103.400s",
+                "word": "had",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "103.400s",
+                "endTime": "103.700s",
+                "word": "apart",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "103.700s",
+                "endTime": "104.400s",
+                "word": "but",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "104.400s",
+                "endTime": "104.500s",
+                "word": "we",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "104.500s",
+                "endTime": "104.700s",
+                "word": "need",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "104.700s",
+                "endTime": "104.900s",
+                "word": "to",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "104.900s",
+                "endTime": "105.200s",
+                "word": "print",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "105.200s",
+                "endTime": "105.300s",
+                "word": "the",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "105.300s",
+                "endTime": "105.600s",
+                "word": "mill",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "105.600s",
+                "endTime": "105.900s",
+                "word": "ID",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "105.900s",
+                "endTime": "106.200s",
+                "word": "on",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "106.200s",
+                "endTime": "106.300s",
+                "word": "the",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "106.300s",
+                "endTime": "106.600s",
+                "word": "screen",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "106.600s",
+                "endTime": "106.800s",
+                "word": "as",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "106.800s",
+                "endTime": "106.900s",
+                "word": "well",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "106.900s",
+                "endTime": "107.600s",
+                "word": "which",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "107.600s",
+                "endTime": "108s",
+                "word": "means",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "108s",
+                "endTime": "108.200s",
+                "word": "we",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "108.200s",
+                "endTime": "108.400s",
+                "word": "need",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "108.400s",
+                "endTime": "108.600s",
+                "word": "to",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "108.600s",
+                "endTime": "108.800s",
+                "word": "accept",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "108.800s",
+                "endTime": "109.100s",
+                "word": "the",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "109.100s",
+                "endTime": "109.400s",
+                "word": "bill",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "109.400s",
+                "endTime": "109.800s",
+                "word": "ID",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "109.800s",
+                "endTime": "110.100s",
+                "word": "from",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "110.100s",
+                "endTime": "110.800s",
+                "word": "URL",
+                "speakerTag": 1
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

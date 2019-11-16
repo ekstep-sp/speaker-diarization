@@ -10,6 +10,7 @@ import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
 import { AutomateAccessTokenModule } from './modules/automate-access-token/automate-access-token.module';
 import { AsyncReaderModule } from './modules/async-reader/async-reader.module';
+import { SpeakerMergerModule } from './modules/speaker-merger/speaker-merger.module';
 @Module({
   // serve static files in the server
   imports: [
@@ -20,6 +21,7 @@ import { AsyncReaderModule } from './modules/async-reader/async-reader.module';
     GoogleSpeakerDiarizationModule,
     AutomateAccessTokenModule,
     ReadDbModule,
+    SpeakerMergerModule,
     AsyncReaderModule,
   ],
   controllers: [AppController],

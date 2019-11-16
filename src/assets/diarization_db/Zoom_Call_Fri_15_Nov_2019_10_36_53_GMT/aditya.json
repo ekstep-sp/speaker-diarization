@@ -1,0 +1,1046 @@
+{
+  "name": "8761387495178026209",
+  "metadata": {
+    "@type": "type.googleapis.com/google.cloud.speech.v1p1beta1.LongRunningRecognizeMetadata",
+    "progressPercent": 100,
+    "startTime": "2019-11-13T08:10:18.777104Z",
+    "lastUpdateTime": "2019-11-13T08:10:58.866839Z"
+  },
+  "done": true,
+  "response": {
+    "@type": "type.googleapis.com/google.cloud.speech.v1p1beta1.LongRunningRecognizeResponse",
+    "results": [
+      {
+        "alternatives": [
+          {
+            "transcript": "what would be good for any new features with the release of angular 809 will be released around November 2019",
+            "confidence": 0.9116251,
+            "words": [
+              {
+                "startTime": "30.300s",
+                "endTime": "31.600s",
+                "word": "what"
+              },
+              {
+                "startTime": "31.600s",
+                "endTime": "31.700s",
+                "word": "would"
+              },
+              {
+                "startTime": "31.700s",
+                "endTime": "34.100s",
+                "word": "be"
+              },
+              {
+                "startTime": "34.100s",
+                "endTime": "34.200s",
+                "word": "good"
+              },
+              {
+                "startTime": "34.200s",
+                "endTime": "34.500s",
+                "word": "for"
+              },
+              {
+                "startTime": "34.500s",
+                "endTime": "34.700s",
+                "word": "any"
+              },
+              {
+                "startTime": "34.700s",
+                "endTime": "34.800s",
+                "word": "new"
+              },
+              {
+                "startTime": "34.800s",
+                "endTime": "35.200s",
+                "word": "features"
+              },
+              {
+                "startTime": "35.200s",
+                "endTime": "35.400s",
+                "word": "with"
+              },
+              {
+                "startTime": "35.400s",
+                "endTime": "35.500s",
+                "word": "the"
+              },
+              {
+                "startTime": "35.500s",
+                "endTime": "35.900s",
+                "word": "release"
+              },
+              {
+                "startTime": "35.900s",
+                "endTime": "35.900s",
+                "word": "of"
+              },
+              {
+                "startTime": "35.900s",
+                "endTime": "36.500s",
+                "word": "angular"
+              },
+              {
+                "startTime": "36.500s",
+                "endTime": "37.800s",
+                "word": "809"
+              },
+              {
+                "startTime": "37.800s",
+                "endTime": "38s",
+                "word": "will"
+              },
+              {
+                "startTime": "38s",
+                "endTime": "38.100s",
+                "word": "be"
+              },
+              {
+                "startTime": "38.100s",
+                "endTime": "38.600s",
+                "word": "released"
+              },
+              {
+                "startTime": "38.600s",
+                "endTime": "38.700s",
+                "word": "around"
+              },
+              {
+                "startTime": "38.700s",
+                "endTime": "39.800s",
+                "word": "November"
+              },
+              {
+                "startTime": "39.800s",
+                "endTime": "40.700s",
+                "word": "2019"
+              }
+            ]
+          }
+        ],
+        "languageCode": "en-us"
+      },
+      {
+        "alternatives": [
+          {
+            "transcript": "Angela supported the integration with the web tracking framework for performance testing as it is not maintained and feels for the majority of application this is defecated now",
+            "confidence": 0.9262555,
+            "words": [
+              {
+                "startTime": "70.600s",
+                "endTime": "71.200s",
+                "word": "Angela"
+              },
+              {
+                "startTime": "71.200s",
+                "endTime": "71.700s",
+                "word": "supported"
+              },
+              {
+                "startTime": "71.700s",
+                "endTime": "71.900s",
+                "word": "the"
+              },
+              {
+                "startTime": "71.900s",
+                "endTime": "72.600s",
+                "word": "integration"
+              },
+              {
+                "startTime": "72.600s",
+                "endTime": "72.800s",
+                "word": "with"
+              },
+              {
+                "startTime": "72.800s",
+                "endTime": "72.900s",
+                "word": "the"
+              },
+              {
+                "startTime": "72.900s",
+                "endTime": "73.200s",
+                "word": "web"
+              },
+              {
+                "startTime": "73.200s",
+                "endTime": "73.600s",
+                "word": "tracking"
+              },
+              {
+                "startTime": "73.600s",
+                "endTime": "74.100s",
+                "word": "framework"
+              },
+              {
+                "startTime": "74.100s",
+                "endTime": "74.300s",
+                "word": "for"
+              },
+              {
+                "startTime": "74.300s",
+                "endTime": "74.900s",
+                "word": "performance"
+              },
+              {
+                "startTime": "74.900s",
+                "endTime": "75.300s",
+                "word": "testing"
+              },
+              {
+                "startTime": "75.300s",
+                "endTime": "76.100s",
+                "word": "as"
+              },
+              {
+                "startTime": "76.100s",
+                "endTime": "76.300s",
+                "word": "it"
+              },
+              {
+                "startTime": "76.300s",
+                "endTime": "76.400s",
+                "word": "is"
+              },
+              {
+                "startTime": "76.400s",
+                "endTime": "76.600s",
+                "word": "not"
+              },
+              {
+                "startTime": "76.600s",
+                "endTime": "77.100s",
+                "word": "maintained"
+              },
+              {
+                "startTime": "77.100s",
+                "endTime": "77.400s",
+                "word": "and"
+              },
+              {
+                "startTime": "77.400s",
+                "endTime": "77.800s",
+                "word": "feels"
+              },
+              {
+                "startTime": "77.800s",
+                "endTime": "77.900s",
+                "word": "for"
+              },
+              {
+                "startTime": "77.900s",
+                "endTime": "78.100s",
+                "word": "the"
+              },
+              {
+                "startTime": "78.100s",
+                "endTime": "79.200s",
+                "word": "majority"
+              },
+              {
+                "startTime": "79.200s",
+                "endTime": "79.500s",
+                "word": "of"
+              },
+              {
+                "startTime": "79.500s",
+                "endTime": "80.300s",
+                "word": "application"
+              },
+              {
+                "startTime": "80.300s",
+                "endTime": "80.700s",
+                "word": "this"
+              },
+              {
+                "startTime": "80.700s",
+                "endTime": "81s",
+                "word": "is"
+              },
+              {
+                "startTime": "81s",
+                "endTime": "81.700s",
+                "word": "defecated"
+              },
+              {
+                "startTime": "81.700s",
+                "endTime": "81.900s",
+                "word": "now"
+              }
+            ]
+          }
+        ],
+        "languageCode": "en-us"
+      },
+      {
+        "alternatives": [
+          {
+            "transcript": "Angela Nate defense in loading features were added and compiler use to bring the application Play one sport es 2015 and another for the S5 which caused a lot of confusion as we have seen many questions over start over",
+            "confidence": 0.9301386,
+            "words": [
+              {
+                "startTime": "107.500s",
+                "endTime": "113.400s",
+                "word": "Angela"
+              },
+              {
+                "startTime": "113.400s",
+                "endTime": "113.600s",
+                "word": "Nate"
+              },
+              {
+                "startTime": "113.600s",
+                "endTime": "114.400s",
+                "word": "defense"
+              },
+              {
+                "startTime": "114.400s",
+                "endTime": "114.500s",
+                "word": "in"
+              },
+              {
+                "startTime": "114.500s",
+                "endTime": "114.900s",
+                "word": "loading"
+              },
+              {
+                "startTime": "114.900s",
+                "endTime": "115.400s",
+                "word": "features"
+              },
+              {
+                "startTime": "115.400s",
+                "endTime": "115.500s",
+                "word": "were"
+              },
+              {
+                "startTime": "115.500s",
+                "endTime": "116s",
+                "word": "added"
+              },
+              {
+                "startTime": "116s",
+                "endTime": "116.400s",
+                "word": "and"
+              },
+              {
+                "startTime": "116.400s",
+                "endTime": "116.900s",
+                "word": "compiler"
+              },
+              {
+                "startTime": "116.900s",
+                "endTime": "117.300s",
+                "word": "use"
+              },
+              {
+                "startTime": "117.300s",
+                "endTime": "118s",
+                "word": "to"
+              },
+              {
+                "startTime": "118s",
+                "endTime": "118.200s",
+                "word": "bring"
+              },
+              {
+                "startTime": "118.200s",
+                "endTime": "118.300s",
+                "word": "the"
+              },
+              {
+                "startTime": "118.300s",
+                "endTime": "118.400s",
+                "word": "application"
+              },
+              {
+                "startTime": "118.400s",
+                "endTime": "119.300s",
+                "word": "Play"
+              },
+              {
+                "startTime": "119.300s",
+                "endTime": "119.700s",
+                "word": "one"
+              },
+              {
+                "startTime": "119.700s",
+                "endTime": "120s",
+                "word": "sport"
+              },
+              {
+                "startTime": "120s",
+                "endTime": "120.900s",
+                "word": "es"
+              },
+              {
+                "startTime": "120.900s",
+                "endTime": "121.800s",
+                "word": "2015"
+              },
+              {
+                "startTime": "121.800s",
+                "endTime": "122.100s",
+                "word": "and"
+              },
+              {
+                "startTime": "122.100s",
+                "endTime": "122.300s",
+                "word": "another"
+              },
+              {
+                "startTime": "122.300s",
+                "endTime": "122.700s",
+                "word": "for"
+              },
+              {
+                "startTime": "122.700s",
+                "endTime": "122.700s",
+                "word": "the"
+              },
+              {
+                "startTime": "122.700s",
+                "endTime": "123.600s",
+                "word": "S5"
+              },
+              {
+                "startTime": "123.600s",
+                "endTime": "124.400s",
+                "word": "which"
+              },
+              {
+                "startTime": "124.400s",
+                "endTime": "124.700s",
+                "word": "caused"
+              },
+              {
+                "startTime": "124.700s",
+                "endTime": "124.800s",
+                "word": "a"
+              },
+              {
+                "startTime": "124.800s",
+                "endTime": "125.100s",
+                "word": "lot"
+              },
+              {
+                "startTime": "125.100s",
+                "endTime": "125.200s",
+                "word": "of"
+              },
+              {
+                "startTime": "125.200s",
+                "endTime": "126s",
+                "word": "confusion"
+              },
+              {
+                "startTime": "126s",
+                "endTime": "127.500s",
+                "word": "as"
+              },
+              {
+                "startTime": "127.500s",
+                "endTime": "127.700s",
+                "word": "we"
+              },
+              {
+                "startTime": "127.700s",
+                "endTime": "127.900s",
+                "word": "have"
+              },
+              {
+                "startTime": "127.900s",
+                "endTime": "128s",
+                "word": "seen"
+              },
+              {
+                "startTime": "128s",
+                "endTime": "128.400s",
+                "word": "many"
+              },
+              {
+                "startTime": "128.400s",
+                "endTime": "128.800s",
+                "word": "questions"
+              },
+              {
+                "startTime": "128.800s",
+                "endTime": "129.100s",
+                "word": "over"
+              },
+              {
+                "startTime": "129.100s",
+                "endTime": "129.500s",
+                "word": "start"
+              },
+              {
+                "startTime": "129.500s",
+                "endTime": "129.500s",
+                "word": "over"
+              }
+            ]
+          }
+        ],
+        "languageCode": "en-us"
+      },
+      {
+        "alternatives": [
+          {
+            "transcript": "semester",
+            "confidence": 0.7622776,
+            "words": [
+              {
+                "startTime": "132.100s",
+                "endTime": "132.900s",
+                "word": "semester"
+              }
+            ]
+          }
+        ],
+        "languageCode": "en-us"
+      },
+      {
+        "alternatives": [
+          {
+            "words": [
+              {
+                "startTime": "30.300s",
+                "endTime": "31.600s",
+                "word": "what",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "31.600s",
+                "endTime": "31.700s",
+                "word": "would",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "31.700s",
+                "endTime": "34.100s",
+                "word": "be",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "34.100s",
+                "endTime": "34.200s",
+                "word": "good",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "34.200s",
+                "endTime": "34.500s",
+                "word": "for",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "34.500s",
+                "endTime": "34.700s",
+                "word": "any",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "34.700s",
+                "endTime": "34.800s",
+                "word": "new",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "34.800s",
+                "endTime": "35.200s",
+                "word": "features",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "35.200s",
+                "endTime": "35.400s",
+                "word": "with",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "35.400s",
+                "endTime": "35.500s",
+                "word": "the",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "35.500s",
+                "endTime": "35.900s",
+                "word": "release",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "35.900s",
+                "endTime": "35.900s",
+                "word": "of",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "35.900s",
+                "endTime": "36.500s",
+                "word": "angular",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "36.500s",
+                "endTime": "37.800s",
+                "word": "809",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "37.800s",
+                "endTime": "38s",
+                "word": "will",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "38s",
+                "endTime": "38.100s",
+                "word": "be",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "38.100s",
+                "endTime": "38.600s",
+                "word": "released",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "38.600s",
+                "endTime": "38.700s",
+                "word": "around",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "38.700s",
+                "endTime": "39.800s",
+                "word": "November",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "39.800s",
+                "endTime": "40.700s",
+                "word": "2019",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "70.600s",
+                "endTime": "71.200s",
+                "word": "Angela",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "71.200s",
+                "endTime": "71.700s",
+                "word": "supported",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "71.700s",
+                "endTime": "71.900s",
+                "word": "the",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "71.900s",
+                "endTime": "72.600s",
+                "word": "integration",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "72.600s",
+                "endTime": "72.800s",
+                "word": "with",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "72.800s",
+                "endTime": "72.900s",
+                "word": "the",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "72.900s",
+                "endTime": "73.200s",
+                "word": "web",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "73.200s",
+                "endTime": "73.600s",
+                "word": "tracking",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "73.600s",
+                "endTime": "74.100s",
+                "word": "framework",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "74.100s",
+                "endTime": "74.300s",
+                "word": "for",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "74.300s",
+                "endTime": "74.900s",
+                "word": "performance",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "74.900s",
+                "endTime": "75.300s",
+                "word": "testing",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "75.300s",
+                "endTime": "76.100s",
+                "word": "as",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "76.100s",
+                "endTime": "76.300s",
+                "word": "it",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "76.300s",
+                "endTime": "76.400s",
+                "word": "is",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "76.400s",
+                "endTime": "76.600s",
+                "word": "not",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "76.600s",
+                "endTime": "77.100s",
+                "word": "maintained",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "77.100s",
+                "endTime": "77.400s",
+                "word": "and",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "77.400s",
+                "endTime": "77.800s",
+                "word": "feels",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "77.800s",
+                "endTime": "77.900s",
+                "word": "for",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "77.900s",
+                "endTime": "78.100s",
+                "word": "the",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "78.100s",
+                "endTime": "79.200s",
+                "word": "majority",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "79.200s",
+                "endTime": "79.500s",
+                "word": "of",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "79.500s",
+                "endTime": "80.300s",
+                "word": "application",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "80.300s",
+                "endTime": "80.700s",
+                "word": "this",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "80.700s",
+                "endTime": "81s",
+                "word": "is",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "81s",
+                "endTime": "81.700s",
+                "word": "defecated",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "81.700s",
+                "endTime": "81.900s",
+                "word": "now",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "107.500s",
+                "endTime": "113.400s",
+                "word": "Angela",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "113.400s",
+                "endTime": "113.600s",
+                "word": "Nate",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "113.600s",
+                "endTime": "114.400s",
+                "word": "defense",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "114.400s",
+                "endTime": "114.500s",
+                "word": "in",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "114.500s",
+                "endTime": "114.900s",
+                "word": "loading",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "114.900s",
+                "endTime": "115.400s",
+                "word": "features",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "115.400s",
+                "endTime": "115.500s",
+                "word": "were",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "115.500s",
+                "endTime": "116s",
+                "word": "added",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "116s",
+                "endTime": "116.400s",
+                "word": "and",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "116.400s",
+                "endTime": "116.900s",
+                "word": "compiler",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "116.900s",
+                "endTime": "117.300s",
+                "word": "use",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "117.300s",
+                "endTime": "118s",
+                "word": "to",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "118s",
+                "endTime": "118.200s",
+                "word": "bring",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "118.200s",
+                "endTime": "118.300s",
+                "word": "the",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "118.300s",
+                "endTime": "118.400s",
+                "word": "application",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "118.400s",
+                "endTime": "119.300s",
+                "word": "Play",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "119.300s",
+                "endTime": "119.700s",
+                "word": "one",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "119.700s",
+                "endTime": "120s",
+                "word": "sport",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "120s",
+                "endTime": "120.900s",
+                "word": "es",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "120.900s",
+                "endTime": "121.800s",
+                "word": "2015",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "121.800s",
+                "endTime": "122.100s",
+                "word": "and",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "122.100s",
+                "endTime": "122.300s",
+                "word": "another",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "122.300s",
+                "endTime": "122.700s",
+                "word": "for",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "122.700s",
+                "endTime": "122.700s",
+                "word": "the",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "122.700s",
+                "endTime": "123.600s",
+                "word": "S5",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "123.600s",
+                "endTime": "124.400s",
+                "word": "which",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "124.400s",
+                "endTime": "124.700s",
+                "word": "caused",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "124.700s",
+                "endTime": "124.800s",
+                "word": "a",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "124.800s",
+                "endTime": "125.100s",
+                "word": "lot",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "125.100s",
+                "endTime": "125.200s",
+                "word": "of",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "125.200s",
+                "endTime": "126s",
+                "word": "confusion",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "126s",
+                "endTime": "127.500s",
+                "word": "as",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "127.500s",
+                "endTime": "127.700s",
+                "word": "we",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "127.700s",
+                "endTime": "127.900s",
+                "word": "have",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "127.900s",
+                "endTime": "128s",
+                "word": "seen",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "128s",
+                "endTime": "128.400s",
+                "word": "many",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "128.400s",
+                "endTime": "128.800s",
+                "word": "questions",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "128.800s",
+                "endTime": "129.100s",
+                "word": "over",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "129.100s",
+                "endTime": "129.500s",
+                "word": "start",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "129.500s",
+                "endTime": "129.500s",
+                "word": "over",
+                "speakerTag": 1
+              },
+              {
+                "startTime": "132.100s",
+                "endTime": "132.900s",
+                "word": "semester",
+                "speakerTag": 1
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
