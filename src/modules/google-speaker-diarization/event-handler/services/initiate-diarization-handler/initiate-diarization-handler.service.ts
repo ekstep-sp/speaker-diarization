@@ -17,11 +17,11 @@ export class InitiateDiarizationHandlerService implements OnModuleInit  {
     ) {
         console.log('constructor called');
         this.gcpSrvc = this.moduleRef.get(GoogleCloudParserService, {strict: false});
-        this.moduleEmitter = this.moduleRef.get(GoogleSpeakerDiarizationEventHandlerService, {strict: false});
     }
 
     onModuleInit() {
         this.diarizationSpkSrvc = this.moduleRef.get(DiarizationSpeakerService, {strict: false});
+        this.moduleEmitter = this.moduleRef.get(GoogleSpeakerDiarizationEventHandlerService, {strict: false});
     }
 
     initiate(diarizationID, videoDetailsForVis) {

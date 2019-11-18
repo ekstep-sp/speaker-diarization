@@ -23,11 +23,13 @@ export class GoogleSpeakerDiarizationEventHandlerService {
             console.log('acknowledging the main event INITIATE_DIARIZATION');
             // send the video details seperately
             const videoDetails = this.getVideoDetails(dataToSend);
+            console.log('video details for this is', videoDetails);
             this.initiateDiarizationSrvc.initiate(dataToSend.data, videoDetails);
         });
 
         this._mainEmitter.on('WRITE_CONVERTED_DATA_TO_JSON', (dataToSend) => {
             console.log('acknowledging the main event WRITE_CONVERTED_DATA_TO_JSON');
+            JSON.stringify(dataToSend);
             this.writeConvertedDataToJSONSrvc.initiate(dataToSend);
         });
     }
