@@ -39,7 +39,7 @@ export class DatabaseUtilityService {
         } else {
             // the object is invalid
         }
-        return {}
+        return {};
     }
 
     checkOrCreateFile(parentFolderName, fileNameToUse = 'combined_diarization.json') {
@@ -86,7 +86,7 @@ export class DatabaseUtilityService {
      * @param parentFolderName Name of the parent directory inside diarization_db/combined folder
      * @param contentsToWrite Data in JSON format to be written
      * @param [fileNameToUse] Name of the file where the data is to be written, default to combined_diarization.json inside parentFolder
-     * @returns an object { ok : true || false, error : < empty string > || < Error Message if ok is false > } stating whether the process terminated successfully or not 
+     * @returns an object { ok : true || false, error : < empty string > || < Error Message if ok is false > } stating whether the process terminated successfully or not
      */
     writeDiarizationContentsToFile(parentFolderName, contentsToWrite, currentSpeakerName,  fileNameToUse = 'combined_diarization.json'): object {
 
@@ -116,7 +116,7 @@ export class DatabaseUtilityService {
                 return {
                     ok: false,
                     error: 'Failed to write data in to the file',
-                }
+                };
             }
         } catch (e) {
             console.log(e);
@@ -146,7 +146,7 @@ export class DatabaseUtilityService {
 
     appendNewDiarizationContent(dataPresent, dataToWrite, designatedSpeakerName): string {
         if (dataPresent.length > 0) {
-            console.log('creating append object')
+            console.log('creating append object');
             // some data is already present inside the combined file, append properly
             try {
                 const parsedData = JSON.parse(dataPresent);
