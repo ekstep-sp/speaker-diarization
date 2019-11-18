@@ -14,12 +14,14 @@ export class InitiateDiarizationHandlerService implements OnModuleInit  {
     moduleEmitter: any;
     constructor(
         private readonly moduleRef: ModuleRef,
-    ) { }
+    ) {
+        console.log('constructor called');
+        this.gcpSrvc = this.moduleRef.get(GoogleCloudParserService, {strict: false});
+        this.moduleEmitter = this.moduleRef.get(GoogleSpeakerDiarizationEventHandlerService, {strict: false});
+    }
 
     onModuleInit() {
-        this.gcpSrvc = this.moduleRef.get(GoogleCloudParserService, {strict: false});
         this.diarizationSpkSrvc = this.moduleRef.get(DiarizationSpeakerService, {strict: false});
-        this.moduleEmitter = this.moduleRef.get(GoogleSpeakerDiarizationEventHandlerService, {strict: false});
     }
 
     initiate(diarizationID, videoDetailsForVis) {
@@ -61,11 +63,23 @@ export class InitiateDiarizationHandlerService implements OnModuleInit  {
     }
 
     async sendTranscribedAudio(responseData, videoDetailsForVis) {
+        console.log('\n\ninside transcribe\n\n', videoDetailsForVis);
         // initiate the process to remove noise and convert data
         const noiseFilteredDataGoogleCloud2 = await this.gcpSrvc.removeNoiseForGoogleCloudResponse(responseData);
         const processedDataGoogleCloud2 = await this.gcpSrvc.processDataForGoogleCloud2(noiseFilteredDataGoogleCloud2);
         // initiate process to write the data in the file
         // get auth token by typing 'gcloud auth application-default print-access-token' in gcloud in appdata/local/cloud
         this.moduleEmitter.emitter.emit('WRITE_CONVERTED_DATA_TO_JSON', {data: processedDataGoogleCloud2, details: videoDetailsForVis});
+    }
+
+    async sendTranscribedAudio2(responseData, videoDetailsForVis) {
+        console.log('transcribe audio 2');
+        // initiate the process to remove noise and convert data
+        const noiseFilteredDataGoogleCloud2 = await this.gcpSrvc.removeNoiseForGoogleCloudResponse(responseData);
+        const processedDataGoogleCloud2 = await this.gcpSrvc.processDataForGoogleCloud2(noiseFilteredDataGoogleCloud2);
+        // initiate process to write the data in the file
+        const eventModuleImporter = this.moduleRef.get(GoogleSpeakerDiarizationEventHandlerService, {strict: false});
+        // get auth token by typing 'gcloud auth application-default print-access-token' in gcloud in appdata/local/cloud
+        eventModuleImporter.emitter.emit('WRITE_CONVERTED_DATA_TO_JSON', {data: processedDataGoogleCloud2, details: videoDetailsForVis});
     }
 }

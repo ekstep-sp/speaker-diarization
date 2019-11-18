@@ -123,6 +123,7 @@ navbar {
   padding: 10px 5px;
   font-size: 1.2rem;
   font-weight: bold;
+  overflow-x: hidden;
 }
 
 .video-details2 .container .body {
@@ -400,8 +401,6 @@ navbar {
 
 .dropdown .dropdownList .list-item {
   text-align: center;
-  -webkit-transition: .5s;
-  transition: .5s;
   min-height: 70px;
   max-height: 75px;
   overflow: hidden;
@@ -755,14 +754,6 @@ input[type=range]:focus::-ms-fill-upper {
 
 .flexBlock_2 .imageBlock_2.i3_2 img {
   width: 100%;
-}
-
-.gc_header {
-  background: cornflowerblue;
-}
-
-.gc_header .gc_title {
-  font-size: 1.3rem;
 }
 
 .clearfix {

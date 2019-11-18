@@ -196,11 +196,12 @@ export class DatabaseUtilityService {
             const newJSONData = {
                 alternatives: [
                     {
-                        words: []
-                    }
-                ]
-            }
+                        words: [],
+                    },
+                ],
+            };
             newJSONData.alternatives[0].words = JSONData.alternatives[0].words.map(wordObj => {
+                wordObj['speakerTag'] = speakerName;
                 return {...wordObj, speakerName};
             });
             console.log('speaker name assigned', newJSONData.alternatives[0].words[0]);

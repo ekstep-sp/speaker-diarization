@@ -68,7 +68,7 @@ export class SpeakerMergerCoreService {
             console.log('time to sort on timestamp');
             const response = this.smUtilitySrvc.sortCombinedDiarizationData(filesLocation);
             if (response['ok']) {
-                console.log('files sorted successfully');
+                console.log('combined file sorted successfully');
             } else {
                 console.log(response['error']);
             }

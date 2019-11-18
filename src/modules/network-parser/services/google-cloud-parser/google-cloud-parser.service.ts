@@ -32,12 +32,12 @@ export class GoogleCloudParserService {
         // if the speaker tag is not present as keys, it is a new speaker, add its pid else nothing
         if (Object.keys(speakersObject).length === 0) {
             // first speaker, also the HUB
-            speakersObject[speakerTag] = { pid: speakerTag, type: this.HUB };
+            speakersObject[speakerTag] = { pid: speakerTag, type: 'hub' };
         } else {
             // not the first speaker
             // if the speaker is not present already, add it as a spoke
             if (Object.keys(speakersObject).indexOf(speakerTag) === -1) {
-                speakersObject[speakerTag] = { pid: speakerTag, type: this.SPOKE };
+                speakersObject[speakerTag] = { pid: speakerTag, type: 'spoke' };
             }
         }
         return speakersObject;
