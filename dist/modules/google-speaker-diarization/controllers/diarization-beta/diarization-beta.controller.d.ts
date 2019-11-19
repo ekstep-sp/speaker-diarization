@@ -14,7 +14,7 @@ export declare class DiarizationBetaController {
     validateDiarizationID(idToValidate: any): boolean;
     handleRequest(response: any, body: any): any;
     checkDiarizationStatusFromID(response: any, params: any): Promise<any>;
-    initialteLongRunningDiarizationWithMultipleFiles(response: Response): Promise<any>;
+    initialteLongRunningDiarizationWithMultipleFiles(response: Response, body: any): Promise<any>;
     handleMultiFilesRequest(response: any, body: any): any;
     trackDiarizationStatus(allFilesData: any): void;
 }

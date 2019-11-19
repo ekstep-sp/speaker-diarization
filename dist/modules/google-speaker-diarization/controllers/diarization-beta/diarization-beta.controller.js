@@ -96,34 +96,39 @@ let DiarizationBetaController = class DiarizationBetaController {
             return response.status(400).send({ error: 'Malformed or invalid diarization id provided' });
         }
     }
-    async initialteLongRunningDiarizationWithMultipleFiles(response) {
+    async initialteLongRunningDiarizationWithMultipleFiles(response, body) {
         console.log('POST : diarization-beta/speaker/longrunningrecogize2');
-        const cloudFilesMetaData = await this.gcsSrvc.getBucketFilesMetaData();
+        const cloudFilesMetaData = await this.gcsSrvc.getBucketFilesMetaData(body.name);
         console.log('Bucket Files Metadata: ', cloudFilesMetaData['data']);
-        let diarizationIds = [];
-        let fileAllData = [];
-        if (cloudFilesMetaData.hasOwnProperty('data')) {
-            let filesMetaData = cloudFilesMetaData['data']['data'];
-            for (let i = 0; i < filesMetaData.length; i++) {
-                fileAllData[i] = filesMetaData[i];
-                let fileUri = filesMetaData[i]['uri'];
-                let requestBody = {};
-                requestBody['fileUri'] = fileUri;
-                requestBody['enableSpeakerDiarization'] = true;
-                requestBody['diarizationSpeakerCount'] = 1;
-                const diarizationIDResponse = await this.handleMultiFilesRequest(response, requestBody);
-                console.log("Diarization Id as Response : " + diarizationIDResponse['response']['data']['process_id']);
-                fileAllData[i]['diarizationResponse'] = diarizationIDResponse['response']['data'];
-                fileAllData[i]['diarizationResponse'] = diarizationIDResponse['response']['data'];
-                diarizationIds.push(diarizationIDResponse['response']['data']['process_id']);
+        const diarizationIds = [];
+        const fileAllData = [];
+        if (cloudFilesMetaData['data'].hasOwnProperty('data')) {
+            if (cloudFilesMetaData['data']['data'].length <= 0) {
+                console.log('no data length recieved');
+                response.status(400).send({ status: 400, folderName: body.name, error: 'either folder specified or files inside it are not present' });
             }
-            console.log('Diarization Ids : ' + diarizationIds);
-            let diarizationIDResponse = { 'diarizationIds': diarizationIds };
-            this.trackDiarizationStatus(fileAllData);
-            response.status(200).send(diarizationIDResponse);
+            else {
+                const filesMetaData = cloudFilesMetaData['data']['data'];
+                for (let i = 0; i < filesMetaData.length; i++) {
+                    fileAllData[i] = filesMetaData[i];
+                    const fileUri = filesMetaData[i]['uri'];
+                    const requestBody = {};
+                    requestBody['fileUri'] = fileUri;
+                    requestBody['enableSpeakerDiarization'] = true;
+                    requestBody['diarizationSpeakerCount'] = 1;
+                    const diarizationIDResponse = await this.handleMultiFilesRequest(response, requestBody);
+                    console.log('Diarization Id as Response : ' + diarizationIDResponse['response']['data']['process_id']);
+                    fileAllData[i]['diarizationResponse'] = diarizationIDResponse['response']['data'];
+                    diarizationIds.push(diarizationIDResponse['response']['data']['process_id']);
+                }
+                console.log('Diarization Ids : ' + diarizationIds);
+                const diarizationIDResponse = { diarizationIds };
+                this.trackDiarizationStatus(fileAllData);
+                response.status(200).send(diarizationIDResponse);
+            }
         }
         else {
-            response.status(400).send({ error: 'data key missing from google cloud function response: ', cloudFilesMetaData });
+            response.status(500).send({ error: 'data key missing from google cloud function response: ', cloudFilesMetaData });
         }
     }
     async handleMultiFilesRequest(response, body) {
@@ -158,16 +163,16 @@ let DiarizationBetaController = class DiarizationBetaController {
         }
     }
     trackDiarizationStatus(allFilesData) {
-        let checkStatus = {};
-        let iterator = [];
+        const checkStatus = {};
+        const iterator = [];
         for (let i = 0; i < allFilesData.length; i++) {
             (function (thisRef, i, allFilesData) {
-                let diarizationProcessId = allFilesData[i]['diarizationResponse']['process_id'];
+                const diarizationProcessId = allFilesData[i]['diarizationResponse']['process_id'];
                 checkStatus[diarizationProcessId] = {
-                    status: 0
+                    status: 0,
                 };
                 console.log('timestamp ->', new Date());
-                checkStatus[diarizationProcessId]["intervalId"] = setInterval(() => {
+                checkStatus[diarizationProcessId]['intervalId'] = setInterval(() => {
                     thisRef.gcsSrvc.initiate2(diarizationProcessId).then(function (response) {
                         if (response === -1) {
                             console.log('\nAn error occured while reading status of diarization id : ' + diarizationProcessId);
@@ -179,11 +184,11 @@ let DiarizationBetaController = class DiarizationBetaController {
                             checkStatus[diarizationProcessId]['status'] = 1;
                             allFilesData[i]['diarized_data'] = response;
                             console.log('AllFilesData : ', allFilesData);
-                            global.clearInterval(checkStatus[diarizationProcessId]["intervalId"]);
-                            let diarizationIds = Object.keys(checkStatus);
+                            global.clearInterval(checkStatus[diarizationProcessId]['intervalId']);
+                            const diarizationIds = Object.keys(checkStatus);
                             let check = false;
                             diarizationIds.forEach(element => {
-                                let status = checkStatus[element]['status'];
+                                const status = checkStatus[element]['status'];
                                 if (status === 0) {
                                     check = true;
                                 }
@@ -216,10 +221,10 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], DiarizationBetaController.prototype, "checkStatus", null);
 __decorate([
-    common_1.Get('speaker/longrunningrecogize2'),
-    __param(0, common_1.Res()),
+    common_1.Post('speaker/longrunningrecogize2'),
+    __param(0, common_1.Res()), __param(1, common_1.Body()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object]),
+    __metadata("design:paramtypes", [Object, Object]),
     __metadata("design:returntype", Promise)
 ], DiarizationBetaController.prototype, "initialteLongRunningDiarizationWithMultipleFiles", null);
 DiarizationBetaController = __decorate([
