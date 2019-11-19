@@ -16,12 +16,12 @@ export class WriteDiarizationDbController {
         if (filesWritten.ok) {
             console.log('files written successfully');
             // files written successfully, now trigger the read mechanism
-            response.status(200).send({fileType: reqBody, data: 'ok'});
+            response.status(200).send({status: 200, message: 'files written successfully'});
 
         } else {
             console.log('An error occured while executing writeFilesToDiarization ');
             console.log(filesWritten.error);
-            response.status(filesWritten['status'] || 200).send({fileType: reqBody, data: 'ok'});
+            response.status(filesWritten['status'] || 500).send({status: filesWritten['status'] || 500, error: filesWritten.error});
         }
     }
 }
