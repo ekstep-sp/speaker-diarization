@@ -6,11 +6,12 @@ import { InitiateDiarizationHandlerService } from './event-handler/services/init
 import { WriteConvertedDataToJsonService } from './event-handler/services/write-converted-data-to-json/write-converted-data-to-json.service';
 import { GcloudTokenProviderService } from '../automate-access-token/services/gcloud-token-provider/gcloud-token-provider.service';
 import { AccessTokenGeneratorService } from '../automate-access-token/services/access-token-generator/access-token-generator.service';
+import { GcsBucketFetcherService } from './services/gcs-bucket-fetcher/gcs-bucket-fetcher.service';
 
 @Module({
     imports: [HttpModule],
     controllers: [DiarizationBetaController],
-    providers: [DiarizationSpeakerService, InitiateDiarizationHandlerService, GoogleSpeakerDiarizationEventHandlerService, WriteConvertedDataToJsonService, GcloudTokenProviderService, AccessTokenGeneratorService],
+    providers: [DiarizationSpeakerService, InitiateDiarizationHandlerService, GoogleSpeakerDiarizationEventHandlerService, WriteConvertedDataToJsonService, GcloudTokenProviderService, AccessTokenGeneratorService,GcsBucketFetcherService],
 })
 export class GoogleSpeakerDiarizationModule {
 }

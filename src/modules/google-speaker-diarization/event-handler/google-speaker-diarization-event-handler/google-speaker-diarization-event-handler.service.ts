@@ -32,6 +32,7 @@ export class GoogleSpeakerDiarizationEventHandlerService {
             JSON.stringify(dataToSend);
             this.writeConvertedDataToJSONSrvc.initiate(dataToSend);
         });
+
     }
 
     getVideoDetails(dataToUse: any) {
