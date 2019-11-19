@@ -1,15 +1,22 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, OnModuleInit } from '@nestjs/common';
 import * as path from 'path';
 import * as fs from 'fs';
 import { InitiateDiarizationHandlerService } from '../../../google-speaker-diarization/event-handler/services/initiate-diarization-handler/initiate-diarization-handler.service';
 
 @Injectable()
 export class SpeakerMergerUtilityService {
-    private BASE_URL = path.resolve(__dirname, './../../../../assets/diarization_db/combined');
+    private BASE_URL: string;
 
-    constructor(private idhSrvc: InitiateDiarizationHandlerService) {}
+    constructor(private idhSrvc: InitiateDiarizationHandlerService) {
+        this.BASE_URL = path.resolve(__dirname, './../../../../assets/diarization_db/combined');
+    }
+
+    OnModuleInit() {
+        this.BASE_URL = path.resolve(__dirname, './../../../../assets/diarization_db/combined');
+    }
 
     sortCombinedDiarizationData(parentFolderName, fileName= 'combined_diarization.json') {
+
         // read the file, sort on the basis of timestamp, write it back
         const fileContents = fs.readFileSync(path.join(this.BASE_URL, parentFolderName, fileName), {encoding: 'utf-8'});
         // only sort if there is anything to sort

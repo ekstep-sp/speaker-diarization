@@ -179,10 +179,11 @@ export class DatabaseUtilityService {
         } else {
             console.log('creating new data object');
             // there is no content in the file, write first set
+            const newDataWithSpeakerName = this.addSpeakerNameInData(designatedSpeakerName, dataToWrite);
             const newDataObject = {
                 response: {
                     results: [
-                        {...dataToWrite},
+                        {...newDataWithSpeakerName},
                     ],
                 },
             };
@@ -190,7 +191,34 @@ export class DatabaseUtilityService {
         }
     }
 
+    cleanSpeakerName(nameToClean2: string) {
+        // the function will make the speaker name short if it more than 14 characters
+        let nameToClean = nameToClean2;
+        if (nameToClean.length > 14) {
+            console.log('recreating speaker name');
+            // remove all numbers from the speaker name
+            // remove text 'audio_only' from the speaker name
+            // remove spaces and join with _
+            nameToClean = nameToClean.replace('audio_only_', '').split('').filter((char: any) => {
+                return !isNaN(char) ? false : true;
+            }).join('');
+            // remove _ from first and last position, if any
+            if (nameToClean[0] === '_') {
+                let nameToCleanArr = nameToClean.split('');
+                nameToCleanArr[0] = '';
+                nameToClean = nameToCleanArr.join('');
+            }
+            if (nameToClean[nameToClean.length - 1] === '_') {
+                let nameToCleanArr = nameToClean.split('');
+                nameToCleanArr[nameToClean.length - 1] = '';
+            }
+        }
+        console.log('cleaned name is ', nameToClean);
+        return nameToClean;
+    }
+
     addSpeakerNameInData(speakerName, JSONData) {
+        speakerName = this.cleanSpeakerName(speakerName);
         console.log('adding speaker ' + speakerName + ' to the data');
         try {
             const newJSONData = {
@@ -211,5 +239,29 @@ export class DatabaseUtilityService {
             console.log(e);
             return undefined;
         }
+    }
+
+    getFolderStruture(addrToConsume: string): object {
+        const sourceExtention = '.wav';
+        const targetExtention = '.json';
+        // if addr is url/someurl/filename.wav
+        // then parent folder should be someurl, filename should be filname.json
+        const FolderNamesArray = addrToConsume.split('/');
+        let parentFolderName = '';
+
+        if (FolderNamesArray[FolderNamesArray.length - 1].replace(' ', '_') !== 'audio_only' + sourceExtention) {
+            parentFolderName = FolderNamesArray[FolderNamesArray.length - 2].replace(' ', '_');
+        } else {
+            console.log('ignoring audio file');
+
+        }
+        let fileName;
+        if (path.extname(FolderNamesArray[FolderNamesArray.length - 1]).toLowerCase() === sourceExtention) {
+            fileName = FolderNamesArray[FolderNamesArray.length - 1].replace(sourceExtention, targetExtention);
+        }
+        return {
+            parentFolderName: !!parentFolderName ? parentFolderName : null ,
+            fileName,
+        };
     }
 }

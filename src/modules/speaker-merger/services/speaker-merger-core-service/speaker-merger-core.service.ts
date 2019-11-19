@@ -1,21 +1,26 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, forwardRef, Inject } from '@nestjs/common';
 import { DatabseCommonService } from '../../../read-db/services/database-common-service/databse-common/databse-common.service';
 import { DatabaseUtilityService } from '../../../read-db/services/database-utility-service/database-utility.service';
 import { SpeakerMergerUtilityService } from '../speaker-merger-utility-service/speaker-merger-utility.service';
+import { ModuleRef } from '@nestjs/core';
 
 @Injectable()
 export class SpeakerMergerCoreService {
 
     private dateToUse = 'Zoom_Call_Fri_15_Nov_2019_10_36_53_GMT';
+    private smUtilitySrvc: any;
     constructor(
-        private dbCommonSrvc: DatabseCommonService, private dbUtilitySrvc: DatabaseUtilityService,
-        private smUtilitySrvc: SpeakerMergerUtilityService,
+        private readonly moduleRef: ModuleRef,
+        private dbUtilitySrvc: DatabaseUtilityService,
+        @Inject(forwardRef(() => DatabseCommonService))
+        private dbCommonSrvc: DatabseCommonService,
         ) {
-        console.log('calling speaker merger module service');
-        this.mergeSpeakers(this.dateToUse);
+        // console.log('calling speaker merger module service');
+        // this.mergeSpeakers(this.dateToUse);
     }
 
     mergeSpeakers(urlToConsume) {
+        // core funtion to start reading files and process
         const fileNames = this.dbCommonSrvc.readDiarizationDB(urlToConsume);
         if (fileNames && fileNames.length > 0) {
             console.log('file names are ', fileNames);
@@ -66,7 +71,8 @@ export class SpeakerMergerCoreService {
         // only sort if everything went fine till now
         if (isValidFile) {
             console.log('time to sort on timestamp');
-            const response = this.smUtilitySrvc.sortCombinedDiarizationData(filesLocation);
+            const UtilitySrvc = this.moduleRef.get(SpeakerMergerUtilityService, {strict: false});
+            const response = UtilitySrvc.sortCombinedDiarizationData(filesLocation);
             if (response['ok']) {
                 console.log('combined file sorted successfully');
             } else {
