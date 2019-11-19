@@ -16,6 +16,7 @@ let WriteConvertedDataToJsonService = class WriteConvertedDataToJsonService {
     initiate(dataToUse) {
         const fileUrl = path.join(this.DB_URL, 'vis_db.json');
         console.log('writing file on ', fileUrl);
+        console.log(JSON.stringify(dataToUse));
         const readFileContents = fs.readFileSync(fileUrl, { encoding: 'utf-8' });
         const newFileContents = this.updateContentsOfFile(readFileContents, dataToUse);
         try {

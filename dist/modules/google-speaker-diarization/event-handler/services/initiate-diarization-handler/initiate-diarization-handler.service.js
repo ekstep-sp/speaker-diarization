@@ -17,9 +17,10 @@ const google_speaker_diarization_event_handler_service_1 = require("../../google
 let InitiateDiarizationHandlerService = class InitiateDiarizationHandlerService {
     constructor(moduleRef) {
         this.moduleRef = moduleRef;
+        console.log('constructor called');
+        this.gcpSrvc = this.moduleRef.get(google_cloud_parser_service_1.GoogleCloudParserService, { strict: false });
     }
     onModuleInit() {
-        this.gcpSrvc = this.moduleRef.get(google_cloud_parser_service_1.GoogleCloudParserService, { strict: false });
         this.diarizationSpkSrvc = this.moduleRef.get(diarization_speaker_service_1.DiarizationSpeakerService, { strict: false });
         this.moduleEmitter = this.moduleRef.get(google_speaker_diarization_event_handler_service_1.GoogleSpeakerDiarizationEventHandlerService, { strict: false });
     }
@@ -55,9 +56,17 @@ let InitiateDiarizationHandlerService = class InitiateDiarizationHandlerService 
         }
     }
     async sendTranscribedAudio(responseData, videoDetailsForVis) {
+        console.log('\n\ninside transcribe\n\n', videoDetailsForVis);
         const noiseFilteredDataGoogleCloud2 = await this.gcpSrvc.removeNoiseForGoogleCloudResponse(responseData);
         const processedDataGoogleCloud2 = await this.gcpSrvc.processDataForGoogleCloud2(noiseFilteredDataGoogleCloud2);
         this.moduleEmitter.emitter.emit('WRITE_CONVERTED_DATA_TO_JSON', { data: processedDataGoogleCloud2, details: videoDetailsForVis });
+    }
+    async sendTranscribedAudio2(responseData, videoDetailsForVis) {
+        console.log('transcribe audio 2');
+        const noiseFilteredDataGoogleCloud2 = await this.gcpSrvc.removeNoiseForGoogleCloudResponse(responseData);
+        const processedDataGoogleCloud2 = await this.gcpSrvc.processDataForGoogleCloud2(noiseFilteredDataGoogleCloud2);
+        const eventModuleImporter = this.moduleRef.get(google_speaker_diarization_event_handler_service_1.GoogleSpeakerDiarizationEventHandlerService, { strict: false });
+        eventModuleImporter.emitter.emit('WRITE_CONVERTED_DATA_TO_JSON', { data: processedDataGoogleCloud2, details: videoDetailsForVis });
     }
 };
 InitiateDiarizationHandlerService = __decorate([

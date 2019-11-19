@@ -14,13 +14,15 @@ const initiate_diarization_handler_service_1 = require("./event-handler/services
 const write_converted_data_to_json_service_1 = require("./event-handler/services/write-converted-data-to-json/write-converted-data-to-json.service");
 const gcloud_token_provider_service_1 = require("../automate-access-token/services/gcloud-token-provider/gcloud-token-provider.service");
 const access_token_generator_service_1 = require("../automate-access-token/services/access-token-generator/access-token-generator.service");
+const gcs_bucket_fetcher_service_1 = require("./services/gcs-bucket-fetcher/gcs-bucket-fetcher.service");
+const read_db_module_1 = require("../read-db/read-db.module");
 let GoogleSpeakerDiarizationModule = class GoogleSpeakerDiarizationModule {
 };
 GoogleSpeakerDiarizationModule = __decorate([
     common_1.Module({
-        imports: [common_1.HttpModule],
+        imports: [common_1.HttpModule, read_db_module_1.ReadDbModule],
         controllers: [diarization_beta_controller_1.DiarizationBetaController],
-        providers: [diarization_speaker_service_1.DiarizationSpeakerService, initiate_diarization_handler_service_1.InitiateDiarizationHandlerService, google_speaker_diarization_event_handler_service_1.GoogleSpeakerDiarizationEventHandlerService, write_converted_data_to_json_service_1.WriteConvertedDataToJsonService, gcloud_token_provider_service_1.GcloudTokenProviderService, access_token_generator_service_1.AccessTokenGeneratorService],
+        providers: [diarization_speaker_service_1.DiarizationSpeakerService, initiate_diarization_handler_service_1.InitiateDiarizationHandlerService, google_speaker_diarization_event_handler_service_1.GoogleSpeakerDiarizationEventHandlerService, write_converted_data_to_json_service_1.WriteConvertedDataToJsonService, gcloud_token_provider_service_1.GcloudTokenProviderService, access_token_generator_service_1.AccessTokenGeneratorService, gcs_bucket_fetcher_service_1.GcsBucketFetcherService],
     })
 ], GoogleSpeakerDiarizationModule);
 exports.GoogleSpeakerDiarizationModule = GoogleSpeakerDiarizationModule;

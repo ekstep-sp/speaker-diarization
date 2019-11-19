@@ -66,6 +66,20 @@ let DiarizationSpeakerService = class DiarizationSpeakerService {
         });
         return Response;
     }
+    initiateDiarizationOnly(requestDetails, bodyData) {
+        console.log('sending initiate diarization request at ', new Date().toTimeString());
+        const Response = this.httpSrvc.post(requestDetails.uri, requestDetails.data, requestDetails.requestConfig).toPromise()
+            .then((response) => {
+            console.log('recieved response from initiate diarization request at ', new Date().toTimeString());
+            return Promise.resolve({ response: { message: `Process started successfully`, data: { process_id: response.data.name } } });
+        })
+            .catch(err => {
+            console.log('recieved error from initiate diarization request at ', new Date().toTimeString());
+            console.log(err);
+            return Promise.resolve({ error: err.message, status: err.response.status });
+        });
+        return Response;
+    }
     async checkStatusFromDiarizationID(id) {
         this.DEFAULT_AUTHORIZATION = 'Bearer ' + this.tokenProvider.process_token;
         const requestConfig = {
@@ -82,6 +96,7 @@ let DiarizationSpeakerService = class DiarizationSpeakerService {
             return Promise.resolve({ resp });
         })
             .catch(err => {
+            console.log('error occcured while hitting pol request for diarization ID ' + id, err);
             return Promise.resolve({ error: err });
         });
         return response;

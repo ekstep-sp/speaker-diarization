@@ -11,4 +11,5 @@ export declare class InitiateDiarizationHandlerService implements OnModuleInit {
     startInititateCallback(diarizationID: any, videoDetailsForVis: any): Promise<void>;
     checkStatusAndProceed(response: any, diarizationID: any, globalIteratorID: any, videoDetailsForVis: any): void;
     sendTranscribedAudio(responseData: any, videoDetailsForVis: any): Promise<void>;
+    sendTranscribedAudio2(responseData: any, videoDetailsForVis: any): Promise<void>;
 }

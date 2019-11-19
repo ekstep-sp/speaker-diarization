@@ -20,11 +20,11 @@ let GoogleCloudParserService = class GoogleCloudParserService {
     addSpeakerWithTypeToList(speakerTag, speakersObject) {
         speakerTag = speakerTag.toString();
         if (Object.keys(speakersObject).length === 0) {
-            speakersObject[speakerTag] = { pid: speakerTag, type: this.HUB };
+            speakersObject[speakerTag] = { pid: speakerTag, type: 'hub' };
         }
         else {
             if (Object.keys(speakersObject).indexOf(speakerTag) === -1) {
-                speakersObject[speakerTag] = { pid: speakerTag, type: this.SPOKE };
+                speakersObject[speakerTag] = { pid: speakerTag, type: 'spoke' };
             }
         }
         return speakersObject;

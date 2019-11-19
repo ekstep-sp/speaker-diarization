@@ -19,6 +19,7 @@ export declare class DiarizationSpeakerService {
     constructor(httpSrvc: HttpService, Emitter: GoogleSpeakerDiarizationEventHandlerService, tokenProvider: GcloudTokenProviderService);
     getDiarizationRequestData(dataToUse: DIARIZATION_REQUEST_INTERFACE): object;
     initiateDiarization(requestDetails: any, bodyData: any): Promise<any>;
+    initiateDiarizationOnly(requestDetails: any, bodyData: any): Promise<any>;
     checkStatusFromDiarizationID(id: string): Promise<any>;
 }
 export {};
