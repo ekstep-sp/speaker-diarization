@@ -11,7 +11,6 @@ export class GcsBucketFetcherService {
     constructor(private httpSrvc: HttpService, private diarizationSpkSrvc: DiarizationSpeakerService) {
     }
 
-
     getBucketFilesMetaData(): object {
         const bucketFilesMetaDataUrl = 'https://us-central1-speaker-diarization-resource.cloudfunctions.net/testFunc';
         // access the default provider token for gcloud
@@ -40,13 +39,12 @@ export class GcsBucketFetcherService {
         // }, 5000);
 
         const res = await this.diarizationSpkSrvc.checkStatusFromDiarizationID(diarizationID);
-            if (res.hasOwnProperty('error')) {
+        if (res.hasOwnProperty('error')) {
                 console.log(`\nAn error occured while reading status of diarization id ${diarizationID} . Error : ${res.error.message} \n status : ${res.error.response.status}`);
                 return -1;
             } else {
                 return this.checkStatusAndProceed2(res.resp.data, diarizationID);
             }
-
 
     }
 

@@ -3,7 +3,8 @@ import { Response } from 'express';
 import { DiarizationSpeakerService } from '../../services/diarization-speaker/diarization-speaker.service';
 import { AccessTokenGeneratorService } from '../../../automate-access-token/services/access-token-generator/access-token-generator.service';
 import { GcsBucketFetcherService } from '../../services/gcs-bucket-fetcher/gcs-bucket-fetcher.service';
-import { GoogleSpeakerDiarizationEventHandlerService } from '../../event-handler/google-speaker-diarization-event-handler/google-speaker-diarization-event-handler.service';
+
+import { DatabseCommonService } from '../../../read-db/services/database-common-service/databse-common/databse-common.service';
 
 
 interface DIARIZATION_REQUEST_INTERFACE {
@@ -19,7 +20,11 @@ interface DIARIZATION_REQUEST_INTERFACE {
 
 @Controller('diarization-beta')
 export class DiarizationBetaController {
-    constructor(private diazSrvc: DiarizationSpeakerService, private atgSrvc: AccessTokenGeneratorService, private gcsSrvc: GcsBucketFetcherService, private Emitter: GoogleSpeakerDiarizationEventHandlerService) { }
+    constructor(
+        private diazSrvc: DiarizationSpeakerService, 
+        private atgSrvc: AccessTokenGeneratorService,
+        private gcsSrvc: GcsBucketFetcherService, 
+        private databaseCommSrvc: DatabseCommonService) { }
 
     @Post('speaker/longrunningrecogize')
     async initialteLongRunningDiarization(@Res() response: Response, @Body() body): Promise<any> {
@@ -218,8 +223,8 @@ export class DiarizationBetaController {
                             console.log('Check : ',check);
                             if(!check)
                             {
-                                // Call Rishab
-                                // Data is present in allFilesData variable
+                                console.log('calling write files to json db');
+                                thisRef.databaseCommSrvc.writeFilesToDiarizationDB({data: allFilesData});
                             }
 
                             console.log('Process Completed for ID : ', diarizationProcessId);
@@ -232,21 +237,6 @@ export class DiarizationBetaController {
 
         
             })(this,i,allFilesData);
-
-        }
-    }
-
-    async asyncTimeout(checkStatus, diarizationProcessId) {
-        console.log('timestamp ->', new Date());
-        let response = await this.gcsSrvc.initiate2(diarizationProcessId);
-        if (response === -1) {
-            console.log('\nAn error occured while reading status of diarization id : ' + diarizationProcessId);
-            // global.clearInterval(iterator[i]);
-
-        } else if (response === 1) {
-            checkStatus[diarizationProcessId]
-            console.log('Process Completed for ID : ', diarizationProcessId);
-            // global.clearInterval(iterator[i]);
 
         }
     }

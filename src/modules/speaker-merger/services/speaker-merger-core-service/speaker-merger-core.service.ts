@@ -21,6 +21,7 @@ export class SpeakerMergerCoreService {
 
     mergeSpeakers(urlToConsume) {
         // core funtion to start reading files and process
+        console.log('merge speaker called with ', urlToConsume);
         const fileNames = this.dbCommonSrvc.readDiarizationDB(urlToConsume);
         if (fileNames && fileNames.length > 0) {
             console.log('file names are ', fileNames);

@@ -7,9 +7,10 @@ import { WriteConvertedDataToJsonService } from './event-handler/services/write-
 import { GcloudTokenProviderService } from '../automate-access-token/services/gcloud-token-provider/gcloud-token-provider.service';
 import { AccessTokenGeneratorService } from '../automate-access-token/services/access-token-generator/access-token-generator.service';
 import { GcsBucketFetcherService } from './services/gcs-bucket-fetcher/gcs-bucket-fetcher.service';
+import { ReadDbModule } from '../read-db/read-db.module';
 
 @Module({
-    imports: [HttpModule],
+    imports: [HttpModule, ReadDbModule],
     controllers: [DiarizationBetaController],
     providers: [DiarizationSpeakerService, InitiateDiarizationHandlerService, GoogleSpeakerDiarizationEventHandlerService, WriteConvertedDataToJsonService, GcloudTokenProviderService, AccessTokenGeneratorService,GcsBucketFetcherService],
 })

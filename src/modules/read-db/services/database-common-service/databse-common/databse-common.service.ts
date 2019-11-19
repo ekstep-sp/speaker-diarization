@@ -105,13 +105,20 @@ export class DatabseCommonService {
         // corresponding folder_name should be created in the combined folder with one file combined_diarization.json
 
         // construct proper database url to write
+        console.log('writing DIARIZATION DB FUNCTION CALLED');
+
         let totalFilesWritten = 0;
         let folderStructure;
-        multipleDiarizationFilesData.data.forEach(fileData => {
+        console.log('total files recieved to read ', multipleDiarizationFilesData.data.length);
+        multipleDiarizationFilesData.data.forEach((fileData, index) => {
+            console.log('inside ', index);
             // get the parent folder name,
             // get the file name
             // get the data
             // write the file in parent_folder/filename.json with data
+            if (fileData.uri.endsWith('audio_only.wav')) {
+                totalFilesWritten += 1;
+            }
             folderStructure = this.dbUtiiltySrvc.getFolderStruture(fileData.name);
 
             if (!!folderStructure['parentFolderName']) {
@@ -137,7 +144,7 @@ export class DatabseCommonService {
             }
         });
         // check if all the files have been written, only then trigger the readfile functionality
-        if (totalFilesWritten === multipleDiarizationFilesData.data.length - 1 ) {
+        if (totalFilesWritten === multipleDiarizationFilesData.data.length) {
             console.log('files written successfully');
             this.speakerMergerSrvc.mergeSpeakers(folderStructure.parentFolderName);
         } else {
