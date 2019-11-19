@@ -44,6 +44,9 @@
                 .name {
                     max-width: 100px;
                 }
+                .value {
+                    word-break: break-word;
+                }
             }
         }
         @include general-box-shadow;

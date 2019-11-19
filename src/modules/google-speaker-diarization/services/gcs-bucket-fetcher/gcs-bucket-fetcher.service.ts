@@ -11,8 +11,8 @@ export class GcsBucketFetcherService {
     constructor(private httpSrvc: HttpService, private diarizationSpkSrvc: DiarizationSpeakerService) {
     }
 
-    getBucketFilesMetaData(): object {
-        const bucketFilesMetaDataUrl = 'https://us-central1-speaker-diarization-resource.cloudfunctions.net/testFunc';
+    getBucketFilesMetaData(folderName): object {
+        const bucketFilesMetaDataUrl = `https://us-central1-speaker-diarization-resource.cloudfunctions.net/testFunc?folderName=${folderName}`;
         // access the default provider token for gcloud
 
         return this.httpSrvc.get(bucketFilesMetaDataUrl).toPromise();
@@ -55,15 +55,15 @@ export class GcsBucketFetcherService {
                 if (response.metadata.progressPercent.toString() === '100' && response.hasOwnProperty('done') && response.done ===  true) {
                     // call ahead
                     // global.clearInterval(globalIteratorID);
-                    console.log('\ncompleted...');
+                    console.log('\ncompleted... for ', diarizationID);
                     return response;
                     // add logic
                     // this.sendTranscribedAudio(response, videoDetailsForVis);
                 }
-                console.log(`\nTotal ${response.metadata.progressPercent}% complete....`);
+                console.log(`\nTotal ${response.metadata.progressPercent}% complete.... for ${diarizationID}`);
                 return 0;
             } else {
-                console.log('0% complete...');
+                console.log('0% complete... for ', diarizationID);
                 return 0;
             }
         }

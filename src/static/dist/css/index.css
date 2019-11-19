@@ -103,6 +103,10 @@ navbar {
   max-width: 100px;
 }
 
+.node-details .container .body .row .value {
+  word-break: break-word;
+}
+
 .video-details2 {
   float: right;
   z-index: 100;

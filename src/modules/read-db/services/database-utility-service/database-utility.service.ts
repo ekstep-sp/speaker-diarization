@@ -249,8 +249,8 @@ export class DatabaseUtilityService {
         const FolderNamesArray = addrToConsume.split('/');
         let parentFolderName = '';
 
-        if (FolderNamesArray[FolderNamesArray.length - 1].replace(' ', '_') !== 'audio_only' + sourceExtention) {
-            parentFolderName = FolderNamesArray[FolderNamesArray.length - 2].replace(' ', '_');
+        if (FolderNamesArray[FolderNamesArray.length - 1].split(' ').join('_') !== 'audio_only' + sourceExtention) {
+            parentFolderName = FolderNamesArray[FolderNamesArray.length - 2].split(' ').join('_');
         } else {
             console.log('ignoring audio file');
 
