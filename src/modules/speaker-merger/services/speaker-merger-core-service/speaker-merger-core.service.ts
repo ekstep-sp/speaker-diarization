@@ -34,7 +34,8 @@ export class SpeakerMergerCoreService {
     }
 
     processJSONFiles(fileNamesToConsume, filesLocation) {
-
+        // clean the combined file of the corresponding parent folder before writing new one
+        this.dbUtilitySrvc.cleanCombinedFile(filesLocation);
         // pick the json file squentially
         // put them in the new combined file
         // once all the files are entered, pick the combined file

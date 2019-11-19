@@ -264,4 +264,15 @@ export class DatabaseUtilityService {
             fileName,
         };
     }
+
+    cleanCombinedFile(parentFolderName) {
+        console.log('cleaning combined folder if any for ', parentFolderName);
+        const combinedFileAddr = path.join(this.DEST_COMPLETE_DIARIZATION_URL, parentFolderName, 'combined_diarization.json');
+        try {
+            fs.writeFileSync(combinedFileAddr, '', {encoding: 'utf-8'});
+            console.log('file cleaned');
+        } catch (e) {
+            console.log('An error occured while cleaning the combined file prior starting the process !! You might face some issues while writing');
+        }
+    }
 }
