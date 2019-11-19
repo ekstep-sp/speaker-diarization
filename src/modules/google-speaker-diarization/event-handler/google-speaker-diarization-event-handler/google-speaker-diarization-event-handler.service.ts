@@ -30,6 +30,7 @@ export class GoogleSpeakerDiarizationEventHandlerService {
             console.log('acknowledging the main event WRITE_CONVERTED_DATA_TO_JSON');
             this.writeConvertedDataToJSONSrvc.initiate(dataToSend);
         });
+
     }
 
     getVideoDetails(dataToUse: any) {

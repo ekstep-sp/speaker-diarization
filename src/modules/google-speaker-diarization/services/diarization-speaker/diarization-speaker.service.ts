@@ -77,6 +77,25 @@ export class DiarizationSpeakerService {
         return Response;
     }
 
+
+    initiateDiarizationOnly(requestDetails, bodyData): Promise<any> {
+        console.log('sending initiate diarization request at ', new Date().toTimeString());
+        const Response = this.httpSrvc.post(requestDetails.uri, requestDetails.data, requestDetails.requestConfig).toPromise()
+        .then((response: any) => {
+            console.log('recieved response from initiate diarization request at ', new Date().toTimeString());
+            // capture the current diarization id and go further
+            return Promise.resolve({response: {message: `Process started successfully`, data: {process_id: response.data.name}}});
+        })
+        .catch(err => {
+            console.log('recieved error from initiate diarization request at ', new Date().toTimeString());
+            console.log(err);
+            // this.Emitter.triggerEvent('INITIATE_DIARIZATION', {data: '698255031310955052'});
+            return Promise.resolve({error: err.message, status: err.response.status});
+        });
+        return Response;
+    }
+
+
     async checkStatusFromDiarizationID(id: string): Promise<any> {
         // set the bearer token
         this.DEFAULT_AUTHORIZATION = 'Bearer ' + this.tokenProvider.process_token;
