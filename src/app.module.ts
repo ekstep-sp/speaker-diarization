@@ -11,6 +11,7 @@ import { join } from 'path';
 import { AutomateAccessTokenModule } from './modules/automate-access-token/automate-access-token.module';
 import { AsyncReaderModule } from './modules/async-reader/async-reader.module';
 import { SpeakerMergerModule } from './modules/speaker-merger/speaker-merger.module';
+import { ZoomParserModule } from './modules/zoom-parser/zoom-parser.module';
 @Module({
   // serve static files in the server
   imports: [
@@ -23,9 +24,11 @@ import { SpeakerMergerModule } from './modules/speaker-merger/speaker-merger.mod
     ReadDbModule,
     SpeakerMergerModule,
     AsyncReaderModule,
+    ZoomParserModule,
   ],
   controllers: [AppController],
   providers: [AppService, CommonRequestValidatorService],
+  exports: [CommonRequestValidatorService],
 })
 export class AppModule {
 

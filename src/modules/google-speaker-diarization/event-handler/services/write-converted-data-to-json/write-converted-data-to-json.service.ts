@@ -23,6 +23,7 @@ export class WriteConvertedDataToJsonService {
 
     updateContentsOfFile(oldContents, newVideoData) {
         // convert to json if the file is not empty
+        console.log('sending video data as ', newVideoData);
         oldContents = oldContents.length > 0 ? JSON.parse(oldContents) : {videos: []};
         const newVideoObject = {
             id: null,
