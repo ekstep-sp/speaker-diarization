@@ -28,6 +28,7 @@ let WriteConvertedDataToJsonService = class WriteConvertedDataToJsonService {
         }
     }
     updateContentsOfFile(oldContents, newVideoData) {
+        console.log('sending video data as ', newVideoData);
         oldContents = oldContents.length > 0 ? JSON.parse(oldContents) : { videos: [] };
         const newVideoObject = {
             id: null,

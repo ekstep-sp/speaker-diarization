@@ -18,6 +18,7 @@ const path_1 = require("path");
 const automate_access_token_module_1 = require("./modules/automate-access-token/automate-access-token.module");
 const async_reader_module_1 = require("./modules/async-reader/async-reader.module");
 const speaker_merger_module_1 = require("./modules/speaker-merger/speaker-merger.module");
+const zoom_parser_module_1 = require("./modules/zoom-parser/zoom-parser.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -32,9 +33,11 @@ AppModule = __decorate([
             read_db_module_1.ReadDbModule,
             speaker_merger_module_1.SpeakerMergerModule,
             async_reader_module_1.AsyncReaderModule,
+            zoom_parser_module_1.ZoomParserModule,
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService, common_request_validator_service_1.CommonRequestValidatorService],
+        exports: [common_request_validator_service_1.CommonRequestValidatorService],
     })
 ], AppModule);
 exports.AppModule = AppModule;

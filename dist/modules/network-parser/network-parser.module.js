@@ -10,12 +10,13 @@ const common_1 = require("@nestjs/common");
 const network_parser_controller_1 = require("./controllers/network-parser/network-parser.controller");
 const google_cloud_parser_service_1 = require("./services/google-cloud-parser/google-cloud-parser.service");
 const common_request_validator_service_1 = require("../../services/shared/common-request-validator/common-request-validator.service");
+const zoom_parser_service_1 = require("./services/zoom-parser/zoom-parser.service");
 let NetworkParserModule = class NetworkParserModule {
 };
 NetworkParserModule = __decorate([
     common_1.Module({
         controllers: [network_parser_controller_1.NetworkParserController],
-        providers: [google_cloud_parser_service_1.GoogleCloudParserService, common_request_validator_service_1.CommonRequestValidatorService],
+        providers: [google_cloud_parser_service_1.GoogleCloudParserService, common_request_validator_service_1.CommonRequestValidatorService, zoom_parser_service_1.ZoomParserService],
     })
 ], NetworkParserModule);
 exports.NetworkParserModule = NetworkParserModule;

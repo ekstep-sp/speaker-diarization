@@ -27,6 +27,28 @@ let CommonRequestValidatorService = class CommonRequestValidatorService {
         }
         return isValid;
     }
+    validateZoomBodyObject(bodyObjectString) {
+        let isValid = false;
+        try {
+            const parsedDataToCheck = Object.assign({}, bodyObjectString);
+            if (this.validateBodyObject(parsedDataToCheck)) {
+                if (parsedDataToCheck.hasOwnProperty('data') && Array.isArray(parsedDataToCheck['data'])) {
+                    console.log('body is valid for zoom parser');
+                    isValid = true;
+                }
+                else {
+                    console.log('body is not valid for zoom parser, data key is either absent or it is not of array type');
+                }
+            }
+            else {
+                console.log(`bodyObject doesn't seem to be a valid generic object`);
+            }
+        }
+        catch (e) {
+            console.log('error while checking validity of the bodyObject ', e);
+        }
+        return isValid;
+    }
 };
 CommonRequestValidatorService = __decorate([
     common_1.Injectable(),
