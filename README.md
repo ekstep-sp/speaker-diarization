@@ -8,6 +8,7 @@ Speaker diarisation (or diarization) is the process of partitioning an input aud
 
 # [INSTALLATION] 
 Refer the installation docs form [The Official Guide To Install Speaker Diarization Utility](https://docs.google.com/document/d/1hddjXd4cKhowrJRknv52pj9a6eiXI6qBpdUly45BKhg/edit?usp=sharing)
+**[NOTE] At the time of writing this documentation, the most updated / statble branch is zoom-parser, so it advisable to switch to zoom-parser after cloning to work with all the modules provided.**
 
 # [FUNCTAIONALITY]
 This project is developed to explore various services provided by different tech giants and see how speaker diarization can be performed in a seamless manner. This project has the following features :
