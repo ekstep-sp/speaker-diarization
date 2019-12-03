@@ -13,8 +13,8 @@ Refer the installation docs form [The Official Guide To Install Speaker Diarizat
 # [FUNCTIONALITY]
 This project is developed to explore various services provided by different tech giants and see how speaker diarization can be performed in a seamless manner. This project has the following features :
 * To perform speaker diarization using Google Speaker diarization Apis
-* Display the diarized data using the Diarization Visulizer utility
 * To perform speaker Diarization using Zoom Apis
+* Display the diarized data using the Diarization Visulizer utility
 
  # 1. To Perform Speaker Diarization using Google Speaker Diarization Apis
 * The google speaker diarization apis are useful when you want to perform speaker diarization using complete apis provided by google.
@@ -35,7 +35,11 @@ This project is developed to explore various services provided by different tech
 
 * After a while you can visit localhost:3200/index.html to see if your files are properly diarized and visible. The data set will be available under the name of the folder you used. For example if your folder name was source_files then in the above url, the data will be available under the name source_files only
 
- # 2. To Perform Speaker Diarization using Diarization Visualizer utility (cloud utility)
+# 2. To perform speaker Diarization using Zoom Apis
+* The process of diarization is a little bit trickier as compared to the above two modules. However, it is much accurate the other two methods.
+* Follow [this url](https://docs.google.com/document/d/1yvUdaCtF4wa1nbc5s9l_5JeDtXglquKyDl2UISVYrL4/edit?usp=sharing) to get started with speaker diarization using zoom apis
+
+ # 3. To Perform Speaker Diarization using Diarization Visualizer utility (cloud utility)
  * There is another, more easier way to see speaker diarization work with some additional information, however this functionality can only diarize one file at a time. The advantage is that the status of diarization can be seen here using the utility.
  * The process is almost similar except few changes, obviously the installation step has to be performed before proceeding
  * Visit the link localhost:3200/cloud-utility/index.html and you will see the module which will help you diarize the audio files.
@@ -44,11 +48,6 @@ This project is developed to explore various services provided by different tech
  * Once you have mentioned all the details, simply click submit (make sure your main speaker-diarization project is active) and wait for the process to start.
  * If the process has started successfully, you will see the completion status and a new button will be shown as soon as diarization is completed.
     ##### NOTE : For production purposes, the new button will always send you to the live version of the page, however for development purposes you can replace that deomain with localhost:3200 because the new data will be visible in the local version and not the live version.
-
-
-# 3. To perform speaker Diarization using Zoom Apis
-* The process of diarization is a little bit trickier as compared to the above two modules. However, it is much accurate the other two methods.
-* Follow [this url](https://docs.google.com/document/d/1yvUdaCtF4wa1nbc5s9l_5JeDtXglquKyDl2UISVYrL4/edit?usp=sharing) to get started with speaker diarization using zoom apis
 
 
 # [WANT TO CONTRIBUTE ?]
