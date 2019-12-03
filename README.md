@@ -47,6 +47,9 @@ This project is developed to explore various services provided by different tech
  * You can provide additional details in the following boxes but make sure you provide the correct number of speakers in the speker count section. This is done because the google speaker diarization apis need exact speaker count to diarize efficiently. For example if you are uploading a url of an audio file which has 5 speakers in it, then you should mention 5 in the speaker count value.
  * Once you have mentioned all the details, simply click submit (make sure your main speaker-diarization project is active) and wait for the process to start.
  * If the process has started successfully, you will see the completion status and a new button will be shown as soon as diarization is completed.
+ 
+* Live version is available at http://13.234.2.81:3200/cloud-utility/index.html
+
     ##### NOTE : For production purposes, the new button will always send you to the live version of the page, however for development purposes you can replace that deomain with localhost:3200 because the new data will be visible in the local version and not the live version.
 
 
