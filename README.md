@@ -20,6 +20,9 @@ This project is developed to explore various services provided by different tech
 * The google speaker diarization apis are useful when you want to perform speaker diarization using complete apis provided by google.
 * These apis are in beta and is subject to change over the period of time as per google. However, at the time of creating the project, the apis allowed users to perform diarization by uploading a set of audio files into the public google cloud bucket. 
 * Note, there is a specification to be followed while uploading files . The files that you upload to the google cloud bucket of your choice must be accessible publicly and should be audio files of type .wav. For example if you wish to perform speaker diarization on your audio file named sample_audio.wma , you will upload this file in a folder named source_files inside bucket for example sample_bucket and this file url inside the bucket is to be publicly accessible.
+
+<b>[NOTE]:</b> For demonstration purposes, bucket name is set to echo_zoom_video. The same bucket is present inside the demo google account (itsme.rishabhk) which was given to you while setup.
+
 * Once you have uploaded the respective files in the bucket of your choice, all you need to do is remember the name of the folder in which you uploaded your files, in this case source_files
 * To initiate the diarization process, use the below api
     ```
