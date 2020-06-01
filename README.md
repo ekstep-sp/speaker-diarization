@@ -1,75 +1,50 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
-</p>
+# **Architectural Flow**
 
-[travis-image]: https://api.travis-ci.org/nestjs/nest.svg?branch=master
-[travis-url]: https://travis-ci.org/nestjs/nest
-[linux-image]: https://img.shields.io/travis/nestjs/nest/master.svg?label=linux
-[linux-url]: https://travis-ci.org/nestjs/nest
-  
-  <p align="center">A progressive <a href="http://nodejs.org" target="blank">Node.js</a> framework for building efficient and scalable server-side applications, heavily inspired by <a href="https://angular.io" target="blank">Angular</a>.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore"><img src="https://img.shields.io/npm/dm/@nestjs/core.svg" alt="NPM Downloads" /></a>
-<a href="https://travis-ci.org/nestjs/nest"><img src="https://api.travis-ci.org/nestjs/nest.svg?branch=master" alt="Travis" /></a>
-<a href="https://travis-ci.org/nestjs/nest"><img src="https://img.shields.io/travis/nestjs/nest/master.svg?label=linux" alt="Linux" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#5" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec"><img src="https://img.shields.io/badge/Donate-PayPal-dc3d53.svg"/></a>
-  <a href="https://twitter.com/nestframework"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+![](https://drive.google.com/uc?export=view&id=1_LyYaa2_MH7RCd-W1EZNSlSki0P8WOpT)
+You can view the above image [**here**](https://drive.google.com/file/d/1_LyYaa2_MH7RCd-W1EZNSlSki0P8WOpT/view?usp=sharing)
 
-## Description
+# **Steps for Installation ( Quick Review )**
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+1. **Enable Zoom account with permissions**
+  a. **Business, Education, or Enterprise** license with **account owner** or **admin privileges** and **Cloud Recording and Audio Transcript settings enabled**. To know more about zoom permissions visit [here](https://support.zoom.us/hc/en-us/articles/115001078646-Role-Based-Access-Control) and enabling the audio transcript option from [here](https://support.zoom.us/hc/en-us/articles/115004794983-Automatically-Transcribe-Cloud-Recordings).
 
-## Installation
+1. **Install Speaker Diarization Project**
+  a. Make sure you have nodeJS ( v10 or higher ), git / Github installed (git CLI is recommended)
+  b. Clone the project repository from [https://github.com/societalplatform-ekstep/speaker-diarization.git](https://github.com/societalplatform-ekstep/speaker-diarization.git) ( **use git clone <repo-url>** to clone)
+  c. Checkout to branch **zoom-parser**
+  d. Go to project root and type **npm install**
+  e. Once packages are installed, install nest-CLI using **npm install -g @nestjs/cli** separately.
+  f. Once nestJS is installed, install the gulp cli using **npm install -g gulp-cli**
+  g. Now type **gulp** and the project should start building.
+  h. Once done, go to **dist/** and type **node main.js.** If everything went fine, you should be able to see a message.
 
-```bash
-$ npm install
-```
+1. **Create JWT app**
+  a. Login to [https://marketplace.zoom.us/](https://marketplace.zoom.us/) with your account (the same account where you enabled the audio transcript feature).
+  b. Go to **create an app** and select the **jwt application**.
+  c. Follow the steps of creating an app, and after it is created you will see your **API-key** and **API-secret**. Also in your JWT app, you will see a **features section** , go and enable event subscription in it. For this project, you have to specifically enable the **transcript-completed (**details about this event can be referenced from[here](https://marketplace.zoom.us/docs/api-reference/webhook-reference/recording-events/recording-transcript-completed)**)** event and add the webhook URL. More details about webhooks in zoom can be found [here](https://marketplace.zoom.us/docs/api-reference/webhook-reference). Record client id and the secret of this jwt app for future reference.
 
-## Running the app
+1. **Upload and update Google Cloud Functions**
+  a. Now login to google-cloud and upload the below-mentioned cloud functions (code provided [here](https://drive.google.com/file/d/1JeTNBu9D4c0_9YYjzlmf9rYnIbVvqxcT/view?usp=sharing)). Please make sure that the name of the cloud function is the same as the name of the zip file.
+    1. webhookFunc.zip
+    2. get\_jwt\_auth\_token.zip
+    3. get\_zoom\_videos.zip
+    4. merge\_meeting\_files.zip
+    5. parse-vtt-to-json.zip
 
-```bash
-# development
-$ npm run start
+   b. Now you will have to update all the reference URLs of these cloud functions. One such example is your merge-meeting-files cloud function, edit that function, and change the URL for parse-vtt-to-json cloud function to your cloud function.
+1. **Connect Google Cloud Functions with JWT app**
+  a. Update the Client ID and ClientSecret in **get\_jwt\_auth\_token.zip** → index.js and redeploy it.
+  b. Once you have deployed all your cloud functions, you have to update the invocation URL of webhookFunc cloud function in your zoom's transcript-completed event subscription (one that you enabled in jwt app)
 
-# watch mode
-$ npm run start:dev
+1. **Connect Google Cloud Functions with Backend API (speaker-diarization-project)**
+  a. Once all this is done, you have to update the outgoing url in the merge-meeting-files cloud function to point it to your deployed webhook of speaker-diarization-project. The endpoint for saving the visualization is **/<domain>/zoom-to-vis/visualize**.
 
-# production mode
-$ npm run start:prod
-```
+If you have followed the above steps, everything is set up, now schedule a meeting ( make sure to mark "record to the cloud" option) and complete it. Once the meeting has ended and transcription completed for your meeting, the diarization process will initiate automatically. After 5 minutes you can visit the URL(for example <your-deployed-domain>/index.html ) to see if your meeting is visible. If not, refer to the google cloud function logs if any error has occurred and resolve accordingly.
 
-## Test
+# **Understanding the speaker diarization flow using zoom APIs.**
 
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-  Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+- Zoom APIs provide a lot of features to access the meetings and any past recordings in the zoom account. One critical API that is used here is **get-recordings API** which can be seen here: [https://docs.google.com/document/d/1nQfJ-j4bAZaKJgsJZYu7OgYDT3PD9oyV0eGD-5HifyE/edit#bookmark=id.3015qb7s6ljg](https://docs.google.com/document/d/1nQfJ-j4bAZaKJgsJZYu7OgYDT3PD9oyV0eGD-5HifyE/edit#bookmark=id.3015qb7s6ljg) and official zoom documentation for the API can be seen [here](https://marketplace.zoom.us/docs/api-reference/zoom-api/cloud-recording/recordingget).
+- This API will return two important file types: **TIMELINE and TRANSCRIPT**
+- The **TIMELINE** file type is basically a json output that contains the timestamp and information of the user who spoke starting at a particular timestamp. The **TRANSCRIPT** file type is basically a vtt file output that contains information on what was spoken between two time-stamps. It does not contain any information about who spoke between those timestamps. Samples of these files can be seen [here](https://drive.google.com/drive/folders/1K8tzjwcrYDsUWChDF7AroTbnjpSnS_W8?usp=sharing).
+- There are a set of cloud functions deployed (link has been mentioned above which are responsible to look for the output of get-recordingsI API, get these files from their respective download URLs, parse them accordingly and merge them to create one json output which contains both the text of what was spoken between two timestamps and by whom.
+- This final json output is then sent to a deployed network-interaction-diagram server to be further parsed and saved in the database so that it can be visualized using our network-interaction-diagram. Again, this whole flow is managed by cloud functions themselves.
