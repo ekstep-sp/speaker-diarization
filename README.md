@@ -37,7 +37,7 @@ You can view the image [**here**](https://drive.google.com/file/d/1_LyYaa2_MH7RC
   b. Once you have deployed all your cloud functions, you have to update the invocation URL of webhookFunc cloud function in your zoom's transcript-completed event subscription (one that you enabled in jwt app)
 
 1. **Connect Google Cloud Functions with Backend API (speaker-diarization-project)**
-  a. Once all this is done, you have to update the outgoing url in the merge-meeting-files cloud function to point it to your deployed webhook of speaker-diarization-project. The endpoint for saving the visualization is **/<domain>/zoom-to-vis/visualize**.
+  a. Once all this is done, you have to update the outgoing url in the merge-meeting-files cloud function to point it to your deployed webhook of speaker-diarization-project. The endpoint for saving the visualization is **/"domain"/zoom-to-vis/visualize**.
 
 If you have followed the above steps, everything is set up, now schedule a meeting ( make sure to mark "record to the cloud" option) and complete it. Once the meeting has ended and transcription completed for your meeting, the diarization process will initiate automatically. After 5 minutes you can visit the URL(for example <your-deployed-domain>/index.html ) to see if your meeting is visible. If not, refer to the google cloud function logs if any error has occurred and resolve accordingly.
 
