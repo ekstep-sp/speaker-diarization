@@ -5,20 +5,20 @@ You can view the image [**here**](https://drive.google.com/file/d/1_LyYaa2_MH7RC
 
 # **Steps for Installation ( Quick Review )**
 
-1. **Enable Zoom account with permissions**
-  a. **Business, Education, or Enterprise** license with **account owner** or **admin privileges** and **Cloud Recording and Audio Transcript settings enabled**. To know more about zoom permissions visit [here](https://support.zoom.us/hc/en-us/articles/115001078646-Role-Based-Access-Control) and enabling the audio transcript option from [here](https://support.zoom.us/hc/en-us/articles/115004794983-Automatically-Transcribe-Cloud-Recordings).
+1. **Enable Zoom account with permissions** </br> 
+  1. **Business, Education, or Enterprise** license with **account owner** or **admin privileges** and **Cloud Recording and Audio Transcript settings enabled**. To know more about zoom permissions visit [here](https://support.zoom.us/hc/en-us/articles/115001078646-Role-Based-Access-Control) and enabling the audio transcript option from [here](https://support.zoom.us/hc/en-us/articles/115004794983-Automatically-Transcribe-Cloud-Recordings).
 
-1. **Install Speaker Diarization Project**
-  a. Make sure you have nodeJS ( v10 or higher ), git / Github installed (git CLI is recommended)
-  b. Clone the project repository from [https://github.com/societalplatform-ekstep/speaker-diarization.git](https://github.com/societalplatform-ekstep/speaker-diarization.git) ( **use git clone <repo-url>** to clone)
-  c. Checkout to branch **zoom-parser**
-  d. Go to project root and type **npm install**
-  e. Once packages are installed, install nest-CLI using **npm install -g @nestjs/cli** separately.
-  f. Once nestJS is installed, install the gulp cli using **npm install -g gulp-cli**
-  g. Now type **gulp** and the project should start building.
-  h. Once done, go to **dist/** and type **node main.js.** If everything went fine, you should be able to see a message.
+2. **Install Speaker Diarization Project**
+  2.1. Make sure you have nodeJS ( v10 or higher ), git / Github installed (git CLI is recommended)
+  2.2. Clone the project repository from [https://github.com/societalplatform-ekstep/speaker-diarization.git](https://github.com/societalplatform-ekstep/speaker-diarization.git) ( **use git clone <repo-url>** to clone)
+  2.3. Checkout to branch **zoom-parser**
+  2.4. Go to project root and type **npm install**
+  2.5. Once packages are installed, install nest-CLI using **npm install -g @nestjs/cli** separately.
+  2.6. Once nestJS is installed, install the gulp cli using **npm install -g gulp-cli**
+  2.7. Now type **gulp** and the project should start building.
+  2.8. Once done, go to **dist/** and type **node main.js.** If everything went fine, you should be able to see a message.
 
-1. **Create JWT app**
+3. **Create JWT app**
   a. Login to [https://marketplace.zoom.us/](https://marketplace.zoom.us/) with your account (the same account where you enabled the audio transcript feature).
   b. Go to **create an app** and select the **jwt application**.
   c. Follow the steps of creating an app, and after it is created you will see your **API-key** and **API-secret**. Also in your JWT app, you will see a **features section** , go and enable event subscription in it. For this project, you have to specifically enable the **transcript-completed (**details about this event can be referenced from[here](https://marketplace.zoom.us/docs/api-reference/webhook-reference/recording-events/recording-transcript-completed)**)** event and add the webhook URL. More details about webhooks in zoom can be found [here](https://marketplace.zoom.us/docs/api-reference/webhook-reference). Record client id and the secret of this jwt app for future reference.
