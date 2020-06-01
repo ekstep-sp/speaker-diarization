@@ -24,7 +24,7 @@ You can view the image [**here**](https://drive.google.com/file/d/1_LyYaa2_MH7RC
   c. Follow the steps of creating an app, and after it is created you will see your **API-key** and **API-secret**. Also in your JWT app, you will see a **features section** , go and enable event subscription in it. For this project, you have to specifically enable the **transcript-completed (**details about this event can be referenced from[here](https://marketplace.zoom.us/docs/api-reference/webhook-reference/recording-events/recording-transcript-completed)**)** event and add the webhook URL. More details about webhooks in zoom can be found [here](https://marketplace.zoom.us/docs/api-reference/webhook-reference). Record client id and the secret of this jwt app for future reference.
 
 4. **Upload and update Google Cloud Functions**</br>
-  a. Now login to google-cloud and upload the below-mentioned cloud functions (code provided [here](https://drive.google.com/file/d/1PuUSx4bQxSGU0dh5PEpgVEneoGUZyQQ6/view?usp=sharing)). Please make sure that the name of the cloud function is the same as the name of the zip file.
+  a. Now login to google-cloud and upload the below-mentioned cloud functions (code provided [here](https://github.com/societalplatform-ekstep/speaker-diarization-cloud-functions-public/tree/master/cloud-functions-speaker-diarization-zoom). Please make sure that the name of the cloud function is the same as the name of the zip file.
     1. webhookFunc.zip
     2. get\_jwt\_auth\_token.zip
     3. get\_zoom\_videos.zip
