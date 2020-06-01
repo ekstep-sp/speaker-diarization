@@ -1,7 +1,7 @@
 # **Architectural Flow**
 
 ![](https://drive.google.com/uc?export=view&id=1_LyYaa2_MH7RCd-W1EZNSlSki0P8WOpT)
-You can view the above image [**here**](https://drive.google.com/file/d/1_LyYaa2_MH7RCd-W1EZNSlSki0P8WOpT/view?usp=sharing)
+You can view the image [**here**](https://drive.google.com/file/d/1_LyYaa2_MH7RCd-W1EZNSlSki0P8WOpT/view?usp=sharing)
 
 # **Steps for Installation ( Quick Review )**
 
