@@ -1,6 +1,6 @@
 {
-    "gcloud_installation_path": "C:/Users/rishabh.kalra/AppData/Local/Google/Cloud SDK/google-cloud-sdk/bin/",
+    "gcloud_installation_path": "<path to gcloud/bin installed locally>",
     "env": {
-        "GOOGLE_AUTHENTICATION_CREDENTIALS": "C:/Users/rishabh.kalra/Desktop/auth.json"
+        "GOOGLE_AUTHENTICATION_CREDENTIALS": "path to google-auth json file whose account details to be used via gcloud"
     }
 }
